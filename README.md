@@ -1,4 +1,4 @@
-# TEST 2 for pages
+# TEST 3 for pages
 
 # Eleventy + Tailwind CSS + GitHub Pages + Custom Domain Template
 
@@ -53,11 +53,36 @@ A starter template for static sites using Eleventy, Tailwind CSS, and GitHub Pag
 - A custom `.rubik-black` class is defined in `styles.css` to ensure the `h1` uses Rubik Black (900).
 - You can add more custom styles to this file as needed; they will be processed by PostCSS and included in the build.
 
+## Important: Eleventy `pathPrefix` for GitHub Pages and Custom Domains
+
+### If deploying to a GitHub Pages project site (e.g. `https://<username>.github.io/<repo>/`):
+
+- In your `.eleventy.js` config, set:
+  ```js
+  pathPrefix: "/<repo>/";
+  ```
+  Example for this repo:
+  ```js
+  pathPrefix: "/trainingadam.com/";
+  ```
+- This ensures all links and asset paths work correctly at the subdirectory URL.
+
+### If deploying to a custom domain (e.g. `https://yourdomain.com`):
+
+- In your `.eleventy.js` config, set:
+  ```js
+  pathPrefix: "/";
+  ```
+- This is required for correct root-relative URLs on your custom domain.
+
+**You must update `pathPrefix` and redeploy when switching between GitHub Pages project site and a custom domain.**
+
+---
+
 ## Gotchas Solved
 
 - CNAME file is always copied to the output directory.
 - Asset paths use Eleventy’s `url` filter for compatibility.
-- `pathPrefix` is `/` for custom domain root.
 - Example DNS and deployment instructions included.
 
 ## Troubleshooting
