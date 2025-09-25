@@ -20,16 +20,21 @@ A starter template for static sites using Eleventy, Tailwind CSS, and GitHub Pag
    ```sh
    npm install
    ```
-3. **Set your custom domain**
-   - Edit the `CNAME` file and replace `your-custom-domain.com` with your domain.
-4. **Configure DNS**
+3. **Configure GitHub Pages**
+   - Go to your repository Settings > Pages
+   - Under "Source", select "GitHub Actions" (not "Deploy from a branch")
+   - This enables the workflow to deploy your site
+4. **Set your custom domain** (optional)
+   - Edit the `CNAME` file and replace `your-custom-domain.com` with your domain
+   - Or set it in Settings > Pages > Custom domain after deployment
+5. **Configure DNS** (if using custom domain)
    - Apex domain: Add A records for 185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153
    - www: Add a CNAME record pointing to `<your-github-username>.github.io`
-5. **Build and serve locally**
+6. **Build and serve locally**
    ```sh
    npm start
    ```
-6. **Deploy**
+7. **Deploy**
    - Push to GitHub. GitHub Actions will build and deploy to GitHub Pages automatically.
 
 ## Google Fonts & Typography
