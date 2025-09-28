@@ -7,3 +7,11 @@
 	font-family: 'Rubik', ui-sans-serif, system-ui, sans-serif;
 	font-weight: 900;
 }
+.brand-adam{
+	text-transform: uppercase;
+	transform: rotate(90deg);
+	transform-origin: right bottom;
+	display: inline-block;
+	font-size: .75rem;
+
+}

@@ -6,12 +6,14 @@
     <title>{{ title or "Eleventy Tailwind Template" }}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@100;200;300;400;500;600;700;800;900&family=Rubik+Puddles&family=Rubik+Gemstones&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ '/assets/styles.generated.css' | url }}">
   </head>
-  <body class="bg-gray-50 text-gray-900">
-    {% include "navbar.njk" %}
-    {{ content | safe }}
-    {% include "footer.njk" %}
+  <body class="bg-gray-50 text-gray-900 w-full overflow-x-hidden">
+    <div class="w-full overflow-x-hidden">
+      {% include "navbar.njk" %}
+      {{ content | safe }}
+      {% include "footer.njk" %}
+    </div>
   </body>
 </html>
