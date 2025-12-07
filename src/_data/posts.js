@@ -14,7 +14,7 @@ function loadPosts(){
       return {
         data,
         // expected URL pattern for each post
-        url: `/posts/${slug}/`
+        url: `/${slug}/`
       };
     } catch (e){
       console.error('Failed to parse', f, e);
@@ -22,8 +22,8 @@ function loadPosts(){
     }
   }).filter(Boolean);
 
-  // sort by id (assuming id is numeric issue number) ascending
-  posts.sort((a,b) => (a.data.id || 0) - (b.data.id || 0));
+  // sort by id (assuming id is numeric issue number) descending
+  posts.sort((a,b) => (b.data.id || 0) - (a.data.id || 0));
   return posts;
 }
 
