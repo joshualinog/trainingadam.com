@@ -1,0 +1,12 @@
+{% if collections.posts %}
+  <ul>
+    {% for post in collections.posts | reverse %}
+      <li>
+        <a href="/{{ post.data.slug }}/">{{ post.data.title }}</a>
+        <p>{{ post.data.excerpt }}</p>
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>No posts yet.</p>
+{% endif %}

@@ -1,0 +1,18 @@
+{
+  "id": 17,
+  "title": "create codespace setup for trainingadam to initialize issue content creation workflow",
+  "slug": "create-codespace-setup-for-trainingadam-to-initialize-issue-content-creation-workflow",
+  "author": "joshualinog",
+  "createdAt": "2025-12-05T18:21:07Z",
+  "updatedAt": "2025-12-05T18:21:07Z",
+  "labels": [
+    "🧬 CONTENT CREATION",
+    "content delivery app development"
+  ],
+  "status": "published",
+  "excerpt": "Use GitHub Issues as the CMS source. Issues labeled `contentPost` will be converted to JSON files in `src/data/posts`.",
+  "content": "# create codespace setup for trainingadam to initialize issue content creation workflow\n**OBJECTIVES OVERVIEW**\n\n1. _instead of a Content management system I am going to use the is\n\nsues with an internal labeling scheme to employ github's API to fetch issues with specific labels to consume those issues and construct Json data posts based on a clear Json schema ._\n2. _the repo is the public repository i own that is the workspace: https://github.com/joshualinog/trainingadam.com_\n3. _these posts in the form of Json data will be in the directory posts and eleventy will create pagination and construct with post pages based on attempt in the data_\n4. _start simple and work to complex later in phase 2 and later phases. if run into difficulties, fails, reallocate goals and move complexity to phase 2 or later_\n5. _initially there will be no styling and a single post time to test proof of concept end to end with github workflows_\n## phase 1\n- [ ] create src/data directory\n- [ ] create of src/data/posts directory\n- [ ] create three github actions workflows \n     - [ ] 1. a github actions yaml worfklow that on a schedule looks at all issues with label `contentPost`, and updates json files in data/posts accordingly; issues will be periodically checked for changes or new issues or deletions on a github actions scheduled workflow\n     - [ ] 2. a github actions yaml worfklow that is triggered based on the label `contentPost` being added, removed, toggled and/or the creation, change, deletion of issue content;  if an issue with the label contentPost is toggled, added, removed, created, changed then the github actions need to be initiated to update the json data according to the changes\n     - [ ] a github actions yaml worfklow that initiates a site rebuild and deploy\n\n- [ ] create a `includes/posts/` directory\n- [ ] create a `blog-home-layout` .njk file in `includes/posts` directory\n- [ ] create a `post-layout` .njk file in the `includes/posts` directory\n- [ ] create pagination using eleventy built in pagination capabilities employing the posts in the src/data/posts \n\n## phase 2\n- [ ] there will eventually be several types of post templates",
+  "raw_issue": {
+    "url": "https://github.com/joshualinog/trainingadam.com/issues/17"
+  }
+}
