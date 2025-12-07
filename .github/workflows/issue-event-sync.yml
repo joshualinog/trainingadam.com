@@ -4,7 +4,7 @@ permissions:
 
 on:
   issues:
-    types: [labeled, unlabeled, edited]
+    types: [labeled, unlabeled, edited, deleted]
 
 jobs:
   event-sync:
@@ -20,7 +20,12 @@ jobs:
           persist-credentials: true
           fetch-depth: 0
 
+      - name: Handle deleted issue
+        if: github.event.action == 'deleted'
+        run: node ./scripts/sync-issues.js delete ${{ github.event.issue.number }}
+
       - name: Run sync for single issue
+        if: github.event.action != 'deleted'
         env:
           ISSUE_NUMBER: ${{ github.event.issue.number }}
         run: |

@@ -57,6 +57,17 @@ function fetchSingle(number){
   return JSON.parse(out);
 }
 
+// Handle delete command
+if (process.argv[2] === 'delete') {
+  const num = String(process.argv[3]).padStart(5, '0');
+  const files = fs.readdirSync(OUT_DIR).filter(f => f.startsWith(`${num}-`) && f.endsWith('.json'));
+  files.forEach(f => {
+    fs.unlinkSync(path.join(OUT_DIR, f));
+    console.log('Deleted', f, 'because issue deleted');
+  });
+  process.exit(0);
+}
+
 function main(){
   mkdirp(OUT_DIR);
 
