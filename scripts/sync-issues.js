@@ -68,15 +68,13 @@ function main(){
     if (hasLabel) {
       writePostJson(issue);
     } else {
-      // Delete the JSON file if it exists
+      // Delete the JSON file(s) for this issue number
       const num = String(issue.number).padStart(5, '0');
-      const slug = issue.title ? slugify(issue.title) : `issue-${issue.number}`;
-      const filename = `${num}-${slug}.json`;
-      const outfile = path.join(OUT_DIR, filename);
-      if (fs.existsSync(outfile)) {
-        fs.unlinkSync(outfile);
-        console.log('Deleted', filename, 'because label removed');
-      }
+      const files = fs.readdirSync(OUT_DIR).filter(f => f.startsWith(`${num}-`) && f.endsWith('.json'));
+      files.forEach(f => {
+        fs.unlinkSync(path.join(OUT_DIR, f));
+        console.log('Deleted', f, 'because label removed');
+      });
     }
     return;
   }
