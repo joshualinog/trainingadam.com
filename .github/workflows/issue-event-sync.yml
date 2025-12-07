@@ -19,6 +19,7 @@ jobs:
         with:
           token: ${{ secrets.GH_PAT }}
           persist-credentials: true
+          fetch-depth: 0
 
       - name: Run sync for single issue
         env:
@@ -46,7 +47,35 @@ jobs:
             echo "No changes to commit"
           else
             git commit -m "chore: sync issue $ISSUE_NUMBER to src/data/posts"
-            # Use PAT for authenticated push
+            # Create a dedicated sync branch and push that branch (avoids touching main)
+            BRANCH_NAME="sync/issue-${ISSUE_NUMBER}-$(date +%s)"
+            git checkout -b "$BRANCH_NAME"
             git remote set-url origin https://x-access-token:${PAT}@github.com/${{ github.repository }}.git
-            git push origin "HEAD:${BRANCH}"
+            git push --set-upstream origin "$BRANCH_NAME"
+            echo "Pushed changes to $BRANCH_NAME"
+            # export branch+commit so later steps can reference them (do not echo the PAT)
+            echo "SYNC_BRANCH=$BRANCH_NAME" >> $GITHUB_ENV
+            echo "SYNC_COMMIT=$(git rev-parse HEAD)" >> $GITHUB_ENV
           fi
+
+      - name: Comment on issue with sync branch
+        if: ${{ github.event.issue.number != null }}
+        env:
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          PAT: ${{ secrets.GH_PAT }}
+        run: |
+          # Only comment if a sync branch was created
+          if [ -z "$SYNC_BRANCH" ]; then
+            echo "No sync branch created; skipping comment"
+            exit 0
+          fi
+
+          COMMIT_URL="https://github.com/${GITHUB_REPOSITORY}/commit/${SYNC_COMMIT}"
+          BRANCH_URL="https://github.com/${GITHUB_REPOSITORY}/tree/${SYNC_BRANCH}"
+
+          # Use gh CLI to post a comment on the issue with links
+          gh issue comment "$ISSUE_NUMBER" --body "Automated sync: created branch ${SYNC_BRANCH} and pushed commit ${SYNC_COMMIT}.
+
+Branch: ${BRANCH_URL}
+Commit: ${COMMIT_URL}"

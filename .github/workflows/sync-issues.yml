@@ -20,6 +20,7 @@ jobs:
         with:
           token: ${{ secrets.GH_PAT }}
           persist-credentials: true
+          fetch-depth: 0
 
       - name: Ensure gh is available
         run: gh --version || true
@@ -48,7 +49,10 @@ jobs:
             echo "No changes to commit"
           else
             git commit -m "chore: sync contentPost issues to src/data/posts"
-            # Use PAT for authenticated push
+            # Create a dedicated sync branch and push that branch (avoids touching main)
+            BRANCH_NAME="sync/sync-$(date +%s)"
+            git checkout -b "$BRANCH_NAME"
             git remote set-url origin https://x-access-token:${PAT}@github.com/${{ github.repository }}.git
-            git push origin "HEAD:${BRANCH}"
+            git push --set-upstream origin "$BRANCH_NAME"
+            echo "Pushed changes to $BRANCH_NAME"
           fi
