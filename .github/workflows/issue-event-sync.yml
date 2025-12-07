@@ -96,7 +96,6 @@ jobs:
           fi
 
       - name: Comment on issue with sync branch
-        if: ${{ github.event.issue.number != null }}
         env:
           ISSUE_NUMBER: ${{ github.event.issue.number }}
           GITHUB_REPOSITORY: ${{ github.repository }}
