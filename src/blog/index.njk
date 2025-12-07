@@ -1,0 +1,12 @@
+---
+title: Blog
+permalink: /blog/
+layout: layout.njk
+---
+
+{# expose the posts array as a collections.posts compatible object for the include #}
+{% set collections = { posts: posts } %}
+
+<h1>{{ title }}</h1>
+
+{% include "posts/blog-home-layout.njk" %}
