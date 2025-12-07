@@ -64,7 +64,20 @@ function main(){
   if (single) {
     console.log('Fetching single issue', single);
     const issue = fetchSingle(single);
-    writePostJson(issue);
+    const hasLabel = (issue.labels || []).some(l => (l.name || l) === 'contentPost');
+    if (hasLabel) {
+      writePostJson(issue);
+    } else {
+      // Delete the JSON file if it exists
+      const num = String(issue.number).padStart(5, '0');
+      const slug = issue.title ? slugify(issue.title) : `issue-${issue.number}`;
+      const filename = `${num}-${slug}.json`;
+      const outfile = path.join(OUT_DIR, filename);
+      if (fs.existsSync(outfile)) {
+        fs.unlinkSync(outfile);
+        console.log('Deleted', filename, 'because label removed');
+      }
+    }
     return;
   }
 
@@ -74,6 +87,19 @@ function main(){
     console.error('unexpected response', issues);
     process.exit(1);
   }
+
+  // Get current issue IDs
+  const currentIds = new Set(issues.map(i => i.number));
+
+  // Delete JSON files for issues no longer labeled contentPost
+  const files = fs.readdirSync(OUT_DIR).filter(f => f.endsWith('.json'));
+  files.forEach(f => {
+    const num = parseInt(f.split('-')[0]);
+    if (!currentIds.has(num)) {
+      fs.unlinkSync(path.join(OUT_DIR, f));
+      console.log('Deleted', f);
+    }
+  });
 
   issues.forEach(i => writePostJson(i));
 }
