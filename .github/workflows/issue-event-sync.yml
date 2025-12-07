@@ -1,5 +1,8 @@
 name: Issue Event Sync
 
+permissions:
+  contents: write
+
 on:
   issues:
     types: [opened, edited, labeled, unlabeled, reopened, closed, deleted]
