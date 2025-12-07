@@ -107,11 +107,9 @@ jobs:
             exit 0
           fi
 
-          COMMIT_URL="https://github.com/${GITHUB_REPOSITORY}/commit/${SYNC_COMMIT}"
-          BRANCH_URL="https://github.com/${GITHUB_REPOSITORY}/tree/${SYNC_BRANCH}"
+          BODY="Automated sync: created branch ${SYNC_BRANCH} and pushed commit ${SYNC_COMMIT}."
+          BODY="${BODY}\nBranch: ${BRANCH_URL}"
+          BODY="${BODY}\nCommit: ${COMMIT_URL}"
 
           # Use gh CLI to post a comment on the issue with links
-          gh issue comment "$ISSUE_NUMBER" --body "Automated sync: created branch ${SYNC_BRANCH} and pushed commit ${SYNC_COMMIT}.
-
-Branch: ${BRANCH_URL}
-Commit: ${COMMIT_URL}"
+          gh issue comment "$ISSUE_NUMBER" --body "$BODY"
