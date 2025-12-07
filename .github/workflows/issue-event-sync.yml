@@ -1,6 +1,4 @@
 name: Issue Event Sync
-permissions:
-  contents: write
 
 on:
   issues:
@@ -9,6 +7,8 @@ on:
 jobs:
   event-sync:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
