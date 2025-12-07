@@ -4,10 +4,8 @@
   "slug": "test-issue-for-workflow-updated",
   "author": "joshualinog",
   "createdAt": "2025-12-07T05:42:10Z",
-  "updatedAt": "2025-12-07T05:45:52Z",
-  "labels": [
-    "contentPost"
-  ],
+  "updatedAt": "2025-12-07T06:15:14Z",
+  "labels": [],
   "status": "published",
   "excerpt": "This is a test issue to trigger the workflow.",
   "content": "This is a test issue to trigger the workflow.",
