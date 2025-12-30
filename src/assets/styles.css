@@ -1,6 +1,84 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+/* 
+https://coolors.co/f15022-e16f3d-ffcc71-554d1f-519e8a-581819-f590a0
+*/
+
+@theme {
+  --color-golden-pollen-50: hsl(38, 100%, 98%);
+  --color-golden-pollen-100: hsl(38, 100%, 95%);
+  --color-golden-pollen-200: hsl(38, 100%, 90%);
+  --color-golden-pollen-300: hsl(38, 100%, 85%);
+  --color-golden-pollen-400: hsl(38, 100%, 78%);
+  --color-golden-pollen-500: hsl(38, 100%, 72%);
+  --color-golden-pollen-600: hsl(38, 100%, 65%);
+  --color-golden-pollen-700: hsl(38, 100%, 55%);
+  --color-golden-pollen-800: hsl(38, 100%, 45%);
+  --color-golden-pollen-900: hsl(38, 100%, 35%);
+  --color-blazing-flame-50: hsl(13, 88%, 98%);
+  --color-blazing-flame-100: hsl(13, 88%, 95%);
+  --color-blazing-flame-200: hsl(13, 88%, 90%);
+  --color-blazing-flame-300: hsl(13, 88%, 80%);
+  --color-blazing-flame-400: hsl(13, 88%, 70%);
+  --color-blazing-flame-500: hsl(13, 88%, 54%);
+  --color-blazing-flame-600: hsl(13, 88%, 45%);
+  --color-blazing-flame-700: hsl(13, 88%, 35%);
+  --color-blazing-flame-800: hsl(13, 88%, 25%);
+  --color-blazing-flame-900: hsl(13, 88%, 15%);
+  --color-burnt-peach-50: hsl(18, 73%, 98%);
+  --color-burnt-peach-100: hsl(18, 73%, 95%);
+  --color-burnt-peach-200: hsl(18, 73%, 90%);
+  --color-burnt-peach-300: hsl(18, 73%, 80%);
+  --color-burnt-peach-400: hsl(18, 73%, 70%);
+  --color-burnt-peach-500: hsl(18, 73%, 56%);
+  --color-burnt-peach-600: hsl(18, 73%, 47%);
+  --color-burnt-peach-700: hsl(18, 73%, 37%);
+  --color-burnt-peach-800: hsl(18, 73%, 27%);
+  --color-burnt-peach-900: hsl(18, 73%, 17%);
+  --color-olive-bark-50: hsl(51, 47%, 95%);
+  --color-olive-bark-100: hsl(51, 47%, 90%);
+  --color-olive-bark-200: hsl(51, 47%, 80%);
+  --color-olive-bark-300: hsl(51, 47%, 70%);
+  --color-olive-bark-400: hsl(51, 47%, 55%);
+  --color-olive-bark-500: hsl(51, 47%, 23%);
+  --color-olive-bark-600: hsl(51, 47%, 20%);
+  --color-olive-bark-700: hsl(51, 47%, 17%);
+  --color-olive-bark-800: hsl(51, 47%, 14%);
+  --color-olive-bark-900: hsl(51, 47%, 11%);
+  --color-seagrass-50: hsl(164, 32%, 95%);
+  --color-seagrass-100: hsl(164, 32%, 90%);
+  --color-seagrass-200: hsl(164, 32%, 80%);
+  --color-seagrass-300: hsl(164, 32%, 70%);
+  --color-seagrass-400: hsl(164, 32%, 60%);
+  --color-seagrass-500: hsl(164, 32%, 47%);
+  --color-seagrass-600: hsl(164, 32%, 40%);
+  --color-seagrass-700: hsl(164, 32%, 33%);
+  --color-seagrass-800: hsl(164, 32%, 26%);
+  --color-seagrass-900: hsl(164, 32%, 19%);
+  --color-night-bordeaux-50: hsl(359, 57%, 95%);
+  --color-night-bordeaux-100: hsl(359, 57%, 90%);
+  --color-night-bordeaux-200: hsl(359, 57%, 80%);
+  --color-night-bordeaux-300: hsl(359, 57%, 70%);
+  --color-night-bordeaux-400: hsl(359, 57%, 55%);
+  --color-night-bordeaux-500: hsl(359, 57%, 22%);
+  --color-night-bordeaux-600: hsl(359, 57%, 19%);
+  --color-night-bordeaux-700: hsl(359, 57%, 16%);
+  --color-night-bordeaux-800: hsl(359, 57%, 13%);
+  --color-night-bordeaux-900: hsl(359, 57%, 10%);
+  --color-cotton-candy-50: hsl(350, 83%, 98%);
+  --color-cotton-candy-100: hsl(350, 83%, 95%);
+  --color-cotton-candy-200: hsl(350, 83%, 90%);
+  --color-cotton-candy-300: hsl(350, 83%, 85%);
+  --color-cotton-candy-400: hsl(350, 83%, 80%);
+  --color-cotton-candy-500: hsl(350, 83%, 76%);
+  --color-cotton-candy-600: hsl(350, 83%, 68%);
+  --color-cotton-candy-700: hsl(350, 83%, 58%);
+  --color-cotton-candy-800: hsl(350, 83%, 48%);
+  --color-cotton-candy-900: hsl(350, 83%, 38%);
+  --font-heading: "Darumadrop One", serif;
+  --font-subheading: "Special Elite", serif;
+  --font-sans: "Nunito Sans", ui-sans-serif, system-ui, sans-serif;
+}
 
 /* Custom Rubik Black for h1 */
 .rubik-black {

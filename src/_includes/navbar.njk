@@ -1,52 +1,41 @@
-{# Mobile-first responsive navbar #}
-<nav class="w-full flex items-center justify-between px-4 py-3 bg-white shadow-md md:px-8 relative z-20">
-  <div class="flex items-center">
-    <span class="font-black text-2xl tracking-tight">TRAIN <span class="brand-adam">adam</span></span>
+<nav class="bg-white shadow">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <div class="flex items-center">
+        <div class="flex-shrink-0">
+          <a href="/" class="text-xl font-heading text-olive-bark-900">Training Adam</a>
+        </div>
+        <div class="hidden md:block">
+          <div class="ml-10 flex items-baseline space-x-4">
+            <a href="/blog" class="text-gray-500 hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium">Blog</a>
+            <a href="#about-us" class="text-gray-500 hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium">About</a>
+            <a href="#donate" class="text-gray-500 hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium">Donate</a>
+            <a href="#shed-light-build" class="text-gray-500 hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium">Shed Light</a>
+            <a href="#permaculture-plants" class="text-gray-500 hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium">Permaculture Plants</a>
+            <a href="#village" class="text-gray-500 hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium">Village</a>
+            <a href="#contact" class="text-gray-500 hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+          </div>
+        </div>
+      </div>
+      <div class="-mr-2 flex md:hidden">
+        <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
   </div>
-  <button class="md:hidden block" aria-label="Open menu" id="mobile-menu-btn">
-    <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-    </svg>
-  </button>
-  <ul class="hidden md:flex space-x-8 font-medium text-gray-700">
-    <li><a href="#" class="hover:text-blue-600">Home</a></li>
-    <li><a href="/blog" class="hover:text-blue-600">Blog</a></li>
-    <li><a href="#" class="hover:text-blue-600">Compare</a></li>
-    <li><a href="#" class="hover:text-blue-600">Features</a></li>
-    <li><a href="#contact" class="hover:text-blue-600">Contact</a></li>
-  </ul>
-
-  <!-- Mobile Footer Menu -->
-  <div id="mobile-footer" class="fixed left-0 right-0 bottom-0 z-50 bg-white border-t border-gray-200 shadow-lg p-6 flex flex-col items-center space-y-4 md:hidden transition-transform duration-300 translate-y-full" style="will-change: transform;">
-    <button id="close-mobile-footer" class="absolute top-2 right-4 text-2xl" aria-label="Close menu">&times;</button>
-    <a href="#" class="text-gray-900 font-semibold text-lg">Home</a>
-    <a href="/blog" class="text-gray-900 font-semibold text-lg">Blog</a>
-    <a href="#" class="text-gray-900 font-semibold text-lg">Compare</a>
-    <a href="#" class="text-gray-900 font-semibold text-lg">Features</a>
-    <a href="#contact" class="text-gray-900 font-semibold text-lg">Contact</a>
+  <div class="md:hidden hidden" id="mobile-menu">
+    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+      <a href="/blog" class="text-gray-500 hover:text-gray-700 block px-3 py-2 rounded-md text-base font-medium">Blog</a>
+      <a href="#about-us" class="text-gray-500 hover:text-gray-700 block px-3 py-2 rounded-md text-base font-medium">About</a>
+      <a href="#donate" class="text-gray-500 hover:text-gray-700 block px-3 py-2 rounded-md text-base font-medium">Donate</a>
+      <a href="#shed-light-build" class="text-gray-500 hover:text-gray-700 block px-3 py-2 rounded-md text-base font-medium">Shed Light</a>
+      <a href="#permaculture-plants" class="text-gray-500 hover:text-gray-700 block px-3 py-2 rounded-md text-base font-medium">Permaculture Plants</a>
+      <a href="#village" class="text-gray-500 hover:text-gray-700 block px-3 py-2 rounded-md text-base font-medium">Village</a>
+      <a href="#contact" class="text-gray-500 hover:text-gray-700 block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+    </div>
   </div>
-
-  <script>
-    // Mobile menu toggle logic
-    const btn = document.getElementById('mobile-menu-btn');
-    const footer = document.getElementById('mobile-footer');
-    const closeBtn = document.getElementById('close-mobile-footer');
-    if (btn && footer && closeBtn) {
-      btn.addEventListener('click', () => {
-        const isOpen = !footer.classList.contains('translate-y-full');
-        if (isOpen) {
-          footer.classList.add('translate-y-full');
-          footer.classList.remove('translate-y-0');
-        } else {
-          footer.classList.remove('translate-y-full');
-          footer.classList.add('translate-y-0');
-        }
-      });
-      closeBtn.addEventListener('click', () => {
-        footer.classList.add('translate-y-full');
-        footer.classList.remove('translate-y-0');
-      });
-    }
-  </script>
 </nav>
-{# Mobile menu triggers footer include, handled in JS #}
