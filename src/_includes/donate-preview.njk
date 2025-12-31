@@ -6,10 +6,17 @@
     </div>
 
     <div class="relative mx-auto flex max-w-3xl flex-col items-center px-6 py-32 text-center sm:py-64 lg:px-0">
-      <h1 class="text-4xl font-bold tracking-tight text-white lg:text-6xl">Support Our Mission</h1>
-      <p class="mt-4 text-xl text-white">Please donate to Training Adam in any way you can. But we especially want building materials donated so we can keep building!</p>
+      {% set organic_background_color = "fill-seagrass-500" %}
+      {% set heading_text = "Donate Today!" %}
+      {% set text_color = "text-seagrass-600" %}
+      {% set heading_classes = "text-8xl font-heading uppercase tracking-tight lg:text-7xl text-white" %}
+      {% include "organic-text-heading.njk" %}
+      <p class="mt-4 text-2xl text-night-bordeaux-500 font-subheading" font-black>Please donate to Training Adam in any way you can. But we especially want building materials donated so we can keep building!</p>
       {% set button_url = "#donate" %}
       {% set button_text = "Donate Today!" %}
+      {% set button_background_color = "fill-golden-pollen-500" %}
+      {% set button_text_color = "text-night-bordeaux-500" %}
+      {% set button_font = "font-subheading" %}
       {% include "organic-button-1.njk" %}
     </div>
   </div>

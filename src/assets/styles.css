@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /* 
-https://coolors.co/f15022-e16f3d-ffcc71-554d1f-519e8a-581819-f590a0
+https://coolors.co/f15022-e16f3d-ffcc71-554d1f-519e8a-581819-f590a0-64434c
 */
 
 @theme {
@@ -75,6 +75,16 @@ https://coolors.co/f15022-e16f3d-ffcc71-554d1f-519e8a-581819-f590a0
   --color-cotton-candy-700: hsl(350, 83%, 58%);
   --color-cotton-candy-800: hsl(350, 83%, 48%);
   --color-cotton-candy-900: hsl(350, 83%, 38%);
+  --color-mauve-shadow-50: hsl(344, 20%, 95%);
+  --color-mauve-shadow-100: hsl(344, 20%, 90%);
+  --color-mauve-shadow-200: hsl(344, 20%, 80%);
+  --color-mauve-shadow-300: hsl(344, 20%, 70%);
+  --color-mauve-shadow-400: hsl(344, 20%, 60%);
+  --color-mauve-shadow-500: hsl(344, 20%, 33%);
+  --color-mauve-shadow-600: hsl(344, 20%, 27%);
+  --color-mauve-shadow-700: hsl(344, 20%, 22%);
+  --color-mauve-shadow-800: hsl(344, 20%, 17%);
+  --color-mauve-shadow-900: hsl(344, 20%, 12%);
   --font-heading: "Darumadrop One", serif;
   --font-subheading: "Special Elite", serif;
   --font-sans: "Nunito Sans", ui-sans-serif, system-ui, sans-serif;
