@@ -1,22 +1,78 @@
-<div id="latest-posts" class="grid grid-cols-1 md:grid-cols-3 gap-6 p-6">
-  {% for post in posts %}
-    {% if loop.index <= 4 %}
-      {% if loop.index == 1 %}
-        <!-- First row: Featured post (full width) -->
-        <div class="md:col-span-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white p-8 rounded-lg shadow-lg">
-          <h2 class="text-3xl font-bold mb-4">{{ post.data.title }}</h2>
-          <p class="text-lg mb-4">{{ post.data.excerpt | striptags | truncate(150) }}</p>
-          <a href="{{ post.url }}" class="inline-block bg-white text-blue-600 px-6 py-2 rounded-full font-semibold hover:bg-gray-100">Read More</a>
+{% set post1 = posts[0] %}
+{% set post2 = posts[1] %}
+{% set post3 = posts[2] %}
+{% set post4 = posts[3] %}
+{% set post5 = posts[4] if posts[4] else posts[3] %}
+<div class="bg-white py-24 sm:py-32 dark:bg-gray-900">
+  <div class="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
+    <h2 class="text-base/7 font-semibold text-indigo-600 dark:text-indigo-400">Latest Posts</h2>
+    <p class="mt-2 max-w-lg text-4xl font-semibold tracking-tight text-pretty text-gray-950 sm:text-5xl dark:text-white">Explore our recent thoughts and ideas</p>
+    <div class="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2">
+      <div class="relative lg:col-span-3">
+        <div class="absolute inset-0 rounded-lg bg-white max-lg:rounded-t-4xl lg:rounded-tl-4xl dark:bg-gray-800"></div>
+        <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-t-[calc(2rem+1px)] lg:rounded-tl-[calc(2rem+1px)]">
+          <img src="https://picsum.photos/seed/1/800/600" alt="" class="h-80 object-cover object-left dark:hidden" />
+          <img src="https://picsum.photos/seed/1/800/600" alt="" class="h-80 object-cover object-left not-dark:hidden" />
+          <div class="p-10 pt-4">
+            <h3 class="text-sm/4 font-semibold text-indigo-600 dark:text-indigo-400">{{ post1.data.labels | default([]) | join(', ') }}</h3>
+            <a href="/blog" class="mt-2 text-lg font-medium tracking-tight text-gray-950 dark:text-white">{{ post1.data.title }}</a>
+            <p class="mt-2 max-w-lg text-sm/6 text-gray-600 dark:text-gray-400">{{ post1.data.content | striptags | truncate(100) }}</p>
+          </div>
         </div>
-      {% else %}
-        <!-- Second row: Three columns -->
-        <div class="bg-white p-6 rounded-lg shadow-md border">
-          <img src="https://via.placeholder.com/300x200?text=No+Image" alt="Post Image" class="w-full h-32 object-cover rounded mb-4">
-          <h3 class="text-xl font-semibold mb-2">{{ post.data.title }}</h3>
-          <p class="text-gray-600 mb-4">{{ post.data.excerpt | striptags | truncate(100) }}</p>
-          <a href="{{ post.url }}" class="text-blue-500 hover:underline">Read More</a>
+        <div class="pointer-events-none absolute inset-0 rounded-lg shadow-sm outline outline-black/5 max-lg:rounded-t-4xl lg:rounded-tl-4xl dark:outline-white/15"></div>
+      </div>
+      <div class="relative lg:col-span-3">
+        <div class="absolute inset-0 rounded-lg bg-white lg:rounded-tr-4xl dark:bg-gray-800"></div>
+        <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] lg:rounded-tr-[calc(2rem+1px)]">
+          <img src="https://picsum.photos/seed/2/800/600" alt="" class="h-80 object-cover object-left lg:object-right dark:hidden" />
+          <img src="https://picsum.photos/seed/2/800/600" alt="" class="h-80 object-cover object-left not-dark:hidden lg:object-right" />
+          <div class="p-10 pt-4">
+            <h3 class="text-sm/4 font-semibold text-indigo-600 dark:text-indigo-400">{{ post2.data.labels | default([]) | join(', ') }}</h3>
+            <a href="/blog" class="mt-2 text-lg font-medium tracking-tight text-gray-950 dark:text-white">{{ post2.data.title }}</a>
+            <p class="mt-2 max-w-lg text-sm/6 text-gray-600 dark:text-gray-400">{{ post2.data.content | striptags | truncate(100) }}</p>
+          </div>
         </div>
-      {% endif %}
-    {% endif %}
-  {% endfor %}
+        <div class="pointer-events-none absolute inset-0 rounded-lg shadow-sm outline outline-black/5 lg:rounded-tr-4xl dark:outline-white/15"></div>
+      </div>
+      <div class="relative lg:col-span-2">
+        <div class="absolute inset-0 rounded-lg bg-white lg:rounded-bl-4xl dark:bg-gray-800"></div>
+        <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] lg:rounded-bl-[calc(2rem+1px)]">
+          <img src="https://picsum.photos/seed/3/800/600" alt="" class="h-80 object-cover object-left dark:hidden" />
+          <img src="https://picsum.photos/seed/3/800/600" alt="" class="h-80 object-cover object-left not-dark:hidden" />
+          <div class="p-10 pt-4">
+            <h3 class="text-sm/4 font-semibold text-indigo-600 dark:text-indigo-400">{{ post3.data.labels | default([]) | join(', ') }}</h3>
+            <a href="/blog" class="mt-2 text-lg font-medium tracking-tight text-gray-950 dark:text-white">{{ post3.data.title }}</a>
+            <p class="mt-2 max-w-lg text-sm/6 text-gray-600 dark:text-gray-400">{{ post3.data.content | striptags | truncate(100) }}</p>
+          </div>
+        </div>
+        <div class="pointer-events-none absolute inset-0 rounded-lg shadow-sm outline outline-black/5 lg:rounded-bl-4xl dark:outline-white/15"></div>
+      </div>
+      <div class="relative lg:col-span-2">
+        <div class="absolute inset-0 rounded-lg bg-white dark:bg-gray-800"></div>
+        <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)]">
+          <img src="https://picsum.photos/seed/4/800/600" alt="" class="h-80 object-cover dark:hidden" />
+          <img src="https://picsum.photos/seed/4/800/600" alt="" class="h-80 object-cover not-dark:hidden" />
+          <div class="p-10 pt-4">
+            <h3 class="text-sm/4 font-semibold text-indigo-600 dark:text-indigo-400">{{ post4.data.labels | default([]) | join(', ') }}</h3>
+            <a href="/blog" class="mt-2 text-lg font-medium tracking-tight text-gray-950 dark:text-white">{{ post4.data.title }}</a>
+            <p class="mt-2 max-w-lg text-sm/6 text-gray-600 dark:text-gray-400">{{ post4.data.content | striptags | truncate(100) }}</p>
+          </div>
+        </div>
+        <div class="pointer-events-none absolute inset-0 rounded-lg shadow-sm outline outline-black/5 dark:outline-white/15"></div>
+      </div>
+      <div class="relative lg:col-span-2">
+        <div class="absolute inset-0 rounded-lg bg-white max-lg:rounded-b-4xl lg:rounded-br-4xl dark:bg-gray-800"></div>
+        <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-br-[calc(2rem+1px)]">
+          <img src="https://picsum.photos/seed/5/800/600" alt="" class="h-80 object-cover dark:hidden" />
+          <img src="https://picsum.photos/seed/5/800/600" alt="" class="h-80 object-cover not-dark:hidden" />
+          <div class="p-10 pt-4">
+            <h3 class="text-sm/4 font-semibold text-indigo-600 dark:text-indigo-400">{{ post5.data.labels | default([]) | join(', ') }}</h3>
+            <a href="/blog" class="mt-2 text-lg font-medium tracking-tight text-gray-950 dark:text-white">{{ post5.data.title }}</a>
+            <p class="mt-2 max-w-lg text-sm/6 text-gray-600 dark:text-gray-400">{{ post5.data.content | striptags | truncate(100) }}</p>
+          </div>
+        </div>
+        <div class="pointer-events-none absolute inset-0 rounded-lg shadow-sm outline outline-black/5 max-lg:rounded-b-4xl lg:rounded-br-4xl dark:outline-white/15"></div>
+      </div>
+    </div>
+  </div>
 </div>

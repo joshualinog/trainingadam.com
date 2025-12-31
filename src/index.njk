@@ -6,8 +6,12 @@ layout: layout.njk
 {% include "hero.njk" %}
 {% include "latest-posts.njk" %}
 {% include "about-us.njk" %}
-{% include "shed-light-build.njk" %}
-{% include "permaculture-plants.njk" %}
-{% include "village.njk" %}
+{% include "donate-preview.njk" %}
+{% set project = projects.shedlite %}
+{% include "project-section/project-section.njk" %}
+{% set project = projects.permacultureplantssc %}
+{% include "project-section/project-section.njk" %}
+{% set project = projects.tinyvillagehealingfarms %}
+{% include "project-section/project-section.njk" %}
 {% include "contact.njk" %}
 
