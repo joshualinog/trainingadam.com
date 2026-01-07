@@ -46,5 +46,14 @@
     "heading": "Ready to grow with permaculture?",
     "button1": "Join Us",
     "button2": "Learn More"
+  },
+  "colors": {
+    "background": "seagrass-700",
+    "mainHeading": "sunshine-500",
+    "body": "white",
+    "accent": "cotton-candy-500",
+    "supportBg": "golden-pollen-600",
+    "supportText": "blazing-flame-500",
+    "contrast": "night-bordeaux-500"
   }
 }

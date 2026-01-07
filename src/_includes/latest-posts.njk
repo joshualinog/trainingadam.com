@@ -5,7 +5,7 @@
 {% set post5 = posts[4] if posts[4] else posts[3] %}
 <div class="bg-cotton-candy-500 py-24 sm:py-32 dark:bg-gray-900">
   <div class="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
-    <h2 class="text-2xl sm:text-3xl font-subheading font-semibold text-seagrass-700 ">Latest Posts</h2>
+    <h2 class="text-2xl sm:text-3xl font-heading font-semibold text-seagrass-700 ">Latest Posts</h2>
     <p class="mt-2 max-w-lg text-5xl font-heading font-semibold tracking-tight text-pretty text-mauve-shadow-500 sm:text-8xl  uppercase">Latest Blog Content</p>
     <div class="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2">
       <div class="relative lg:col-span-3">
@@ -14,7 +14,7 @@
           <img src="https://picsum.photos/seed/1/800/600" alt="" class="h-80 object-cover object-left dark:hidden" />
           <img src="https://picsum.photos/seed/1/800/600" alt="" class="h-80 object-cover object-left not-dark:hidden" />
           <div class="p-10 pt-4">
-            <h3 class="text-sm/4 font-semibold text-indigo-600 dark:text-indigo-400">{{ post1.data.labels | default([]) | join(', ') }}</h3>
+            <h3 class="text-sm/4 font-heading font-semibold text-indigo-600 dark:text-indigo-400">{{ post1.data.labels | default([]) | join(', ') }}</h3>
             <a href="/blog" class="mt-2 text-lg font-medium tracking-tight text-gray-950 dark:text-white">{{ post1.data.title }}</a>
             <p class="mt-2 max-w-lg text-sm/6 text-gray-600 dark:text-gray-400">{{ post1.data.content | striptags | truncate(100) }}</p>
           </div>

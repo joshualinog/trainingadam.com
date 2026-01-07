@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /* 
-https://coolors.co/f15022-e16f3d-ffcc71-554d1f-519e8a-581819-f590a0-64434c
+https://coolors.co/f15022-e16f3d-ffcc71-554d1f-519e8a-581819-f590a0-64434c-efdb44
 */
 
 @theme {
@@ -85,9 +85,20 @@ https://coolors.co/f15022-e16f3d-ffcc71-554d1f-519e8a-581819-f590a0-64434c
   --color-mauve-shadow-700: hsl(344, 20%, 22%);
   --color-mauve-shadow-800: hsl(344, 20%, 17%);
   --color-mauve-shadow-900: hsl(344, 20%, 12%);
+  --color-sunshine-50: hsl(353, 84%, 98%);
+  --color-sunshine-100: hsl(353, 84%, 95%);
+  --color-sunshine-200: hsl(353, 84%, 90%);
+  --color-sunshine-300: hsl(353, 84%, 80%);
+  --color-sunshine-400: hsl(353, 84%, 70%);
+  --color-sunshine-500: hsl(353, 84%, 60%);
+  --color-sunshine-600: hsl(353, 84%, 50%);
+  --color-sunshine-700: hsl(353, 84%, 40%);
+  --color-sunshine-800: hsl(353, 84%, 30%);
+  --color-sunshine-900: hsl(353, 84%, 20%);
   --font-heading: "Darumadrop One", serif;
   --font-subheading: "Special Elite", serif;
   --font-sans: "Nunito Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-hand: "Gaegu", cursive;
 }
 
 /* Custom Rubik Black for h1 */
