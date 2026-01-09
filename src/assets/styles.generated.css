@@ -2394,7 +2394,7 @@
   }
 }
 .organic-button {
-  --organic-button-size: 50vmin;
+  --organic-button-size: 40vmin;
 }
 @screen sm {
   .organic-button {
