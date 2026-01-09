@@ -106,6 +106,12 @@ https://coolors.co/f15022-e16f3d-ffcc71-554d1f-519e8a-581819-f590a0-64434c-efdb4
 	font-family: 'Rubik', ui-sans-serif, system-ui, sans-serif;
 	font-weight: 900;
 }
+
+/* Subheading font utility */
+.font-subheading {
+  font-family: var(--font-subheading);
+}
+
 .brand-adam{
 	text-transform: uppercase;
 	transform: rotate(90deg);
@@ -117,7 +123,7 @@ https://coolors.co/f15022-e16f3d-ffcc71-554d1f-519e8a-581819-f590a0-64434c-efdb4
 
 /* Organic button CTA text inside SVG rectangle */
 .organic-button-cta-text {
-  @apply font-bold text-xs leading-loose text-center box-border flex items-center justify-center px-2 py-2;
+  @apply font-bold text-xs leading-tight text-center box-border flex items-center justify-center px-2 py-2;
   color: var(--color-night-bordeaux-500);
   font-family: var(--font-subheading);
   /* ensure it fits within the foreignObject box */
@@ -173,8 +179,32 @@ https://coolors.co/f15022-e16f3d-ffcc71-554d1f-519e8a-581819-f590a0-64434c-efdb4
   text-transform: uppercase;
 }
 @screen sm {
-  .organic-button-svg .organic-button-heading-svg { font-size: 36px; }
+  .organic-button-svg .organic-button-heading-svg { font-size: 2rem; }
 }
 @screen md {
-  .organic-button-svg .organic-button-heading-svg { font-size: 48px; }
+  .organic-button-svg .organic-button-heading-svg { font-size: 4rem; }
+}
+
+/* Organic button close styles (background + X color) */
+.organic-button-close {
+  transition: opacity .12s ease, transform .08s ease;
+  opacity: 0;
+  background-color: var(--color-golden-pollen-700);
+  color: var(--color-night-bordeaux-500);
+  border: 0;
+  width: 2rem;
+  height: 2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+  border-radius: 9999px;
+}
+
+/* Ensure the X icon picks up the bordeaux color */
+.organic-button-close svg {
+  color: var(--color-night-bordeaux-500);
+  stroke: currentColor;
+  width: 1rem;
+  height: 1rem;
 }
