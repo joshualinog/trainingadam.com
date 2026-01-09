@@ -141,7 +141,7 @@ https://coolors.co/f15022-e16f3d-ffcc71-554d1f-519e8a-581819-f590a0-64434c-efdb4
 
 /* Organic button sizing on the wrapper */
 .organic-button {
-  --organic-button-size: 40vmin;
+  --organic-button-size: 70vmin;
 }
 @screen sm {
   .organic-button { --organic-button-size: 40vmin; }
