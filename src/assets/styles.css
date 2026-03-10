@@ -95,6 +95,17 @@ https://coolors.co/f15022-e16f3d-ffcc71-554d1f-519e8a-581819-f590a0-64434c-efdb4
   --color-sunshine-700: hsl(353, 84%, 40%);
   --color-sunshine-800: hsl(353, 84%, 30%);
   --color-sunshine-900: hsl(353, 84%, 20%);
+  /* new glowyellowgreen palette around #EFDB44 */
+  --color-glowyellowgreen-50: #fefbeb;
+  --color-glowyellowgreen-100: #fdf7d7;
+  --color-glowyellowgreen-200: #fcf3b3;
+  --color-glowyellowgreen-300: #fbef8f;
+  --color-glowyellowgreen-400: #faeb6b;
+  --color-glowyellowgreen-500: #EFDB44;
+  --color-glowyellowgreen-600: #d5c136;
+  --color-glowyellowgreen-700: #bba028;
+  --color-glowyellowgreen-800: #a1911a;
+  --color-glowyellowgreen-900: #89710c;
   --font-heading: "Darumadrop One", serif;
   --font-subheading: "Special Elite", serif;
   --font-sans: "Nunito Sans", ui-sans-serif, system-ui, sans-serif;
@@ -207,4 +218,13 @@ https://coolors.co/f15022-e16f3d-ffcc71-554d1f-519e8a-581819-f590a0-64434c-efdb4
   stroke: currentColor;
   width: 1rem;
   height: 1rem;
+}
+
+
+.section-heading-small{
+ @apply font-subheading text-2xl mb-4 tracking-widest;
+ color: var(--color-night-bordeaux-500);
+}
+.section-heading-large{
+@apply font-heading text-6xl mb-6 uppercase;
 }
