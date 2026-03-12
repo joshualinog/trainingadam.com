@@ -252,6 +252,13 @@ https://coolors.co/f15022-e16f3d-ffcc71-554d1f-519e8a-581819-f590a0-64434c-efdb4
   z-index: 1;
   color: #000; /* pick contrasting color */
 }
+
+/* background helper for donate page */
+.shapebg {
+  @apply absolute inset-0 bg-center bg-no-repeat bg-contain;
+  background-image: url("/assets/images/shapebg.png");
+}
+
 .woodblock-box {
   background: #f15a24; /* That orange-red from your image */
   filter: url(#woodcut-edge);
