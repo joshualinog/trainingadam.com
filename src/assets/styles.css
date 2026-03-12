@@ -223,8 +223,79 @@ https://coolors.co/f15022-e16f3d-ffcc71-554d1f-519e8a-581819-f590a0-64434c-efdb4
 
 .section-heading-small{
  @apply font-subheading text-2xl mb-4 tracking-widest;
- color: var(--color-night-bordeaux-500);
+
 }
 .section-heading-large{
 @apply font-heading text-6xl mb-6 uppercase;
+}
+
+.speech-cloud {
+  /* adjust width/height as needed */
+  width: 100%;
+  height: 300px;
+
+  /* make the blob wider via background-size so text sits inside */
+  background: url("/assets/svg/speech-cloud.svg") no-repeat center/80% auto;
+  background-position: center center;
+  /* or inline: background: url("data:image/svg+xml,<svg…>") … */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+}
+
+.speech-cloud h1,
+.speech-cloud p {
+  position: relative; /* ensure text stays above the background */
+  z-index: 1;
+  color: #000; /* pick contrasting color */
+}
+.woodblock-box {
+  background: #f15a24; /* That orange-red from your image */
+  filter: url(#woodcut-edge);
+  padding: 40px;
+  width: 300px;
+  clip-path: ellipse(50% 40% at 50% 50%); /* Start with a basic organic blob */
+}
+
+.donate-timeline{
+  time{
+    @apply flex items-center text-3xl/6 text-blazing-flame-500 font-heading;
+   
+  }
+  p.heading{
+   @apply mt-6 text-lg/8 font-semibold tracking-tight text-seagrass-600 font-subheading;
+  }
+  strong{
+    @apply font-bold font-heading;
+  }
+  .time-text{
+    @apply mt-1 text-base/7 text-black font-bold;
+  }
+  ul{
+      @apply text-blazing-flame-500 font-subheading font-bold uppercase text-2xl;
+      list-style: none;
+      padding-left: 1rem;
+    
+      li {
+        position: relative;
+        padding-left: 1.5rem;
+      }
+      li::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0.5rem;
+        width: 0.5rem;
+        height: 0.5rem;
+        border: 2px solid var(--color-blazing-flame-500);
+        border-radius: 9999px;
+      }
+      /* special styling for last item */
+      li:last-child {
+        @apply text-seagrass-600 font-black text-3xl;
+      }
+  }
 }
