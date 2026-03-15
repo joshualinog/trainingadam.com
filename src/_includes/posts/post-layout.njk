@@ -1,5 +1,10 @@
 <article class="post">
   <h1 class="font-heading">{{ post.data.title }}</h1>
-  <div class="meta">By {{ post.data.author }} — {{ post.data.createdAt }}</div>
-  <div class="content">{{ post.data.content | safe }}</div>
+  <div class="meta">By {{ post.data.author }} — {{ post.data.date | date("yyyy-LL-dd") }}</div>
+  {% if post.data.mainImage %}
+    <div class="post-main-image mt-6 mb-8">
+      <img src="{{ post.data.mainImage }}" alt="{{ post.data.title }}" class="w-full rounded-xl object-cover" />
+    </div>
+  {% endif %}
+  <div class="content">{{ post.data.contentHtml | safe }}</div>
 </article>

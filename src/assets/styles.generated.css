@@ -10,9 +10,6 @@
     --color-yellow-500: oklch(79.5% 0.184 86.047);
     --color-blue-600: oklch(54.6% 0.245 262.881);
     --color-blue-700: oklch(48.8% 0.243 264.376);
-    --color-indigo-100: oklch(93% 0.034 272.788);
-    --color-indigo-200: oklch(87% 0.065 274.039);
-    --color-indigo-300: oklch(78.5% 0.115 274.713);
     --color-indigo-400: oklch(67.3% 0.182 276.935);
     --color-indigo-500: oklch(58.5% 0.233 277.117);
     --color-indigo-600: oklch(51.1% 0.262 276.966);
@@ -31,7 +28,6 @@
     --color-white: #fff;
     --spacing: 0.25rem;
     --container-sm: 24rem;
-    --container-md: 28rem;
     --container-lg: 32rem;
     --container-xl: 36rem;
     --container-2xl: 42rem;
@@ -81,9 +77,7 @@
     --default-mono-font-family: var(--font-mono);
     --color-golden-pollen-500: hsl(38, 100%, 72%);
     --color-golden-pollen-700: hsl(38, 100%, 55%);
-    --color-blazing-flame-400: hsl(13, 88%, 70%);
     --color-blazing-flame-500: hsl(13, 88%, 54%);
-    --color-blazing-flame-600: hsl(13, 88%, 45%);
     --color-olive-bark-900: hsl(51, 47%, 11%);
     --color-seagrass-300: hsl(164, 32%, 70%);
     --color-seagrass-500: hsl(164, 32%, 47%);
@@ -770,9 +764,6 @@
   .bg-blazing-flame-500 {
     background-color: var(--color-blazing-flame-500);
   }
-  .bg-blazing-flame-600 {
-    background-color: var(--color-blazing-flame-600);
-  }
   .bg-blue-600 {
     background-color: var(--color-blue-600);
   }
@@ -1085,14 +1076,8 @@
   .text-black {
     color: var(--color-black);
   }
-  .text-blazing-flame-400 {
-    color: var(--color-blazing-flame-400);
-  }
   .text-blazing-flame-500 {
     color: var(--color-blazing-flame-500);
-  }
-  .text-blazing-flame-600 {
-    color: var(--color-blazing-flame-600);
   }
   .text-blue-600 {
     color: var(--color-blue-600);
@@ -1376,20 +1361,6 @@
       background-color: var(--color-indigo-600);
     }
   }
-  .hover\:bg-blazing-flame-400 {
-    &:hover {
-      @media (hover: hover) {
-        background-color: var(--color-blazing-flame-400);
-      }
-    }
-  }
-  .hover\:bg-blazing-flame-500 {
-    &:hover {
-      @media (hover: hover) {
-        background-color: var(--color-blazing-flame-500);
-      }
-    }
-  }
   .hover\:bg-blue-700 {
     &:hover {
       @media (hover: hover) {
@@ -1518,16 +1489,6 @@
   .focus-visible\:outline-offset-2 {
     &:focus-visible {
       outline-offset: 2px;
-    }
-  }
-  .focus-visible\:outline-blazing-flame-500 {
-    &:focus-visible {
-      outline-color: var(--color-blazing-flame-500);
-    }
-  }
-  .focus-visible\:outline-blazing-flame-600 {
-    &:focus-visible {
-      outline-color: var(--color-blazing-flame-600);
     }
   }
   .focus-visible\:outline-indigo-500 {
