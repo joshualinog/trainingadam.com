@@ -75,6 +75,7 @@
     --blur-3xl: 64px;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
+    --color-golden-pollen-200: hsl(38, 100%, 90%);
     --color-golden-pollen-500: hsl(38, 100%, 72%);
     --color-golden-pollen-700: hsl(38, 100%, 55%);
     --color-blazing-flame-500: hsl(13, 88%, 54%);
@@ -1092,6 +1093,9 @@
   .text-glowyellowgreen-500 {
     color: var(--color-glowyellowgreen-500);
   }
+  .text-golden-pollen-200 {
+    color: var(--color-golden-pollen-200);
+  }
   .text-gray-100 {
     color: var(--color-gray-100);
   }
@@ -1360,9 +1364,19 @@
       border-color: var(--color-indigo-600);
     }
   }
+  .checked\:border-seagrass-500 {
+    &:checked {
+      border-color: var(--color-seagrass-500);
+    }
+  }
   .checked\:bg-indigo-600 {
     &:checked {
       background-color: var(--color-indigo-600);
+    }
+  }
+  .checked\:bg-seagrass-500 {
+    &:checked {
+      background-color: var(--color-seagrass-500);
     }
   }
   .hover\:bg-blue-700 {
@@ -1478,6 +1492,11 @@
       outline-color: var(--color-indigo-600);
     }
   }
+  .focus\:outline-seagrass-500 {
+    &:focus {
+      outline-color: var(--color-seagrass-500);
+    }
+  }
   .focus\:outline-none {
     &:focus {
       --tw-outline-style: none;
@@ -1503,6 +1522,11 @@
   .focus-visible\:outline-indigo-600 {
     &:focus-visible {
       outline-color: var(--color-indigo-600);
+    }
+  }
+  .focus-visible\:outline-seagrass-500 {
+    &:focus-visible {
+      outline-color: var(--color-seagrass-500);
     }
   }
   .focus-visible\:outline-seagrass-700 {
