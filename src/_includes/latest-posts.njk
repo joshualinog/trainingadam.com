@@ -9,66 +9,66 @@
     <p class="mt-2 max-w-lg text-5xl font-heading font-semibold tracking-tight text-pretty text-mauve-shadow-500 sm:text-8xl  uppercase">Latest Blog Content</p>
     <div class="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2">
       <div class="relative lg:col-span-3">
-        <div class="absolute inset-0 rounded-lg bg-blazing-flame-500 max-lg:rounded-t-4xl lg:rounded-tl-4xl bg-gray-800"></div>
+        <div class="absolute inset-0 rounded-lg bg-blazing-flame-500 max-lg:rounded-t-4xl lg:rounded-tl-4xl "></div>
         <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-t-[calc(2rem+1px)] lg:rounded-tl-[calc(2rem+1px)]">
           <img src="{{ post1.data.mainImage | default('https://picsum.photos/seed/1/800/600') }}" alt="{{ post1.data.title }}" class="h-80 object-cover object-left hidden" />
           <img src="{{ post1.data.mainImage | default('https://picsum.photos/seed/1/800/600') }}" alt="{{ post1.data.title }}" class="h-80 object-cover object-left not-hidden" />
           <div class="p-10 pt-4">
-            <h3 class="text-sm/4 font-heading font-semibold text-indigo-600 text-indigo-400">{{ post1.data.labels | default([]) | join(', ') }}</h3>
-            <a href="/blog" class="mt-2 text-lg font-medium tracking-tight text-gray-950 text-white">{{ post1.data.title }}</a>
-            <p class="mt-2 max-w-lg text-sm/6 text-gray-600 text-gray-400">{{ post1.data.content | striptags | truncate(100) }}</p>
+            <h3 class="text-lg/6 font-heading font-semibold text-mauve-shadow-500 font-subheading">{{ post1.data.labels | default([]) | join(', ') }}</h3>
+            <a href="/blog" class="mt-2 text-2xl font-medium tracking-tight text-glowyellowgreen-500 font-subheading">{{ post1.data.title }}</a>
+            <p class="mt-2 max-w-lg text-lg font-bold font-sans">{{ post1.data.content | striptags | truncate(100) }}</p>
           </div>
         </div>
         <div class="pointer-events-none absolute inset-0 rounded-lg shadow-sm outline outline-black/5 max-lg:rounded-t-4xl lg:rounded-tl-4xl outline-white/15"></div>
       </div>
       <div class="relative lg:col-span-3">
-        <div class="absolute inset-0 rounded-lg bg-blazing-flame-500 lg:rounded-tr-4xl bg-gray-800"></div>
+        <div class="absolute inset-0 rounded-lg bg-blazing-flame-500 lg:rounded-tr-4xl "></div>
         <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] lg:rounded-tr-[calc(2rem+1px)]">
           <img src="{{ post2.data.mainImage | default('https://picsum.photos/seed/2/800/600') }}" alt="{{ post2.data.title }}" class="h-80 object-cover object-left lg:object-right hidden" />
           <img src="{{ post2.data.mainImage | default('https://picsum.photos/seed/2/800/600') }}" alt="{{ post2.data.title }}" class="h-80 object-cover object-left not-hidden lg:object-right" />
           <div class="p-10 pt-4">
-            <h3 class="text-sm/4 font-semibold text-indigo-600 text-indigo-400">{{ post2.data.labels | default([]) | join(', ') }}</h3>
-            <a href="/blog" class="mt-2 text-lg font-medium tracking-tight text-gray-950 text-white">{{ post2.data.title }}</a>
-            <p class="mt-2 max-w-lg text-sm/6 text-gray-600 text-gray-400">{{ post2.data.content | striptags | truncate(100) }}</p>
+            <h3 class="text-lg/6 font-semibold text-mauve-shadow-500 font-subheading">{{ post2.data.labels | default([]) | join(', ') }}</h3>
+            <a href="/blog" class="mt-2 text-2xl font-medium tracking-tight text-glowyellowgreen-500 font-subheading">{{ post2.data.title }}</a>
+            <p class="mt-2 max-w-lg text-lg font-bold font-sans">{{ post2.data.content | striptags | truncate(100) }}</p>
           </div>
         </div>
         <div class="pointer-events-none absolute inset-0 rounded-lg shadow-sm outline outline-black/5 lg:rounded-tr-4xl outline-white/15"></div>
       </div>
       <div class="relative lg:col-span-2">
-        <div class="absolute inset-0 rounded-lg bg-blazing-flame-500 lg:rounded-bl-4xl bg-gray-800"></div>
+        <div class="absolute inset-0 rounded-lg bg-blazing-flame-500 lg:rounded-bl-4xl "></div>
         <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] lg:rounded-bl-[calc(2rem+1px)]">
           <img src="{{ post3.data.mainImage | default('https://picsum.photos/seed/3/800/600') }}" alt="{{ post3.data.title }}" class="h-80 object-cover object-left hidden" />
           <img src="{{ post3.data.mainImage | default('https://picsum.photos/seed/3/800/600') }}" alt="{{ post3.data.title }}" class="h-80 object-cover object-left not-hidden" />
           <div class="p-10 pt-4">
-            <h3 class="text-sm/4 font-semibold text-indigo-600 text-indigo-400">{{ post3.data.labels | default([]) | join(', ') }}</h3>
-            <a href="/blog" class="mt-2 text-lg font-medium tracking-tight text-gray-950 text-white">{{ post3.data.title }}</a>
-            <p class="mt-2 max-w-lg text-sm/6 text-gray-600 text-gray-400">{{ post3.data.content | striptags | truncate(100) }}</p>
+            <h3 class="text-lg/6 font-semibold text-mauve-shadow-500 font-subheading">{{ post3.data.labels | default([]) | join(', ') }}</h3>
+            <a href="/blog" class="mt-2 text-2xl font-medium tracking-tight text-glowyellowgreen-500 font-subheading">{{ post3.data.title }}</a>
+            <p class="mt-2 max-w-lg text-lg font-bold font-sans">{{ post3.data.content | striptags | truncate(100) }}</p>
           </div>
         </div>
         <div class="pointer-events-none absolute inset-0 rounded-lg shadow-sm outline outline-black/5 lg:rounded-bl-4xl outline-white/15"></div>
       </div>
       <div class="relative lg:col-span-2">
-        <div class="absolute inset-0 rounded-lg bg-blazing-flame-500 bg-gray-800"></div>
+        <div class="absolute inset-0 rounded-lg bg-blazing-flame-500 "></div>
         <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)]">
           <img src="{{ post4.data.mainImage | default('https://picsum.photos/seed/4/800/600') }}" alt="{{ post4.data.title }}" class="h-80 object-cover hidden" />
           <img src="{{ post4.data.mainImage | default('https://picsum.photos/seed/4/800/600') }}" alt="{{ post4.data.title }}" class="h-80 object-cover not-hidden" />
           <div class="p-10 pt-4">
-            <h3 class="text-sm/4 font-semibold text-indigo-600 text-indigo-400">{{ post4.data.labels | default([]) | join(', ') }}</h3>
-            <a href="/blog" class="mt-2 text-lg font-medium tracking-tight text-gray-950 text-white">{{ post4.data.title }}</a>
-            <p class="mt-2 max-w-lg text-sm/6 text-gray-600 text-gray-400">{{ post4.data.content | striptags | truncate(100) }}</p>
+            <h3 class="text-lg/6 font-semibold text-mauve-shadow-500 font-subheading">{{ post4.data.labels | default([]) | join(', ') }}</h3>
+            <a href="/blog" class="mt-2 text-2xl font-medium tracking-tight text-glowyellowgreen-500 font-subheading">{{ post4.data.title }}</a>
+            <p class="mt-2 max-w-lg text-lg font-bold font-sans">{{ post4.data.content | striptags | truncate(100) }}</p>
           </div>
         </div>
         <div class="pointer-events-none absolute inset-0 rounded-lg shadow-sm outline outline-black/5 outline-white/15"></div>
       </div>
       <div class="relative lg:col-span-2">
-        <div class="absolute inset-0 rounded-lg bg-blazing-flame-500 max-lg:rounded-b-4xl lg:rounded-br-4xl bg-gray-800"></div>
+        <div class="absolute inset-0 rounded-lg bg-blazing-flame-500 max-lg:rounded-b-4xl lg:rounded-br-4xl "></div>
         <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-br-[calc(2rem+1px)]">
           <img src="{{ post5.data.mainImage | default('https://picsum.photos/seed/5/800/600') }}" alt="{{ post5.data.title }}" class="h-80 object-cover hidden" />
           <img src="{{ post5.data.mainImage | default('https://picsum.photos/seed/5/800/600') }}" alt="{{ post5.data.title }}" class="h-80 object-cover not-hidden" />
           <div class="p-10 pt-4">
-            <h3 class="text-sm/4 font-semibold text-indigo-600 text-indigo-400">{{ post5.data.labels | default([]) | join(', ') }}</h3>
-            <a href="/blog" class="mt-2 text-lg font-medium tracking-tight text-gray-950 text-white">{{ post5.data.title }}</a>
-            <p class="mt-2 max-w-lg text-sm/6 text-gray-600 text-gray-400">{{ post5.data.content | striptags | truncate(100) }}</p>
+            <h3 class="text-lg/6 font-semibold text-mauve-shadow-500 font-subheading">{{ post5.data.labels | default([]) | join(', ') }}</h3>
+            <a href="/blog" class="mt-2 text-2xl font-medium tracking-tight text-glowyellowgreen-500 font-subheading">{{ post5.data.title }}</a>
+            <p class="mt-2 max-w-lg text-lg font-bold font-sans">{{ post5.data.content | striptags | truncate(100) }}</p>
           </div>
         </div>
         <div class="pointer-events-none absolute inset-0 rounded-lg shadow-sm outline outline-black/5 max-lg:rounded-b-4xl lg:rounded-br-4xl outline-white/15"></div>
