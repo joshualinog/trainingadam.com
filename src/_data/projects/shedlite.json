@@ -9,7 +9,7 @@
     "shed3.jpg",
     "shed4.jpg"
   ],
-  "headingImage": "shed-hero.jpg",
+  "headingImage": "https://github.com/user-attachments/assets/a5b62c38-8d0a-464e-8f4a-e5d302f81aba",
   "contentSubHeading": "Discover our mission and the impact we're making",
   "projectFeatures": [
     {
@@ -46,5 +46,14 @@
     "heading": "Ready to support Shed Lite?",
     "button1": "Donate Now",
     "button2": "Learn More"
+  },
+  "colors": {
+    "background": "golden-pollen-600",
+    "mainHeading": "seagrass-600",
+    "body": "#333333",
+    "accent": "#ff0000",
+    "supportBg": "#00ff00",
+    "supportText": "#000000",
+    "contrast": "#0000ff"
   }
 }

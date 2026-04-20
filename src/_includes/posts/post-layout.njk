@@ -1,10 +1,41 @@
-<article class="post">
-  <h1 class="font-heading">{{ post.data.title }}</h1>
-  <div class="meta">By {{ post.data.author }} — {{ post.data.date | date("yyyy-LL-dd") }}</div>
-  {% if post.data.mainImage %}
-    <div class="post-main-image mt-6 mb-8">
-      <img src="{{ post.data.mainImage }}" alt="{{ post.data.title }}" class="w-full rounded-xl object-cover" />
+{% set postTags = post.data.tags or post.data.labels or [] %}
+
+<main class="overflow-hidden bg-white dark:bg-gray-900">
+  <div class="relative mx-auto max-w-7xl">
+    <div class="absolute -top-44 -right-60 h-60 w-80 rotate-[-10deg] rounded-full bg-linear-to-tr from-golden-pollen-200 via-cotton-candy-500 to-indigo-500 blur-3xl"></div>
+  </div>
+
+  <div class="px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl lg:max-w-7xl">
+      <header class="pt-12 sm:pt-16">
+        <h2 class="mt-16 font-subheading text-xs font-semibold tracking-widest text-blazing-flame-500 uppercase">{{ post.data.date | date("EEEE, LLLL d, yyyy") }}</h2>
+        <h1 class="mt-2 text-4xl font-heading font-medium tracking-tight text-pretty text-seagrass-500 sm:text-6xl uppercase">{{ post.data.title }}</h1>
+      </header>
+
+      <div class="mt-16 pb-24">
+        <article class="mx-auto w-full max-w-2xl text-gray-700 dark:text-gray-300">
+          <div class="mb-8 flex flex-wrap items-center gap-3">
+            <a href="{{ post.data.raw_issue.url | default('/blog/') }}" class="font-subheading text-sm/5 font-semibold text-blazing-flame-500 hover:text-seagrass-700">{{ post.data.author | default('Training Adam') }}</a>
+            {% if postTags.length %}
+              {% for tag in postTags %}
+                <span class="rounded-full border border-dotted border-blazing-flame-500/40 bg-night-bordeaux-50 px-2 text-sm/6 font-medium text-blazing-flame-500">{{ tag }}</span>
+              {% endfor %}
+            {% endif %}
+          </div>
+
+          {% if post.data.mainImage %}
+            <img alt="{{ post.data.title }}" class="mb-10 aspect-3/2 w-full rounded-2xl object-cover shadow-xl" src="{{ post.data.mainImage }}" />
+          {% endif %}
+
+          <div class="prose prose-lg max-w-none text-lg font-bold text-pretty text-black sm:text-xl/8  ">
+            {{ post.data.contentHtml | safe }}
+          </div>
+
+          <div class="mt-10">
+            <a href="/blog/" class="inline-flex items-center justify-center rounded-lg border border-transparent px-3 py-2 text-2xl font-heading uppercase text-white bg-blazing-flame-500 hover:bg-seagrass-500">Back to blog</a>
+          </div>
+        </article>
+      </div>
     </div>
-  {% endif %}
-  <div class="content">{{ post.data.contentHtml | safe }}</div>
-</article>
+  </div>
+</main>
