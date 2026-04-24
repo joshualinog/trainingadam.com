@@ -9,38 +9,38 @@
     "shed3.jpg",
     "shed4.jpg"
   ],
-  "headingImage": "https://github.com/user-attachments/assets/a5b62c38-8d0a-464e-8f4a-e5d302f81aba",
+  "headingImage": "/assets/images/shedlitebannerimage.png",
   "contentSubHeading": "Discover our mission and the impact we're making",
   "projectFeatures": [
     {
-      "short": "Push to deploy",
-      "description": "Morbi viverra dui mi arcu sed. Tellus semper adipiscing suspendisse semper morbi. Odio urna massa nunc massa.",
-      "icon": "M12 16.5V9.75m0 0 3 3m-3-3-3 3M6.75 19.5a4.5 4.5 0 0 1-1.41-8.775 5.25 5.25 0 0 1 10.233-2.33 3 3 0 0 1 3.758 3.848A3.752 3.752 0 0 1 18 19.5H6.75Z"
+      "short": "A Shelter Built by Hand",
+      "description": "Every Shed Lite structure is assembled by volunteers from your community, turning lumber and love into a real place of refuge for someone in need.",
+      "icon": "m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
     },
     {
-      "short": "SSL certificates",
-      "description": "Sit quis amet rutrum tellus ullamcorper ultricies libero dolor eget. Sem sodales gravida quam turpis enim lacus amet.",
-      "icon": "M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z"
+      "short": "Free to Those in Need",
+      "description": "We believe shelter should never be a barrier to healing. Shed Lite structures are provided at no cost to individuals walking through the hardest seasons of their lives.",
+      "icon": "m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
     },
     {
-      "short": "Simple queues",
-      "description": "Quisque est vel vulputate cursus. Risus proin diam nunc commodo. Lobortis auctor congue commodo diam neque.",
-      "icon": "M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99"
+      "short": "Dignity in Small Spaces",
+      "description": "A small, well-built shed gives a person something that addiction and hardship strips away — a space that is theirs, safe, and quiet enough to begin again.",
+      "icon": "m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
     },
     {
-      "short": "Advanced security",
-      "description": "Arcu egestas dolor vel iaculis in ipsum mauris. Tincidunt mattis aliquet hac quis. Id hac maecenas ac donec pharetra eget.",
-      "icon": "M7.864 4.243A7.5 7.5 0 0 1 19.5 10.5c0 2.92-.556 5.709-1.568 8.268M5.742 6.364A7.465 7.465 0 0 0 4.5 10.5a7.464 7.464 0 0 1-1.15 3.993m1.989 3.559A11.209 11.209 0 0 0 8.25 10.5a3.75 3.75 0 1 1 7.5 0c0 .527-.021 1.049-.064 1.565M12 10.5a14.94 14.94 0 0 1-3.6 9.75m6.633-4.596a18.666 18.666 0 0 1-2.485 5.33"
+      "short": "Rooted in Community",
+      "description": "From material sourcing to the final nail, each project draws neighbors together around a shared purpose: that no one in our town should face suffering without a safe place to land.",
+      "icon": "m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
     }
   ],
-  "missionTitle": "Our Mission",
+  "missionTitle": "The Tiny Life as a Human Default",
   "missionText1": "Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris semper sed amet vitae sed turpis id. Id dolor praesent donec est. Odio penatibus risus viverra tellus varius sit neque erat velit.",
   "missionText2": "Et vitae blandit facilisi magna lacus commodo. Vitae sapien duis odio id et. Id blandit molestie auctor fermentum dignissim. Lacus diam tincidunt ac cursus in vel. Mauris varius vulputate et ultrices hac adipiscing egestas.",
   "stats": {
-    "raised": "50K",
+    "raised": "250K",
     "companies": "5",
     "dealsClosed": "20",
-    "leadsGenerated": "100"
+    "leadsGenerated": "50"
   },
   "cta": {
     "heading": "Ready to support Shed Lite?",
@@ -48,10 +48,10 @@
     "button2": "Learn More"
   },
   "colors": {
-    "background": "golden-pollen-600",
+    "background": "golden-pollen-500",
     "mainHeading": "seagrass-600",
     "body": "#333333",
-    "accent": "#ff0000",
+    "accent": "burnt-peach-500",
     "supportBg": "#00ff00",
     "supportText": "#000000",
     "contrast": "#0000ff"
