@@ -1110,9 +1110,6 @@
   .bg-indigo-500 {
     background-color: var(--color-indigo-500);
   }
-  .bg-indigo-600 {
-    background-color: var(--color-indigo-600);
-  }
   .bg-mauve-shadow-50 {
     background-color: var(--color-mauve-shadow-50);
   }
@@ -1744,14 +1741,8 @@
   .text-gray-200 {
     color: var(--color-gray-200);
   }
-  .text-gray-300 {
-    color: var(--color-gray-300);
-  }
   .text-gray-400 {
     color: var(--color-gray-400);
-  }
-  .text-gray-500 {
-    color: var(--color-gray-500);
   }
   .text-gray-600 {
     color: var(--color-gray-600);
@@ -1764,12 +1755,6 @@
   }
   .text-gray-950 {
     color: var(--color-gray-950);
-  }
-  .text-indigo-400 {
-    color: var(--color-indigo-400);
-  }
-  .text-indigo-600 {
-    color: var(--color-indigo-600);
   }
   .text-mauve-shadow-50 {
     color: var(--color-mauve-shadow-50);
@@ -3682,6 +3667,26 @@
 }
 #mobile-menu {
   background-color: var(--color-seagrass-500);
+}
+.donate-page #contact {
+  & .bg-mauve-shadow-500 {
+    background-color: var(--color-blazing-flame-500);
+  }
+  & .text-glowyellowgreen-500 {
+    color: white;
+  }
+  & .text-golden-pollen-200 {
+    color: var(--color-golden-pollen-500);
+  }
+}
+.donate-page footer .bg-golden-pollen-700 {
+  background-color: var(--color-seagrass-400);
+  & .text-black {
+    color: black;
+  }
+  & .text-seagrass-600 {
+    color: var(--color-blazing-flame-500);
+  }
 }
 @property --tw-translate-x {
   syntax: "*";

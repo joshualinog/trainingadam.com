@@ -313,3 +313,28 @@ https://coolors.co/f15022-e16f3d-ffcc71-554d1f-519e8a-581819-f590a0-64434c-efdb4
 #mobile-menu {
   @apply bg-seagrass-500;
 }
+
+/* Donate page overrides for the contact section */
+.donate-page #contact {
+  & .bg-mauve-shadow-500 {
+    background-color: var(--color-blazing-flame-500);
+  }
+  & .text-glowyellowgreen-500 {
+    color: white;
+  }
+  & .text-golden-pollen-200 {
+    color: var(--color-golden-pollen-500);
+  }
+}
+
+/* Donate page footer CTA banner */
+.donate-page footer .bg-golden-pollen-700 {
+  background-color: var(--color-seagrass-400);
+
+  & .text-black {
+    color: black;
+  }
+  & .text-seagrass-600 {
+    color: var(--color-blazing-flame-500);
+  }
+}

@@ -1,12 +1,12 @@
 <section id="contact">
 <div class="relative bg-mauve-shadow-500">
   <div class="lg:absolute lg:inset-0 lg:left-1/2">
-    <img src="/assets/images/contact.png" alt="" class="h-64 w-full bg-gray-50 object-cover sm:h-80 lg:absolute lg:h-full dark:bg-gray-800" />
+    <img src="{{ '/assets/images/CONTACTdonate.png' if bodyClass == 'donate-page' else '/assets/images/contact.png' }}" alt="" class="h-64 w-full bg-gray-50 object-cover sm:h-80 lg:absolute lg:h-full dark:bg-gray-800" />
   </div>
   <div class="pt-16 pb-24 sm:pt-24 sm:pb-32 lg:mx-auto lg:grid lg:max-w-7xl lg:grid-cols-2 lg:pt-32">
     <div class="px-6 lg:px-8">
       <div class="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
-        <h2 class="text-4xl font-semibold tracking-tight text-pretty  sm:text-5xl  text-glowyellowgreen-500 section-heading-large">Let's work together</h2>
+        <h2 class="text-4xl font-semibold tracking-tight text-pretty  sm:text-5xl  text-glowyellowgreen-500 section-heading-large">{{ "DONATE TODAY!" if bodyClass == "donate-page" else "Let's work together" }}</h2>
         <p class="mt-2 text-lg/8 text-glowyellowgreen-500 font-bold ">We can't wait to hear your ideas! Reach out to us and share your vision!</p>
         <div data-fs-success class="hidden mt-6 rounded-md bg-seagrass-500/20 border border-seagrass-500 px-4 py-3 text-glowyellowgreen-500 font-bold">Thanks! Your message has been sent. We'll be in touch soon.</div>
         <div data-fs-error class="hidden mt-6 rounded-md bg-red-500/20 border border-red-400 px-4 py-3 text-red-300 font-bold"></div>
