@@ -6,69 +6,6 @@ layout: layout.njk
 <div class="bg-[#376558] pt-24 sm:pt-32">
   <div class="mx-auto max-w-7xl px-6 lg:px-8">
     <div class="mx-auto max-w-2xl lg:max-w-4xl">
-      <h1 class="text-2xl sm:text-3xl font-heading font-semibold text-seagrass-700">Our Videos</h1>
-      <p class="mt-2 max-w-lg text-5xl font-heading font-semibold tracking-tight text-pretty text-cotton-candy-400 sm:text-8xl uppercase">Latest from YouTube</p>
-
-      {% if videos and videos.length %}
-        <div class="mt-16 grid gap-10 sm:grid-cols-2">
-          {% for video in videos %}
-            <article class="flex flex-col gap-4">
-              <a href="{{ video.url }}" target="_blank" rel="noopener noreferrer" class="group block relative aspect-video overflow-hidden rounded-2xl bg-gray-100 shadow-md">
-                <img
-                  src="{{ video.thumbnail }}"
-                  alt="{{ video.title }}"
-                  class="absolute inset-0 size-full object-cover transition-transform duration-300 group-hover:scale-105"
-                  loading="lazy"
-                />
-                <div class="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <svg class="size-16 text-white drop-shadow-lg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <path d="M8 5v14l11-7L8 5z"/>
-                  </svg>
-                </div>
-              </a>
-
-              <div>
-                <time datetime="{{ video.published }}" class="text-xs font-subheading text-cotton-candy-400">
-                  {{ video.published | date("LLL d, yyyy") }}
-                </time>
-                <h2 class="mt-1 text-2xl font-heading font-medium tracking-tight text-cotton-candy-400 uppercase leading-tight">
-                  <a href="{{ video.url }}" target="_blank" rel="noopener noreferrer" class="hover:text-glowyellowgreen-500">
-                    {{ video.title }}
-                  </a>
-                </h2>
-                {% if video.description %}
-                  <p class="mt-2 text-sm font-sans text-cotton-candy-400 line-clamp-3">{{ video.description | truncate(160) }}</p>
-                {% endif %}
-              </div>
-            </article>
-          {% endfor %}
-        </div>
-
-        <div class="mt-16 text-center">
-          <a
-            href="https://www.youtube.com/channel/UC0QvZbD75rCMc5yEJEamDAQ"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-block rounded-full bg-seagrass-700 px-8 py-3 text-base font-subheading font-semibold text-white hover:bg-seagrass-600 transition-colors"
-          >
-            See all videos on YouTube
-          </a>
-        </div>
-      {% else %}
-        <p class="mt-8 text-cotton-candy-400 font-sans">No videos available right now. Check back soon or <a href="https://www.youtube.com/channel/UC0QvZbD75rCMc5yEJEamDAQ" target="_blank" rel="noopener noreferrer" class="underline hover:text-glowyellowgreen-500">visit our YouTube channel</a>.</p>
-      {% endif %}
-    </div>
-  </div>
-  <img src="/assets/images/youtubebottom.png" alt="" class="w-full" aria-hidden="true" />
-</div>
----
-title: Videos
-layout: layout.njk
----
-
-<div class="bg-[#376558] pt-24 sm:pt-32">
-  <div class="mx-auto max-w-7xl px-6 lg:px-8">
-    <div class="mx-auto max-w-2xl lg:max-w-4xl">
       <h1 class="text-2xl sm:text-3xl font-subheading font-semibold text-night-bordeaux-500">Watch us on Youtube <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="size-5 shrink-0"><path d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.417-4.814a2.507 2.507 0 0 1 1.768-1.768C5.744 5 11.998 5 11.998 5s6.255 0 7.814.418ZM15.194 12 10 15V9l5.194 3Z" clip-rule="evenodd" fill-rule="evenodd" /></svg></h1>
       <p class="mt-2 max-w-5xl text-5xl font-heading font-semibold tracking-tight text-pretty text-cotton-candy-400 sm:text-8xl uppercase">Latest from YouTube</p>
 
