@@ -1,0 +1,115 @@
+{# 
+  Expects these variables to be set before including:
+    platformPosts  — array from facebook.js or instagram.js
+    platformName   — "Facebook" or "Instagram"
+    platformHandle — display handle, e.g. "Training Adam" or "@trainingadamsoil2soul"
+    platformUrl    — link to the profile/page
+    platformColor  — custom color token name, e.g. "seagrass" or "cotton-candy"
+#}
+
+{% if platformPosts and platformPosts.length %}
+<section class="py-16 sm:py-20">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+
+    {# Platform header #}
+    <div class="flex items-center justify-between mb-8">
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-widest text-{{ platformColor }}-400">{{ platformName }}</p>
+        <h2 class="mt-1 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
+          Latest from {{ platformHandle }}
+        </h2>
+      </div>
+      <a
+        href="{{ platformUrl }}"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-sm font-semibold text-{{ platformColor }}-600 hover:text-{{ platformColor }}-400 dark:text-{{ platformColor }}-400 dark:hover:text-{{ platformColor }}-300 transition-colors"
+      >
+        Follow &rarr;
+      </a>
+    </div>
+
+    {# Post cards grid #}
+    <ul class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3" role="list">
+      {% for post in platformPosts %}
+      <li class="group relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-black/5 dark:bg-gray-800 dark:ring-white/10 transition-shadow hover:shadow-md">
+
+        {# Image / video thumbnail #}
+        {% if post.imageUrl %}
+        <a href="{{ post.permalink }}" target="_blank" rel="noopener noreferrer" class="relative block aspect-square overflow-hidden bg-gray-100 dark:bg-gray-700">
+          <img
+            src="{{ post.imageUrl }}"
+            alt="{{ post.text | truncate(80) if post.text else platformName + ' post' }}"
+            class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+            loading="lazy"
+          />
+          {# Video indicator #}
+          {% if post.type == 'video' or post.type == 'VIDEO' %}
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="rounded-full bg-black/50 p-3">
+              <svg class="size-8 text-white" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M8 6.82v10.36c0 .79.87 1.27 1.54.84l8.14-5.18a1 1 0 0 0 0-1.69L9.54 5.98A1 1 0 0 0 8 6.82Z"/>
+              </svg>
+            </div>
+          </div>
+          {% endif %}
+          {# Carousel indicator #}
+          {% if post.type == 'carousel_album' %}
+          <div class="absolute top-2 right-2">
+            <div class="rounded-full bg-black/50 p-1.5">
+              <svg class="size-4 text-white" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M2 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6Zm16-2a2 2 0 0 1 2 2v9.5a2 2 0 0 1-2 2V4Z"/>
+              </svg>
+            </div>
+          </div>
+          {% endif %}
+        </a>
+        {% endif %}
+
+        {# Card body #}
+        <div class="flex flex-1 flex-col p-5">
+          {% if post.text %}
+          <p class="flex-1 text-sm text-gray-700 dark:text-gray-300 line-clamp-4">{{ post.text }}</p>
+          {% endif %}
+          <div class="mt-4 flex items-center justify-between">
+            <div class="flex flex-col gap-0.5">
+              {% if post.author %}
+              <span class="text-xs font-medium text-gray-600 dark:text-gray-400">{{ post.author }}</span>
+              {% endif %}
+              <time class="text-xs text-gray-400 dark:text-gray-500" datetime="{{ post.date }}">
+                {{ post.date | truncate(10, false, '') }}
+              </time>
+            </div>
+            <a
+              href="{{ post.permalink }}"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-xs font-semibold text-{{ platformColor }}-600 hover:text-{{ platformColor }}-400 dark:text-{{ platformColor }}-400 dark:hover:text-{{ platformColor }}-300 transition-colors"
+            >
+              View post &rarr;
+            </a>
+          </div>
+        </div>
+
+      </li>
+      {% endfor %}
+    </ul>
+
+    {# See more button #}
+    <div class="mt-10 flex justify-center">
+      <a
+        href="{{ platformUrl }}"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-x-2 rounded-full bg-{{ platformColor }}-50 px-6 py-3 text-sm font-semibold text-{{ platformColor }}-700 ring-1 ring-{{ platformColor }}-200 hover:bg-{{ platformColor }}-100 dark:bg-{{ platformColor }}-900/20 dark:text-{{ platformColor }}-300 dark:ring-{{ platformColor }}-800 dark:hover:bg-{{ platformColor }}-900/40 transition-colors"
+      >
+        See more on {{ platformName }}
+        <svg class="size-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <path fill-rule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z" clip-rule="evenodd"/>
+        </svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+{% endif %}

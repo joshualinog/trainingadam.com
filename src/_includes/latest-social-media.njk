@@ -1,0 +1,23 @@
+{# Facebook — page's own posts #}
+{% set platformPosts = facebook.posts %}
+{% set platformName = "Facebook" %}
+{% set platformHandle = "Training Adam" %}
+{% set platformUrl = "https://www.facebook.com/trainingadam" %}
+{% set platformColor = "seagrass" %}
+{% include "social-media/platform-feed.njk" %}
+
+{# Facebook — visitor posts #}
+{% set platformPosts = facebook.visitorPosts %}
+{% set platformName = "Facebook" %}
+{% set platformHandle = "from our community" %}
+{% set platformUrl = "https://www.facebook.com/trainingadam" %}
+{% set platformColor = "seagrass" %}
+{% include "social-media/platform-feed.njk" %}
+
+{# Instagram #}
+{% set platformPosts = instagram %}
+{% set platformName = "Instagram" %}
+{% set platformHandle = "@trainingadamsoil2soul" %}
+{% set platformUrl = "https://www.instagram.com/trainingadamsoil2soul" %}
+{% set platformColor = "cotton-candy" %}
+{% include "social-media/platform-feed.njk" %}
