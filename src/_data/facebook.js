@@ -6,11 +6,8 @@ const LIMIT = 6;
 const POST_FIELDS = [
   'id',
   'message',
-  'story',
   'permalink_url',
   'created_time',
-  'type',
-  'attachments{media,type}',
 ].join(',');
 
 const FEED_FIELDS = [
@@ -18,9 +15,7 @@ const FEED_FIELDS = [
   'message',
   'permalink_url',
   'created_time',
-  'type',
   'from',
-  'attachments{media,type}',
 ].join(',');
 
 async function getPageAccessToken() {
@@ -33,24 +28,13 @@ async function getPageAccessToken() {
   return json.access_token;
 }
 
-function extractImage(post) {
-  const attachment = post.attachments?.data?.[0];
-  if (!attachment) return null;
-  // Carousel: grab first child
-  if (attachment.subattachments?.data?.[0]?.media?.image?.src) {
-    return attachment.subattachments.data[0].media.image.src;
-  }
-  return attachment.media?.image?.src || null;
-}
-
 function normalizePost(post) {
   return {
     id: post.id,
-    text: post.message || post.story || '',
-    imageUrl: extractImage(post),
+    text: post.message || '',
+    imageUrl: null,
     permalink: post.permalink_url,
     date: post.created_time,
-    type: post.type,
     platform: 'facebook',
     author: post.from?.name || null,
   };
