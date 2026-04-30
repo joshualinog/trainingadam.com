@@ -2657,6 +2657,16 @@
       border-bottom-left-radius: calc(2rem + 1px);
     }
   }
+  .max-md\:row-start-1 {
+    @media (width < 48rem) {
+      grid-row-start: 1;
+    }
+  }
+  .max-md\:row-start-3 {
+    @media (width < 48rem) {
+      grid-row-start: 3;
+    }
+  }
   .max-md\:rounded-t-4xl {
     @media (width < 48rem) {
       border-top-left-radius: var(--radius-4xl);
@@ -2991,6 +3001,21 @@
       grid-column: span 3 / span 3;
     }
   }
+  .md\:col-start-2 {
+    @media (width >= 48rem) {
+      grid-column-start: 2;
+    }
+  }
+  .md\:row-span-2 {
+    @media (width >= 48rem) {
+      grid-row: span 2 / span 2;
+    }
+  }
+  .md\:row-start-2 {
+    @media (width >= 48rem) {
+      grid-row-start: 2;
+    }
+  }
   .md\:-mx-8 {
     @media (width >= 48rem) {
       margin-inline: calc(var(--spacing) * -8);
@@ -3016,9 +3041,19 @@
       height: calc(var(--spacing) * 64);
     }
   }
+  .md\:min-h-0 {
+    @media (width >= 48rem) {
+      min-height: calc(var(--spacing) * 0);
+    }
+  }
   .md\:w-64 {
     @media (width >= 48rem) {
       width: calc(var(--spacing) * 64);
+    }
+  }
+  .md\:max-w-7xl {
+    @media (width >= 48rem) {
+      max-width: var(--container-7xl);
     }
   }
   .md\:grid-cols-2 {
@@ -3056,6 +3091,18 @@
       gap: calc(var(--spacing) * 8);
     }
   }
+  .md\:rounded-l-4xl {
+    @media (width >= 48rem) {
+      border-top-left-radius: var(--radius-4xl);
+      border-bottom-left-radius: var(--radius-4xl);
+    }
+  }
+  .md\:rounded-l-\[calc\(2rem\+1px\)\] {
+    @media (width >= 48rem) {
+      border-top-left-radius: calc(2rem + 1px);
+      border-bottom-left-radius: calc(2rem + 1px);
+    }
+  }
   .md\:rounded-tl-4xl {
     @media (width >= 48rem) {
       border-top-left-radius: var(--radius-4xl);
@@ -3064,6 +3111,18 @@
   .md\:rounded-tl-\[calc\(2rem\+1px\)\] {
     @media (width >= 48rem) {
       border-top-left-radius: calc(2rem + 1px);
+    }
+  }
+  .md\:rounded-r-4xl {
+    @media (width >= 48rem) {
+      border-top-right-radius: var(--radius-4xl);
+      border-bottom-right-radius: var(--radius-4xl);
+    }
+  }
+  .md\:rounded-r-\[calc\(2rem\+1px\)\] {
+    @media (width >= 48rem) {
+      border-top-right-radius: calc(2rem + 1px);
+      border-bottom-right-radius: calc(2rem + 1px);
     }
   }
   .md\:rounded-tr-4xl {
