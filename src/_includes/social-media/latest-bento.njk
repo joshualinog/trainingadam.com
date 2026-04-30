@@ -16,7 +16,7 @@
 
     <div class="flex items-center justify-between mb-10 sm:mb-16">
       <div>
-        <p class="text-3xl font-subheading font-semibold text-night-bordeaux-500">{{ platformName }}</p>
+        <p class="text-3xl font-subheading font-semibold text-night-bordeaux-500 flex items-center gap-3">{% set iconSize = "size-24" %}{% include "social-media/platform-icon.njk" %}{% set iconSize = null %} {{ platformName }} </p>
         <h2 class="mt-2 text-2xl font-heading uppercase font-semibold tracking-tight text-pretty text-mauve-shadow-500 sm:text-2xl">Latest from : <span class="text-6xl">{{ platformHandle }}</span></h2>
       </div>
       <a href="{{ platformUrl }}" target="_blank" rel="noopener noreferrer"
@@ -34,6 +34,10 @@
             <a href="{{ post.permalink }}" target="_blank" rel="noopener noreferrer"
                class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] {{ bentoInnerRound[loop.index0] }}">
 
+              <span class="absolute top-3 right-3 z-10 text-glowyellowgreen-500 drop-shadow">
+                {% include "social-media/platform-icon.njk" %}
+              </span>
+
               {% if post.type != 'status' %}
                 {% if post.imageUrl %}
                   <img
@@ -48,8 +52,8 @@
                 {% endif %}
               {% endif %}
 
-              <div class="p-6 pt-4 flex flex-col gap-2 {% if post.type == 'status' %}flex-1 justify-center{% endif %}">
-                <span class="text-xs font-semibold {% if post.type == 'status' %}text-glowyellowgreen-400{% else %}text-{{ platformColor }}-600{% endif %} uppercase tracking-widest">{{ post.type }}</span>
+              <div class="p-6 pt-4 flex-1 flex flex-col gap-2 {% if post.type == 'status' %}justify-center{% endif %}">
+                <span class="text-xs font-hand font-semibold {% if post.type == 'status' %}text-glowyellowgreen-400{% else %}text-{{ platformColor }}-600{% endif %} uppercase tracking-widest">{{ post.type }}</span>
                 <p class="text-3xl {% if post.type == 'status' %}text-glowyellowgreen-500{% else %}text-gray-950{% endif %} line-clamp-5 ">{{ post.text | truncate(bentoCapLen[loop.index0]) }}</p>
                 <p class="text-4xl {% if post.type == 'status' %}text-glowyellowgreen-700{% else %}text-glowyellowgreen-500{% endif %} mt-auto pt-2">{{ post.date | date("LLL d, yyyy") }}</p>
               </div>
