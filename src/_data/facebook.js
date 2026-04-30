@@ -8,6 +8,9 @@ const POST_FIELDS = [
   'message',
   'permalink_url',
   'created_time',
+  'status_type',
+  'full_picture',
+  'attachments{media,type,url,subattachments{media,type}}',
 ].join(',');
 
 const FEED_FIELDS = [
@@ -15,6 +18,9 @@ const FEED_FIELDS = [
   'message',
   'permalink_url',
   'created_time',
+  'status_type',
+  'full_picture',
+  'attachments{media,type,url,subattachments{media,type}}',
   'from',
 ].join(',');
 
@@ -28,13 +34,45 @@ async function getPageAccessToken() {
   return json.access_token;
 }
 
+// Derive a normalised type string from status_type and attachment type
+function resolveType(post) {
+  const st = post.status_type;
+  const attachType = post.attachments?.data?.[0]?.type || '';
+  if (st === 'added_video' || attachType === 'video_inline' || attachType === 'video_autoplay') return 'video';
+  if (st === 'added_photos' || attachType === 'photo' || attachType === 'album') return 'photo';
+  if (st === 'shared_story' || attachType === 'share') return 'link';
+  return 'status';
+}
+
+// Extract the best available image URL
+function resolveImage(post) {
+  // full_picture is the most reliable single-image field
+  if (post.full_picture) return post.full_picture;
+  // Fall back to first attachment media image
+  const firstAttachment = post.attachments?.data?.[0];
+  if (firstAttachment?.media?.image?.src) return firstAttachment.media.image.src;
+  return null;
+}
+
+// Extract carousel images from subattachments
+function resolveCarouselImages(post) {
+  const first = post.attachments?.data?.[0];
+  if (!first?.subattachments?.data?.length) return null;
+  return first.subattachments.data
+    .map(s => s.media?.image?.src)
+    .filter(Boolean);
+}
+
 function normalizePost(post) {
+  const type = resolveType(post);
   return {
     id: post.id,
     text: post.message || '',
-    imageUrl: null,
+    imageUrl: resolveImage(post),
+    carouselImages: resolveCarouselImages(post),
     permalink: post.permalink_url,
     date: post.created_time,
+    type,         // 'photo' | 'video' | 'link' | 'status'
     platform: 'facebook',
     author: post.from?.name || null,
   };
