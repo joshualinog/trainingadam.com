@@ -1,73 +1,67 @@
-<div class="bg-white py-24 sm:py-32 dark:bg-gray-900">
-  <div class="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
-    <h2 class="text-base/7 font-semibold text-indigo-600 dark:text-indigo-400">Deploy faster</h2>
-    <p class="mt-2 max-w-lg text-4xl font-semibold tracking-tight text-pretty text-gray-950 sm:text-5xl dark:text-white">Everything you need to deploy your app</p>
-    <div class="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2">
-      <div class="relative lg:col-span-3">
-        <div class="absolute inset-0 rounded-lg bg-white max-lg:rounded-t-4xl lg:rounded-tl-4xl dark:bg-gray-800"></div>
-        <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-t-[calc(2rem+1px)] lg:rounded-tl-[calc(2rem+1px)]">
-          <img src="https://tailwindcss.com/plus-assets/img/component-images/bento-01-performance.png" alt="" class="h-80 object-cover object-left dark:hidden" />
-          <img src="https://tailwindcss.com/plus-assets/img/component-images/dark-bento-01-performance.png" alt="" class="h-80 object-cover object-left not-dark:hidden" />
-          <div class="p-10 pt-4">
-            <h3 class="text-sm/4 font-semibold text-indigo-600 dark:text-indigo-400">Performance</h3>
-            <p class="mt-2 text-lg font-medium tracking-tight text-gray-950 dark:text-white">Lightning-fast builds</p>
-            <p class="mt-2 max-w-lg text-sm/6 text-gray-600 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In gravida justo et nulla efficitur, maximus egestas sem pellentesque.</p>
-          </div>
-        </div>
-        <div class="pointer-events-none absolute inset-0 rounded-lg shadow-sm outline outline-black/5 max-lg:rounded-t-4xl lg:rounded-tl-4xl dark:outline-white/15"></div>
+{% if platformPosts and platformPosts.length %}
+
+{#
+  Per-cell config arrays (indexed 0–4 by loop.index0).
+  Tailwind v4 @source inline(...) already safelists all custom color classes,
+  and the literal strings below are picked up by the content scanner.
+#}
+{% set bentoSpan        = ["md:col-span-3", "md:col-span-3", "md:col-span-2", "md:col-span-2", "md:col-span-2"] %}
+{% set bentoOuterRound  = ["max-md:rounded-t-4xl md:rounded-tl-4xl", "md:rounded-tr-4xl", "md:rounded-bl-4xl", "", "max-md:rounded-b-4xl md:rounded-br-4xl"] %}
+{% set bentoInnerRound  = ["max-md:rounded-t-[calc(2rem+1px)] md:rounded-tl-[calc(2rem+1px)]", "md:rounded-tr-[calc(2rem+1px)]", "md:rounded-bl-[calc(2rem+1px)]", "", "max-md:rounded-b-[calc(2rem+1px)] md:rounded-br-[calc(2rem+1px)]"] %}
+{% set bentoImgH        = ["h-80", "h-80", "h-64", "h-64", "h-64"] %}
+{% set bentoCapLen      = [160, 160, 120, 120, 120] %}
+
+<section class="bg-glowyellowgreen-500 font-heading py-16 sm:py-24">
+  <div class="mx-auto max-w-7xl px-6 md:px-8">
+
+    <div class="flex items-center justify-between mb-10 sm:mb-16">
+      <div>
+        <p class="text-3xl font-subheading font-semibold text-night-bordeaux-500">{{ platformName }}</p>
+        <h2 class="mt-2 text-2xl font-heading uppercase font-semibold tracking-tight text-pretty text-mauve-shadow-500 sm:text-2xl">Latest from : <span class="text-6xl">{{ platformHandle }}</span></h2>
       </div>
-      <div class="relative lg:col-span-3">
-        <div class="absolute inset-0 rounded-lg bg-white lg:rounded-tr-4xl dark:bg-gray-800"></div>
-        <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] lg:rounded-tr-[calc(2rem+1px)]">
-          <img src="https://tailwindcss.com/plus-assets/img/component-images/bento-01-releases.png" alt="" class="h-80 object-cover object-left lg:object-right dark:hidden" />
-          <img src="https://tailwindcss.com/plus-assets/img/component-images/dark-bento-01-releases.png" alt="" class="h-80 object-cover object-left not-dark:hidden lg:object-right" />
-          <div class="p-10 pt-4">
-            <h3 class="text-sm/4 font-semibold text-indigo-600 dark:text-indigo-400">Releases</h3>
-            <p class="mt-2 text-lg font-medium tracking-tight text-gray-950 dark:text-white">Push to deploy</p>
-            <p class="mt-2 max-w-lg text-sm/6 text-gray-600 dark:text-gray-400">Curabitur auctor, ex quis auctor venenatis, eros arcu rhoncus massa, laoreet dapibus ex elit vitae odio.</p>
-          </div>
-        </div>
-        <div class="pointer-events-none absolute inset-0 rounded-lg shadow-sm outline outline-black/5 lg:rounded-tr-4xl dark:outline-white/15"></div>
-      </div>
-      <div class="relative lg:col-span-2">
-        <div class="absolute inset-0 rounded-lg bg-white lg:rounded-bl-4xl dark:bg-gray-800"></div>
-        <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] lg:rounded-bl-[calc(2rem+1px)]">
-          <img src="https://tailwindcss.com/plus-assets/img/component-images/bento-01-speed.png" alt="" class="h-80 object-cover object-left dark:hidden" />
-          <img src="https://tailwindcss.com/plus-assets/img/component-images/dark-bento-01-speed.png" alt="" class="h-80 object-cover object-left not-dark:hidden" />
-          <div class="p-10 pt-4">
-            <h3 class="text-sm/4 font-semibold text-indigo-600 dark:text-indigo-400">Speed</h3>
-            <p class="mt-2 text-lg font-medium tracking-tight text-gray-950 dark:text-white">Built for power users</p>
-            <p class="mt-2 max-w-lg text-sm/6 text-gray-600 dark:text-gray-400">Sed congue eros non finibus molestie. Vestibulum euismod augue.</p>
-          </div>
-        </div>
-        <div class="pointer-events-none absolute inset-0 rounded-lg shadow-sm outline outline-black/5 lg:rounded-bl-4xl dark:outline-white/15"></div>
-      </div>
-      <div class="relative lg:col-span-2">
-        <div class="absolute inset-0 rounded-lg bg-white dark:bg-gray-800"></div>
-        <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)]">
-          <img src="https://tailwindcss.com/plus-assets/img/component-images/bento-01-integrations.png" alt="" class="h-80 object-cover dark:hidden" />
-          <img src="https://tailwindcss.com/plus-assets/img/component-images/dark-bento-01-integrations.png" alt="" class="h-80 object-cover not-dark:hidden" />
-          <div class="p-10 pt-4">
-            <h3 class="text-sm/4 font-semibold text-indigo-600 dark:text-indigo-400">Integrations</h3>
-            <p class="mt-2 text-lg font-medium tracking-tight text-gray-950 dark:text-white">Connect your favorite tools</p>
-            <p class="mt-2 max-w-lg text-sm/6 text-gray-600 dark:text-gray-400">Maecenas at augue sed elit dictum vulputate, in nisi aliquam maximus arcu.</p>
-          </div>
-        </div>
-        <div class="pointer-events-none absolute inset-0 rounded-lg shadow-sm outline outline-black/5 dark:outline-white/15"></div>
-      </div>
-      <div class="relative lg:col-span-2">
-        <div class="absolute inset-0 rounded-lg bg-white max-lg:rounded-b-4xl lg:rounded-br-4xl dark:bg-gray-800"></div>
-        <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-br-[calc(2rem+1px)]">
-          <img src="https://tailwindcss.com/plus-assets/img/component-images/bento-01-network.png" alt="" class="h-80 object-cover dark:hidden" />
-          <img src="https://tailwindcss.com/plus-assets/img/component-images/dark-bento-01-network.png" alt="" class="h-80 object-cover not-dark:hidden" />
-          <div class="p-10 pt-4">
-            <h3 class="text-sm/4 font-semibold text-indigo-600 dark:text-indigo-400">Network</h3>
-            <p class="mt-2 text-lg font-medium tracking-tight text-gray-950 dark:text-white">Globally distributed CDN</p>
-            <p class="mt-2 max-w-lg text-sm/6 text-gray-600 dark:text-gray-400">Aenean vulputate justo commodo auctor vehicula in malesuada semper.</p>
-          </div>
-        </div>
-        <div class="pointer-events-none absolute inset-0 rounded-lg shadow-sm outline outline-black/5 max-lg:rounded-b-4xl lg:rounded-br-4xl dark:outline-white/15"></div>
-      </div>
+      <a href="{{ platformUrl }}" target="_blank" rel="noopener noreferrer"
+         class="text-sm font-semibold text-{{ platformColor }}-600 hover:text-{{ platformColor }}-700">
+        View all <span aria-hidden="true">→</span>
+      </a>
     </div>
+
+    <div class="mt-10 grid grid-cols-1 gap-4 sm:mt-16 md:grid-cols-6 md:grid-rows-2">
+      {% for post in platformPosts %}
+        {% if loop.index <= 5 %}
+          <div class="relative {{ bentoSpan[loop.index0] }}">
+            <div class="absolute inset-0 rounded-lg {% if post.type == 'status' %}bg-mauve-shadow-500{% else %}bg-seagrass-400{% endif %} {{ bentoOuterRound[loop.index0] }}"></div>
+
+            <a href="{{ post.permalink }}" target="_blank" rel="noopener noreferrer"
+               class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] {{ bentoInnerRound[loop.index0] }}">
+
+              {% if post.type != 'status' %}
+                {% if post.imageUrl %}
+                  <img
+                    src="{{ post.imageUrl }}"
+                    alt="{{ post.text | truncate(80) }}"
+                    class="{{ bentoImgH[loop.index0] }} w-full object-cover object-center"
+                  />
+                {% else %}
+                  <div class="{{ bentoImgH[loop.index0] }} w-full bg-{{ platformColor }}-100 flex items-center justify-center">
+                    <span class="text-{{ platformColor }}-300 text-6xl font-black select-none" aria-hidden="true">✦</span>
+                  </div>
+                {% endif %}
+              {% endif %}
+
+              <div class="p-6 pt-4 flex flex-col gap-2 {% if post.type == 'status' %}flex-1 justify-center{% endif %}">
+                <span class="text-xs font-semibold {% if post.type == 'status' %}text-glowyellowgreen-400{% else %}text-{{ platformColor }}-600{% endif %} uppercase tracking-widest">{{ post.type }}</span>
+                <p class="text-3xl {% if post.type == 'status' %}text-glowyellowgreen-500{% else %}text-gray-950{% endif %} line-clamp-5 ">{{ post.text | truncate(bentoCapLen[loop.index0]) }}</p>
+                <p class="text-4xl {% if post.type == 'status' %}text-glowyellowgreen-700{% else %}text-glowyellowgreen-500{% endif %} mt-auto pt-2">{{ post.date | date("LLL d, yyyy") }}</p>
+              </div>
+            </a>
+
+            <div class="pointer-events-none absolute inset-0 rounded-lg shadow-sm outline outline-black/5 {{ bentoOuterRound[loop.index0] }}"></div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
   </div>
-</div>
+</section>
+
+{% endif %}

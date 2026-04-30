@@ -8,6 +8,9 @@ https://coolors.co/f15022-e16f3d-ffcc71-554d1f-519e8a-581819-f590a0-64434c-efdb4
 */
 
 @theme {
+  --breakpoint-xs: 20rem;   /* 320px */
+  --breakpoint-ml: 60rem;   /* 960px */
+
   --color-golden-pollen-50: #fffbf5;
   --color-golden-pollen-100: #fff6e5;
   --color-golden-pollen-200: #ffeccc;

@@ -1,7 +1,7 @@
 const IG_USER_ID = '17841421490800808';
 const TOKEN = process.env.META_ACCESS_TOKEN;
 const API_VERSION = 'v21.0';
-const LIMIT = 6;
+const LIMIT = 15;
 
 const FIELDS = [
   'id',

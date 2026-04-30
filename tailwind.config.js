@@ -8,6 +8,7 @@ export default {
     extend: {
       screens: {
         'xs': '320px',
+        'ml': '960px',
       },
       fontFamily: {
         sans: ["Rubik", "ui-sans-serif", "system-ui", "sans-serif"],

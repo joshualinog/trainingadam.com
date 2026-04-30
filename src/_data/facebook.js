@@ -1,7 +1,7 @@
 const PAGE_ID = '426519330535482';
 const TOKEN = process.env.META_ACCESS_TOKEN;
 const API_VERSION = 'v21.0';
-const LIMIT = 6;
+const LIMIT = 15;
 
 const POST_FIELDS = [
   'id',
