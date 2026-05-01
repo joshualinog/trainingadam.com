@@ -1,6 +1,7 @@
 {% set postTags = post.data.tags or post.data.labels or [] %}
+{% set defaultImage = 'https://github.com/user-attachments/assets/3fc088e1-139e-4fe5-a0bf-e0567589c96f' %}
 
-<main class="overflow-hidden bg-white dark:bg-gray-900">
+<main class="overflow-hidden bg-white">
   <div class="relative mx-auto max-w-7xl">
     <div class="absolute -top-44 -right-60 h-60 w-80 rotate-[-10deg] rounded-full bg-linear-to-tr from-golden-pollen-200 via-cotton-candy-500 to-indigo-500 blur-3xl"></div>
   </div>
@@ -9,11 +10,11 @@
     <div class="mx-auto max-w-2xl lg:max-w-7xl">
       <header class="pt-12 sm:pt-16">
         <h2 class="mt-16 font-subheading text-xs font-semibold tracking-widest text-blazing-flame-500 uppercase">{{ post.data.date | date("EEEE, LLLL d, yyyy") }}</h2>
-        <h1 class="mt-2 text-4xl font-heading font-medium tracking-tight text-pretty text-seagrass-500 sm:text-6xl uppercase">{{ post.data.title }}</h1>
+        <h1 class="mt-2 text-4xl font-heading font-medium tracking-tight text-pretty text-mauve-shadow-500 sm:text-6xl uppercase">{{ post.data.title }}</h1>
       </header>
 
       <div class="mt-16 pb-24">
-        <article class="mx-auto w-full max-w-2xl text-gray-700 dark:text-gray-300">
+        <article class="mx-auto w-full max-w-2xl">
           <div class="mb-8 flex flex-wrap items-center gap-3">
             <a href="{{ post.data.raw_issue.url | default('/blog/') }}" class="font-subheading text-sm/5 font-semibold text-blazing-flame-500 hover:text-seagrass-700">{{ post.data.author | default('Training Adam') }}</a>
             {% if postTags.length %}
@@ -23,16 +24,53 @@
             {% endif %}
           </div>
 
-          {% if post.data.mainImage %}
-            <img alt="{{ post.data.title }}" class="mb-10 aspect-3/2 w-full rounded-2xl object-cover shadow-xl" src="{{ post.data.mainImage }}" />
-          {% endif %}
+          <img alt="{{ post.data.title }}" class="mb-10 aspect-3/2 w-full rounded-2xl object-cover shadow-xl" src="{{ post.data.mainImage | default(defaultImage, true) }}" />
 
-          <div class="prose prose-lg max-w-none text-lg font-bold text-pretty text-black sm:text-xl/8  ">
+          <div class="prose prose-lg max-w-none text-lg font-sans font-bold text-pretty text-mauve-shadow-500 sm:text-xl/8 prose-headings:font-heading prose-headings:text-mauve-shadow-500 prose-a:text-blazing-flame-500 prose-a:font-semibold prose-a:no-underline hover:prose-a:text-seagrass-700">
             {{ post.data.contentHtml | safe }}
           </div>
 
-          <div class="mt-10">
-            <a href="/blog/" class="inline-flex items-center justify-center rounded-lg border border-transparent px-3 py-2 text-2xl font-heading uppercase text-white bg-blazing-flame-500 hover:bg-seagrass-500">Back to blog</a>
+          <div class="mt-10 flex flex-wrap items-center gap-4">
+            <a href="/blog/" class="inline-flex items-center justify-center rounded-lg px-4 py-2 text-xl font-heading uppercase text-white bg-blazing-flame-500 hover:bg-seagrass-500 transition-colors">Back to blog</a>
+            <a id="share-twitter" href="#" target="_blank" rel="noopener noreferrer"
+               class="inline-flex items-center gap-2 rounded-lg bg-black px-4 py-2 text-sm font-subheading font-semibold text-white hover:bg-mauve-shadow-500 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.741l7.73-8.835L1.254 2.25H8.08l4.258 5.63 5.907-5.63Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              Share on X
+            </a>
+            <a id="share-facebook" href="#" target="_blank" rel="noopener noreferrer"
+               class="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-subheading font-semibold text-white hover:bg-blue-700 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              Share on Facebook
+            </a>
+          </div>
+          <script>
+            (function() {
+              var url = encodeURIComponent(location.href);
+              var title = encodeURIComponent(document.title);
+              document.getElementById('share-twitter').href = 'https://twitter.com/intent/tweet?url=' + url + '&text=' + title;
+              document.getElementById('share-facebook').href = 'https://www.facebook.com/sharer/sharer.php?u=' + url;
+            })();
+          </script>
+
+          <!-- Comments via Giscus (GitHub Discussions) -->
+          <!-- To activate: 1) Enable Discussions on your GitHub repo, 2) Visit https://giscus.app, enter joshualinog/trainingadam.com, and replace the REPLACE_WITH_* values below -->
+          <div class="mt-16 border-t border-mauve-shadow-500/20 pt-10">
+            <h2 class="mb-6 text-2xl font-heading font-semibold text-mauve-shadow-500">Comments</h2>
+            <script src="https://giscus.app/client.js"
+              data-repo="joshualinog/trainingadam.com"
+              data-repo-id="REPLACE_WITH_REPO_ID"
+              data-category="General"
+              data-category-id="REPLACE_WITH_CATEGORY_ID"
+              data-mapping="pathname"
+              data-strict="0"
+              data-reactions-enabled="1"
+              data-emit-metadata="0"
+              data-input-position="bottom"
+              data-theme="light"
+              data-lang="en"
+              crossorigin="anonymous"
+              async>
+            </script>
           </div>
         </article>
       </div>

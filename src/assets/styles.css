@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @source inline("bg-{golden-pollen,blazing-flame,burnt-peach,olive-bark,seagrass,night-bordeaux,cotton-candy,mauve-shadow,sunshine,glowyellowgreen}-{50,100,200,300,400,500,600,700,800,900}");
 @source inline("text-{golden-pollen,blazing-flame,burnt-peach,olive-bark,seagrass,night-bordeaux,cotton-candy,mauve-shadow,sunshine,glowyellowgreen}-{50,100,200,300,400,500,600,700,800,900}");
