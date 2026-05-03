@@ -4,7 +4,7 @@ const path = require('path');
 
 const CHANNEL_ID = 'UC0QvZbD75rCMc5yEJEamDAQ';
 const FEED_URL = `https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`;
-const CACHE_FILE = path.join(__dirname, 'videos-cache.json');
+const CACHE_FILE = path.join(__dirname, '..', '..', 'videos-cache.json');
 
 function fetchURL(url) {
   return new Promise((resolve, reject) => {
