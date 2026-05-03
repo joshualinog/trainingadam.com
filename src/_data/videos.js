@@ -1,7 +1,10 @@
 const https = require('https');
+const fs = require('fs');
+const path = require('path');
 
 const CHANNEL_ID = 'UC0QvZbD75rCMc5yEJEamDAQ';
 const FEED_URL = `https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`;
+const CACHE_FILE = path.join(__dirname, 'videos-cache.json');
 
 function fetchURL(url) {
   return new Promise((resolve, reject) => {
@@ -32,7 +35,7 @@ module.exports = async function () {
     const xml = await fetchURL(FEED_URL);
     const entries = [...xml.matchAll(/<entry>([\s\S]*?)<\/entry>/g)];
 
-    return entries.map(([, entry]) => {
+    const videos = entries.map(([, entry]) => {
       const videoId = extractTagContent(entry, 'yt:videoId');
       const title = extractTagContent(entry, 'title');
       const published = extractTagContent(entry, 'published');
@@ -51,8 +54,22 @@ module.exports = async function () {
         embedUrl: `https://www.youtube-nocookie.com/embed/${videoId}`,
       };
     });
+
+    // Update cache on successful fetch
+    try {
+      fs.writeFileSync(CACHE_FILE, JSON.stringify(videos, null, 2));
+    } catch (cacheErr) {
+      console.warn('[videos.js] Could not write cache:', cacheErr.message);
+    }
+
+    return videos;
   } catch (err) {
-    console.warn('[videos.js] YouTube RSS fetch failed:', err.message);
-    return [];
+    console.warn('[videos.js] YouTube RSS fetch failed, using cache:', err.message);
+    try {
+      return JSON.parse(fs.readFileSync(CACHE_FILE, 'utf8'));
+    } catch (cacheErr) {
+      console.warn('[videos.js] Cache also unavailable:', cacheErr.message);
+      return [];
+    }
   }
 };
