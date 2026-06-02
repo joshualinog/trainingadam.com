@@ -1,8 +1,8 @@
 {
   "name": "Shed Lite",
-  "tagline": "Building small sheds for hope",
+  "tagline": "The Shed Life: Let Your Light Shine",
   "domain": "shedlite.org",
-  "description": "Our Shed Lite initiative focuses on constructing small, affordable sheds to provide safe spaces for addicts and suffering people, helping them find peace and recovery.",
+  "description": "Shed Lite is a play on words — 'lite' for a small footprint, and 'light' for the light that shines. We take donated wooden sheds and convert them into a plethora of outdoor structures: greenhouses, man caves, she sheds, playhouses, outdoor rooms, meditation houses, camping cabins, and more. We also build shed-adjacent structures like benches that double as planters and vine trellises. We encourage the shed life — the simple, the small, the refurbished.",
   "gallery": [
     "shed1.jpg",
     "shed2.jpg",
@@ -13,29 +13,29 @@
   "contentSubHeading": "Discover our mission and the impact we're making",
   "projectFeatures": [
     {
-      "short": "A Shelter Built by Hand",
-      "description": "Every Shed Lite structure is assembled by volunteers from your community, turning lumber and love into a real place of refuge for someone in need.",
+      "short": "Convert Donated Sheds",
+      "description": "We receive donated framed wooden sheds and transform them into functional outdoor structures — greenhouses, she sheds, man caves, playhouses, meditation houses, outdoor entertaining rooms, and camping cabins.",
       "icon": "m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
     },
     {
-      "short": "Free to Those in Need",
-      "description": "We believe shelter should never be a barrier to healing. Shed Lite structures are provided at no cost to individuals walking through the hardest seasons of their lives.",
+      "short": "Live in the Garden",
+      "description": "We embody the permaculture philosophy that humans need to live in the garden and be outside even while in their structures. Shed Lite builds outdoor rooms that put people back in creation.",
       "icon": "m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
     },
     {
-      "short": "Dignity in Small Spaces",
-      "description": "A small, well-built shed gives a person something that addiction and hardship strips away — a space that is theirs, safe, and quiet enough to begin again.",
+      "short": "Small Footprint, Beautiful Purpose",
+      "description": "Our structures are intimate but functional, beautiful but multi-purpose. Benches double as planters and vine trellises. Every build decreases the human footprint while maximizing meaningful outdoor life.",
       "icon": "m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
     },
     {
-      "short": "Rooted in Community",
-      "description": "From material sourcing to the final nail, each project draws neighbors together around a shared purpose: that no one in our town should face suffering without a safe place to land.",
+      "short": "Refurbished and Restored",
+      "description": "We recycle and strengthen donated sheds, and accept donated building materials to build new structures. Nothing is wasted. Everything is made useful and beautiful again — the shed life!",
       "icon": "m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
     }
   ],
-  "missionTitle": "The Tiny Life as a Human Default",
-  "missionText1": "Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris semper sed amet vitae sed turpis id. Id dolor praesent donec est. Odio penatibus risus viverra tellus varius sit neque erat velit.",
-  "missionText2": "Et vitae blandit facilisi magna lacus commodo. Vitae sapien duis odio id et. Id blandit molestie auctor fermentum dignissim. Lacus diam tincidunt ac cursus in vel. Mauris varius vulputate et ultrices hac adipiscing egestas.",
+  "missionTitle": "The Simple, the Small, the Refurbished",
+  "missionText1": "Shed Lite sheds light on what is possible when we stop building bigger and start building better. Donated sheds, reclaimed materials, and volunteer hands become structures that serve real human needs — a place to grow, a place to rest, a place to be outside in the garden of life.",
+  "missionText2": "We encourage the shed life: a commitment to the small, the intimate, and the purposeful. Every structure we build or convert is a statement that humans thrive when they live lightly on the land, outside, in beauty, and in community.",
   "stats": {
     "raised": "250K",
     "companies": "5",
