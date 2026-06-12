@@ -1,0 +1,47 @@
+{
+  "name": "Trash to Treasure: Clean and Restored",
+  "tagline": "Turn discarded materials into restored community treasure",
+  "domain": "trashtotreasure.org",
+  "description": "Trash to Treasure turns items and spaces others discard into restored, beautiful resources for community reuse and regeneration.",
+  "contentSubHeading": "From trash to treasure-filled spaces",
+  "projectFeatures": [
+    {
+      "short": "Cleaner public spaces",
+      "description": "We pilot litter-removal, restorative planting, and welcoming street furniture to make streets safer and more inviting.",
+      "icon": "M12 6.75V4.5m0 15v-2.25m5.25-6.75H19.5M4.5 12h2.25"
+    },
+    {
+      "short": "Restored corridors",
+      "description": "Unsightly traffic zones become places to linger, meet, and discover local makers, artists, and food.",
+      "icon": "M9 12l3 3 3-3"
+    },
+    {
+      "short": "Treasure mapping",
+      "description": "We document community assets and hidden possibilities so every restoration project is anchored in local stories and care.",
+      "icon": "M12 9.75l3 3-3 3"
+    }
+  ],
+  "missionTitle": "Rediscover the treasure in everyday waste",
+  "missionText1": "Our work shows how small interventions and community care can turn discarded materials and neglected spaces into resources people love.",
+  "missionText2": "We support communities that want to restore what was thrown away, making beauty and utility out of trash.",
+  "stats": {
+    "raised": "12K",
+    "companies": "3",
+    "dealsClosed": "0",
+    "leadsGenerated": "22"
+  },
+  "cta": {
+    "heading": "Watch for Trash to Treasure",
+    "button1": "Get updates",
+    "button2": "Read the story"
+  },
+  "colors": {
+    "background": "night-bordeaux-500",
+    "mainHeading": "glowyellowgreen-500",
+    "body": "cotton-candy-300",
+    "accent": "burnt-peach-500",
+    "supportBg": "seagrass-500",
+    "supportText": "white",
+    "contrast": "white"
+  }
+}

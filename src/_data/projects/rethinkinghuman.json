@@ -1,0 +1,47 @@
+{
+  "name": "Rethinking Human",
+  "tagline": "A new story for how humans belong in community and ecosystem",
+  "domain": "rethinkinghuman.org",
+  "description": "Rethinking Human explores how our built systems, economies, and education can be redesigned so people thrive with more time, meaning, and ecological belonging.",
+  "contentSubHeading": "Designing humane systems for regenerative living",
+  "projectFeatures": [
+    {
+      "short": "Human-centered systems",
+      "description": "Create practices and places that support human dignity, shared responsibility, and collective learning instead of extraction.",
+      "icon": "M4.5 12.75l7.5 7.5 7.5-7.5"
+    },
+    {
+      "short": "Community rhythms",
+      "description": "Reimagine time, work, and play so communities can restore rest, participation, and ecological relationship.",
+      "icon": "M12 8.25v7.5m3.75-3.75h-7.5"
+    },
+    {
+      "short": "Practical guidance",
+      "description": "Build tools, stories, and learning experiences that make regenerative living easier for families and neighborhoods.",
+      "icon": "M6 12l6-6 6 6"
+    }
+  ],
+  "missionTitle": "A better human future starts with design",
+  "missionText1": "We are imagining the systems that support healthy families, meaningful work, and places where nature and culture can grow together.",
+  "missionText2": "This project is a call to rethink the rules of housing, education, and community so that people can belong without burning out the planet.",
+  "stats": {
+    "raised": "10K",
+    "companies": "2",
+    "dealsClosed": "0",
+    "leadsGenerated": "12"
+  },
+  "cta": {
+    "heading": "Stay tuned for Rethinking Human",
+    "button1": "Notify Me",
+    "button2": "Learn More"
+  },
+  "colors": {
+    "background": "white",
+    "mainHeading": "blazing-flame-500",
+    "body": "night-bordeaux-500",
+    "accent": "olive-bark-500",
+    "supportBg": "cotton-candy-500",
+    "supportText": "golden-pollen-500",
+    "contrast": "night-bordeaux-900"
+  }
+}

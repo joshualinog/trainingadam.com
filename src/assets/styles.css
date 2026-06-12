@@ -1,11 +1,11 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-@source inline("bg-{golden-pollen,blazing-flame,burnt-peach,olive-bark,seagrass,night-bordeaux,cotton-candy,mauve-shadow,sunshine,glowyellowgreen}-{50,100,200,300,400,500,600,700,800,900}");
-@source inline("text-{golden-pollen,blazing-flame,burnt-peach,olive-bark,seagrass,night-bordeaux,cotton-candy,mauve-shadow,sunshine,glowyellowgreen}-{50,100,200,300,400,500,600,700,800,900}");
+@source inline("bg-{golden-pollen,blazing-flame,burnt-peach,olive-bark,seagrass,night-bordeaux,cotton-candy,mauve-shadow,sunshine,glowyellowgreen,forest-moss}-{50,100,200,300,400,500,600,700,800,900,950}");
+@source inline("text-{golden-pollen,blazing-flame,burnt-peach,olive-bark,seagrass,night-bordeaux,cotton-candy,mauve-shadow,sunshine,glowyellowgreen,forest-moss}-{50,100,200,300,400,500,600,700,800,900,950}");
 
 /* 
-https://coolors.co/f15022-e16f3d-ffcc71-554d1f-519e8a-581819-f590a0-64434c-efdb44
+https://coolors.co/f15022-e16f3d-ffcc71-554d1f-519e8a-581819-f590a0-64434c-efdb44-5e7a25
 */
 
 @theme {
@@ -113,6 +113,17 @@ https://coolors.co/f15022-e16f3d-ffcc71-554d1f-519e8a-581819-f590a0-64434c-efdb4
   --color-glowyellowgreen-700: #bba028;
   --color-glowyellowgreen-800: #a1911a;
   --color-glowyellowgreen-900: #89710c;
+  --color-forest-moss-50: #f7faeb;
+  --color-forest-moss-100: #ebf3d4;
+  --color-forest-moss-200: #d9e8ae;
+  --color-forest-moss-300: #bfd87e;
+  --color-forest-moss-400: #a4c556;
+  --color-forest-moss-500: #86aa38;
+  --color-forest-moss-600: #5e7a25;
+  --color-forest-moss-700: #506823;
+  --color-forest-moss-800: #415321;
+  --color-forest-moss-900: #384720;
+  --color-forest-moss-950: #1c260d;
   --font-heading: "Darumadrop One", serif;
   --font-subheading: "Special Elite", serif;
   --font-sans: "Nunito Sans", ui-sans-serif, system-ui, sans-serif;
