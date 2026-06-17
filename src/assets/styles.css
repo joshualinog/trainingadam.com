@@ -3,6 +3,7 @@
 
 @source inline("bg-{golden-pollen,blazing-flame,burnt-peach,olive-bark,seagrass,night-bordeaux,cotton-candy,mauve-shadow,sunshine,glowyellowgreen,forest-moss}-{50,100,200,300,400,500,600,700,800,900,950}");
 @source inline("text-{golden-pollen,blazing-flame,burnt-peach,olive-bark,seagrass,night-bordeaux,cotton-candy,mauve-shadow,sunshine,glowyellowgreen,forest-moss}-{50,100,200,300,400,500,600,700,800,900,950}");
+@source inline("bg-seagrass-700 bg-night-bordeaux-500 bg-golden-pollen-500 bg-golden-pollen-600 bg-white");
 
 /* 
 https://coolors.co/f15022-e16f3d-ffcc71-554d1f-519e8a-581819-f590a0-64434c-efdb44-5e7a25
@@ -352,4 +353,7 @@ https://coolors.co/f15022-e16f3d-ffcc71-554d1f-519e8a-581819-f590a0-64434c-efdb4
   & .text-seagrass-600 {
     color: var(--color-blazing-flame-500);
   }
+}
+.branch-page {
+  background-color: var(--branch-page-bg, white);
 }

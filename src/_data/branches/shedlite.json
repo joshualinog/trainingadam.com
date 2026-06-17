@@ -10,6 +10,44 @@
     "shed4.jpg"
   ],
   "headingImage": "/assets/images/shedlitebannerimage.png",
+  "branchDonations": [
+    {
+      "image": "donation-sheds.jpg",
+      "name": "Sheds",
+      "short": "Donated sheds ready for conversion",
+      "description": "Give us your old or unwanted wooden shed and we will transform it into something beautiful — a greenhouse, playhouse, she shed, or outdoor room."
+    },
+    {
+      "image": "donation-lumber.jpg",
+      "name": "Wood and Lumber",
+      "short": "Framing, decking, and reclaimed wood",
+      "description": "Donate new or salvaged lumber, plywood, reclaimed boards, or dimensional framing stock so we can build and repair outdoor structures."
+    },
+    {
+      "image": "donation-hardware.jpg",
+      "name": "Hardware",
+      "short": "Fasteners, hinges, latches, and brackets",
+      "description": "Contribute screws, nails, bolts, hinges, door latches, and metal brackets — the small parts that hold every shed project together."
+    },
+    {
+      "image": "donation-tools.jpg",
+      "name": "Tools",
+      "short": "Hand and power tools for builds",
+      "description": "Donate drills, saws, levels, hammers, and other tools so our volunteer builders can work safely and efficiently on every project."
+    },
+    {
+      "image": "donation-furniture.jpg",
+      "name": "Outdoor Furniture",
+      "short": "Benches, chairs, and tables for outdoor spaces",
+      "description": "Give us outdoor furniture in any condition — we restore, repaint, and repurpose benches, chairs, and tables to furnish the spaces we build."
+    },
+    {
+      "image": "donation-greenhouses.jpg",
+      "name": "Greenhouses",
+      "short": "Greenhouse kits, panels, and frames",
+      "description": "Donate greenhouse kits, polycarbonate panels, old cold frames, or aluminum framing so we can build growing spaces for families and communities."
+    }
+  ],
   "contentSubHeading": "Discover our mission and the impact we're making",
   "branchFeatures": [
     {

@@ -4,6 +4,44 @@
   "domain": "growupandplay.org",
   "description": "Grow Up and Play combines child-led discovery, outdoor education, and community play to help young people develop confidence, creativity, and ecological awareness.",
   "contentSubHeading": "Healthy growth through play and outdoor learning",
+  "branchDonations": [
+    {
+      "image": "donation-playsets.jpg",
+      "name": "Playsets and Climbing Structures",
+      "short": "Outdoor play equipment for children",
+      "description": "Donate wooden or metal playsets, climbing frames, slides, and swings so children can explore freely in safe outdoor environments."
+    },
+    {
+      "image": "donation-art.jpg",
+      "name": "Art and Craft Supplies",
+      "short": "Materials for creative expression",
+      "description": "Contribute paint, clay, fabric, paper, and other art materials so children can express themselves and build creative confidence."
+    },
+    {
+      "image": "donation-books.jpg",
+      "name": "Children's Books",
+      "short": "Stories that spark curiosity and wonder",
+      "description": "Donate gently used children's books — especially nature, science, and storytelling titles that encourage reading and imagination."
+    },
+    {
+      "image": "donation-garden-kits.jpg",
+      "name": "Children's Garden Kits",
+      "short": "Grow-your-own kits for young gardeners",
+      "description": "Support child-led garden projects with seed kits, small tools, pots, and soil so every child can experience the joy of growing their own food."
+    },
+    {
+      "image": "donation-outdoor-gear.jpg",
+      "name": "Outdoor Gear",
+      "short": "Rain boots, hats, and adventure clothes",
+      "description": "Give gently used rain gear, sturdy shoes, sun hats, and outdoor clothing so no child misses a session due to weather or wardrobe."
+    },
+    {
+      "image": "donation-scholarship.jpg",
+      "name": "Program Scholarships",
+      "short": "Access for every child regardless of income",
+      "description": "Contribute to our scholarship fund so families facing financial barriers can still enroll their children in Grow Up and Play programs."
+    }
+  ],
   "branchFeatures": [
     {
       "short": "Play-rich design",

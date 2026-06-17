@@ -9,6 +9,44 @@
     "image3.jpg",
     "image4.jpg"
   ],
+  "branchDonations": [
+    {
+      "image": "donation-1.jpg",
+      "name": "Shed Materials",
+      "short": "Building supplies for shelter projects",
+      "description": "Donate wood, nails, and other materials to help us build safe, functional sheds for community use."
+    },
+    {
+      "image": "donation-2.jpg",
+      "name": "Outdoor Furniture",
+      "short": "Furniture for shared learning spaces",
+      "description": "Support the creation of outdoor meeting and classroom spaces with durable, comfortable furniture."
+    },
+    {
+      "image": "donation-3.jpg",
+      "name": "Gardening Tools",
+      "short": "Tools to grow and maintain food gardens",
+      "description": "Provide gardening tools and supplies so our branches can grow fresh food and teach hands-on skills."
+    },
+    {
+      "image": "donation-4.jpg",
+      "name": "Workshop Supplies",
+      "short": "Materials for practical learning workshops",
+      "description": "Help equip workshops with the tools and supplies needed for craft, repair, and skill-building sessions."
+    },
+    {
+      "image": "donation-5.jpg",
+      "name": "Technology Access",
+      "short": "Devices and connectivity for learning",
+      "description": "Donate laptops, tablets, and connectivity support so every branch can access digital learning resources."
+    },
+    {
+      "image": "donation-6.jpg",
+      "name": "Scholarship Fund",
+      "short": "Support for learners and community members",
+      "description": "Contribute to scholarships and program support to make branch education accessible to everyone."
+    }
+  ],
   "headingImage": "hero-image.jpg",
   "contentSubHeading": "Discover what makes this branch special",
   "branchFeatures": [

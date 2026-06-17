@@ -10,6 +10,44 @@
     "farm4.jpg"
   ],
   "headingImage": "/assets/images/tinyhealingbannerimage.png",
+  "branchDonations": [
+    {
+      "image": "donation-land.jpg",
+      "name": "Land or Property",
+      "short": "Space for a healing farm or garden",
+      "description": "Donate or lease land so we can establish a therapeutic farm where people can come to heal, grow food, and reconnect with the natural world."
+    },
+    {
+      "image": "donation-animals.jpg",
+      "name": "Farm Animals",
+      "short": "Gentle animals for therapeutic interaction",
+      "description": "Donate chickens, goats, rabbits, or other gentle animals that can be cared for as part of therapeutic farm routines and healing programs."
+    },
+    {
+      "image": "donation-seeds.jpg",
+      "name": "Seeds and Seedlings",
+      "short": "Plants that nourish body and spirit",
+      "description": "Contribute vegetable seeds, herb starts, and medicinal plant seedlings so our healing gardens stay full, productive, and diverse season to season."
+    },
+    {
+      "image": "donation-tools.jpg",
+      "name": "Farming Tools",
+      "short": "Equipment for therapeutic farm work",
+      "description": "Donate hoes, rakes, wheelbarrows, pruners, and other hand tools that make farm work accessible and enjoyable for program participants."
+    },
+    {
+      "image": "donation-building.jpg",
+      "name": "Building Materials",
+      "short": "Materials for tiny structures on the farm",
+      "description": "Give lumber, roofing, windows, or other salvaged building materials to help us construct small cabins, tool sheds, and sheltered gathering spaces."
+    },
+    {
+      "image": "donation-therapy.jpg",
+      "name": "Therapy Program Sponsorship",
+      "short": "Support access to healing for those in need",
+      "description": "Sponsor a participant in our therapeutic farming program — covering their costs so financial hardship is never a barrier to healing and growth."
+    }
+  ],
   "contentSubHeading": "Explore our healing practices and community initiatives",
   "branchFeatures": [
     {

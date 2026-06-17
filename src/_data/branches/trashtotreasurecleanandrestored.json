@@ -4,6 +4,44 @@
   "domain": "trashtotreasure.org",
   "description": "Trash to Treasure turns items and spaces others discard into restored, beautiful resources for community reuse and regeneration.",
   "contentSubHeading": "From trash to treasure-filled spaces",
+  "branchDonations": [
+    {
+      "image": "donation-furniture.jpg",
+      "name": "Furniture",
+      "short": "Pieces worth restoring and reusing",
+      "description": "Donate old chairs, tables, shelving, or cabinets in any condition — we strip, sand, restore, and repurpose them into beautiful functional pieces."
+    },
+    {
+      "image": "donation-paint.jpg",
+      "name": "Paint and Finishes",
+      "short": "Supplies for restoration and beautification",
+      "description": "Contribute leftover paint, varnish, stain, or wood finish so we can restore donated items and beautify community spaces with color and care."
+    },
+    {
+      "image": "donation-salvage.jpg",
+      "name": "Salvaged Materials",
+      "short": "Reclaimed wood, metal, glass, and tile",
+      "description": "Give us your salvaged architectural materials — old bricks, reclaimed wood, vintage tiles, or wrought iron — so nothing beautiful ends up in landfill."
+    },
+    {
+      "image": "donation-cleaning.jpg",
+      "name": "Cleaning Supplies",
+      "short": "Products for community clean-up efforts",
+      "description": "Donate gloves, bags, biodegradable cleaners, and litter-grabbing tools so our volunteer teams can tackle community clean-up days with the right equipment."
+    },
+    {
+      "image": "donation-tools.jpg",
+      "name": "Restoration Tools",
+      "short": "Hand and power tools for repair work",
+      "description": "Contribute sanders, drills, clamps, chisels, and other restoration tools so our team can repair and transform donated items efficiently."
+    },
+    {
+      "image": "donation-space.jpg",
+      "name": "Workshop or Storage Space",
+      "short": "Room to receive, sort, and restore donations",
+      "description": "Offer a garage, warehouse bay, or covered space where we can store incoming donations and carry out restoration work between events."
+    }
+  ],
   "branchFeatures": [
     {
       "short": "Cleaner public spaces",

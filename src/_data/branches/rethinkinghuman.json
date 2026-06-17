@@ -4,6 +4,44 @@
   "domain": "rethinkinghuman.org",
   "description": "Rethinking Human explores how our built systems, economies, and education can be redesigned so people thrive with more time, meaning, and ecological belonging.",
   "contentSubHeading": "Designing humane systems for regenerative living",
+  "branchDonations": [
+    {
+      "image": "donation-books.jpg",
+      "name": "Books and Publications",
+      "short": "Ideas that reshape how we think and live",
+      "description": "Donate books on ecology, philosophy, community design, or alternative economics that challenge assumptions and open new possibilities."
+    },
+    {
+      "image": "donation-workshop-space.jpg",
+      "name": "Workshop Space",
+      "short": "Venues for conversation and learning",
+      "description": "Offer a space — a living room, community hall, or outdoor area — where people can gather to explore regenerative ideas together."
+    },
+    {
+      "image": "donation-media.jpg",
+      "name": "Recording Equipment",
+      "short": "Tools to capture and share new stories",
+      "description": "Donate microphones, cameras, or editing equipment so we can record conversations, interviews, and educational content for wider reach."
+    },
+    {
+      "image": "donation-time.jpg",
+      "name": "Professional Time",
+      "short": "Skills, mentorship, and expertise",
+      "description": "Offer your professional time as a designer, facilitator, writer, or systems thinker to help shape curriculum and community programming."
+    },
+    {
+      "image": "donation-fund.jpg",
+      "name": "Research and Writing Fund",
+      "short": "Support for deep thinking and publishing",
+      "description": "Contribute to a fund that pays writers, researchers, and thinkers to develop long-form work on regenerative systems and human flourishing."
+    },
+    {
+      "image": "donation-events.jpg",
+      "name": "Event Sponsorship",
+      "short": "Bring people together around new ideas",
+      "description": "Sponsor a gathering, symposium, or public talk that helps communities explore what it means to live more humanely and ecologically."
+    }
+  ],
   "branchFeatures": [
     {
       "short": "Human-centered systems",

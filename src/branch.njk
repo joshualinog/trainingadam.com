@@ -6,7 +6,9 @@ pagination:
 permalink: "{{ branch.url }}"
 layout: layout.njk
 ---
-
+<main class="branch-page bg-{{ branch.colors.background }}">
+{% include "branch-section/branch-donate-feature.njk" %}
 {% include "branch-section/branch-section-heading.njk" %}
 {% include "branch-section/branch-section-content-preview.njk" %}
 {% include "branch-section/branch-section-cta.njk" %}
+</main>

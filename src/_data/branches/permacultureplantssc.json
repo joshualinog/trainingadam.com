@@ -10,6 +10,44 @@
     "plant4.jpg"
   ],
   "headingImage": "/assets/images/permaculturebannerimage.png",
+  "branchDonations": [
+    {
+      "image": "donation-trees.jpg",
+      "name": "Trees",
+      "short": "Fruit and shade trees for food forests",
+      "description": "Donate established or bare-root trees to help us plant permanent food forests that feed communities for generations."
+    },
+    {
+      "image": "donation-flowers.jpg",
+      "name": "Flowers",
+      "short": "Pollinator and medicinal flowers",
+      "description": "Contribute flower starts, bulbs, or seeds — especially native, medicinal, and pollinator-friendly varieties that support healthy ecosystems."
+    },
+    {
+      "image": "donation-land.jpg",
+      "name": "Land Plot",
+      "short": "Space to grow and demonstrate",
+      "description": "Offer a plot of land for a community demonstration garden or food forest that teaches permaculture to neighbors and visitors."
+    },
+    {
+      "image": "donation-seeds.jpg",
+      "name": "Seeds",
+      "short": "Open-pollinated and heirloom seeds",
+      "description": "Share seed packets from your own garden or unopened stock — especially open-pollinated varieties we can save and multiply year after year."
+    },
+    {
+      "image": "donation-soil.jpg",
+      "name": "Soil and Amendments",
+      "short": "Compost, mulch, and mineral inputs",
+      "description": "Donate compost, wood chips, straw, biochar, or mineral amendments to build living soil that grows resilient, productive plants."
+    },
+    {
+      "image": "donation-tools.jpg",
+      "name": "Tools",
+      "short": "Hand tools for garden and land work",
+      "description": "Donate shovels, pruners, broadforks, hoes, and other quality hand tools so our volunteers can work efficiently and safely."
+    }
+  ],
   "contentSubHeading": "Explore our sustainable practices and community initiatives",
   "branchFeatures": [
     {
