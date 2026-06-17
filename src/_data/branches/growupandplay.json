@@ -4,7 +4,7 @@
   "domain": "growupandplay.org",
   "description": "Grow Up and Play combines child-led discovery, outdoor education, and community play to help young people develop confidence, creativity, and ecological awareness.",
   "contentSubHeading": "Healthy growth through play and outdoor learning",
-  "projectFeatures": [
+  "branchFeatures": [
     {
       "short": "Play-rich design",
       "description": "We create safe, adventurous outdoor spaces that invite exploration, storytelling, and creative movement.",
@@ -22,7 +22,7 @@
     }
   ],
   "missionTitle": "Grow curious hearts and resilient learners",
-  "missionText1": "This project gives children the freedom to learn outdoors and the space to build confidence through play that feels meaningful and connected.",
+  "missionText1": "This branch gives children the freedom to learn outdoors and the space to build confidence through play that feels meaningful and connected.",
   "missionText2": "We support neighborhoods that want better ways for kids and adults to grow together without the pressure of screens or over-scheduled lives.",
   "stats": {
     "raised": "8K",

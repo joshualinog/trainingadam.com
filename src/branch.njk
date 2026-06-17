@@ -1,0 +1,12 @@
+---
+pagination:
+  data: branchPages
+  size: 1
+  alias: branch
+permalink: "{{ branch.url }}"
+layout: layout.njk
+---
+
+{% include "branch-section/branch-section-heading.njk" %}
+{% include "branch-section/branch-section-content-preview.njk" %}
+{% include "branch-section/branch-section-cta.njk" %}

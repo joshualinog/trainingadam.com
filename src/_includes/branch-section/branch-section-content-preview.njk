@@ -1,25 +1,25 @@
 <div class="overflow-hidden  py-24 sm:py-32 ">
   <div class="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
     <div class="max-w-4xl">
-      <p class="text-2xl font-subheading text-{{ project.colors.accent }}">This Initiative:</p>
-      <h1 class="mt-2 text-4xl font-heading font-semibold tracking-tight text-pretty text-{{ project.colors.mainHeading }} sm:text-5xl "> {{ project.tagline }}</h1>
-      <p class="mt-6 text-xl font-black  text-balance text-{{ project.colors.mainHeading }}">{{ project.description }}</p>
+      <p class="text-2xl font-subheading text-{{ branch.colors.accent }}">This Initiative:</p>
+      <h1 class="mt-2 text-4xl font-heading font-semibold tracking-tight text-pretty text-{{ branch.colors.mainHeading }} sm:text-5xl "> {{ branch.tagline }}</h1>
+      <p class="mt-6 text-xl font-black  text-balance text-{{ branch.colors.mainHeading }}">{{ branch.description }}</p>
     </div>
     <section class="mt-20 grid grid-cols-1 lg:grid-cols-2 lg:gap-x-8 lg:gap-y-16">
       <div class="lg:pr-8">
-        <h2 class="text-4xl uppercase font-hand font-black tracking-tight text-pretty text-{{ project.colors.accent }}">Our Goal is {{ project.missionTitle }}</h2>
+        <h2 class="text-4xl uppercase font-hand font-black tracking-tight text-pretty text-{{ branch.colors.accent }}">Our Goal is {{ branch.missionTitle }}</h2>
         <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
-          {% for feature in project.projectFeatures %}
+          {% for feature in branch.branchFeatures %}
           <div class="relative pl-16">
             <dt class="text-base/7 font-semibold text-gray-900 text-white">
-              <div class="absolute top-0 left-0 flex size-10 items-center justify-center rounded-lg bg-{{ project.colors.mainHeading }}">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6 text-{{ project.colors.background }}">
+              <div class="absolute top-0 left-0 flex size-10 items-center justify-center rounded-lg bg-{{ branch.colors.mainHeading }}">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6 text-{{ branch.colors.background }}">
                   <path d="{{ feature.icon }}" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
               </div>
-              <span class="font-subheading text-{{project.colors.accent}} text-2xl">{{ feature.short }}</span>
+              <span class="font-subheading text-{{branch.colors.accent}} text-2xl">{{ feature.short }}</span>
             </dt>
-            <dd class="mt-2 text-base/7  text-{{ project.colors.mainHeading }} font-bold">{{ feature.description }}</dd>
+            <dd class="mt-2 text-base/7  text-{{ branch.colors.mainHeading }} font-bold">{{ feature.description }}</dd>
           </div>
           {% endfor %}
         </dl>
@@ -41,24 +41,24 @@
         </div>
       </div> -->
       <div class="max-lg:mt-16 lg:col-span-1">
-        <p class="text-6xl font-heading uppercase text-{{ project.colors.accent }}">Our Number Goals</p>
+        <p class="text-6xl font-heading uppercase text-{{ branch.colors.accent }}">Our Number Goals</p>
         <hr class="mt-6 border-t border-gray-200 border-gray-700" />
         <dl class="mt-6 grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-2">
           <div class="flex flex-col gap-y-2 border-b border-dotted border-gray-200 pb-4 border-gray-700">
-            <dt class="text-lg font-subheading font-semibold text-{{ project.colors.accent}}">To Raise</dt>
-            <dd class="order-first font-hand text-8xl font-semibold tracking-tight text-{{ project.colors.mainHeading }}">$<span>{{ project.stats.raised }}</span></dd>
+            <dt class="text-lg font-subheading font-semibold text-{{ branch.colors.accent}}">To Raise</dt>
+            <dd class="order-first font-hand text-8xl font-semibold tracking-tight text-{{ branch.colors.mainHeading }}">$<span>{{ branch.stats.raised }}</span></dd>
           </div>
           <div class="flex flex-col gap-y-2 border-b border-dotted border-gray-200 pb-4 border-gray-700">
-            <dt class="text-lg font-subheading font-semibold text-{{ project.colors.accent}}">Company Sponsors</dt>
-            <dd class="order-first font-hand text-8xl font-semibold tracking-tight text-{{ project.colors.mainHeading }}"><span>{{ project.stats.companies }}</span></dd>
+            <dt class="text-lg font-subheading font-semibold text-{{ branch.colors.accent}}">Company Sponsors</dt>
+            <dd class="order-first font-hand text-8xl font-semibold tracking-tight text-{{ branch.colors.mainHeading }}"><span>{{ branch.stats.companies }}</span></dd>
           </div>
           <div class="flex flex-col gap-y-2 max-sm:border-b max-sm:border-dotted max-sm:border-gray-200 max-sm:pb-4 max-sm:border-gray-700">
-            <dt class="text-lg font-subheading font-semibold text-{{ project.colors.accent}}">Projects Completed</dt>
-            <dd class="order-first font-hand text-8xl font-semibold tracking-tight text-{{ project.colors.mainHeading }}"><span>{{ project.stats.dealsClosed }}</span></dd>
+            <dt class="text-lg font-subheading font-semibold text-{{ branch.colors.accent}}">Branches Completed</dt>
+            <dd class="order-first font-hand text-8xl font-semibold tracking-tight text-{{ branch.colors.mainHeading }}"><span>{{ branch.stats.dealsClosed }}</span></dd>
           </div>
           <div class="flex flex-col gap-y-2">
-            <dt class="text-lg font-subheading font-semibold text-{{ project.colors.accent}}">Volunteers</dt>
-            <dd class="order-first font-hand text-8xl font-semibold tracking-tight text-{{ project.colors.mainHeading }}"><span>{{ project.stats.leadsGenerated }}</span></dd>
+            <dt class="text-lg font-subheading font-semibold text-{{ branch.colors.accent}}">Volunteers</dt>
+            <dd class="order-first font-hand text-8xl font-semibold tracking-tight text-{{ branch.colors.mainHeading }}"><span>{{ branch.stats.leadsGenerated }}</span></dd>
           </div>
         </dl>
       </div>

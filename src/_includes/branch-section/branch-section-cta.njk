@@ -1,0 +1,14 @@
+<div class="">
+  <div class="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:flex lg:items-center lg:justify-between lg:px-8">
+    <h2 class="max-w-2xl text-4xl font-heading  tracking-tight sm:text-5xl text-{{ branch.colors.mainHeading }}">
+      {{ branch.cta.heading }}
+    </h2>
+    <div class="mt-10 flex items-center gap-x-6 lg:mt-0 lg:shrink-0">
+      <a href="#contact" data-initiative="{{ branch.name | slug }}" class="rounded-md bg-{{branch.colors.accent}} px-3.5 py-2.5 text-lg font-black font-subheading text-white shadow-xs hover:bg-{{branch.colors.accent}} focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-{{branch.colors.accent}} bg-{{branch.colors.accent}} shadow-none hover:bg-{{branch.colors.accent}} focus-visible:outline-{{branch.colors.accent}}"> {{ branch.cta.button1 }} </a>
+      <a href="#" class="text-lg font-subheading font-black text-gray-900 hover:opacity-80 text-gray-100">
+        {{ branch.cta.button2 }}
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+</div>

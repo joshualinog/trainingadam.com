@@ -4,7 +4,7 @@
   "domain": "trashtotreasure.org",
   "description": "Trash to Treasure turns items and spaces others discard into restored, beautiful resources for community reuse and regeneration.",
   "contentSubHeading": "From trash to treasure-filled spaces",
-  "projectFeatures": [
+  "branchFeatures": [
     {
       "short": "Cleaner public spaces",
       "description": "We pilot litter-removal, restorative planting, and welcoming street furniture to make streets safer and more inviting.",
@@ -17,7 +17,7 @@
     },
     {
       "short": "Treasure mapping",
-      "description": "We document community assets and hidden possibilities so every restoration project is anchored in local stories and care.",
+      "description": "We document community assets and hidden possibilities so every restoration branch is anchored in local stories and care.",
       "icon": "M12 9.75l3 3-3 3"
     }
   ],

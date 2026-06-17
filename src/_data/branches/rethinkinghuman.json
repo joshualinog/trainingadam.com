@@ -4,7 +4,7 @@
   "domain": "rethinkinghuman.org",
   "description": "Rethinking Human explores how our built systems, economies, and education can be redesigned so people thrive with more time, meaning, and ecological belonging.",
   "contentSubHeading": "Designing humane systems for regenerative living",
-  "projectFeatures": [
+  "branchFeatures": [
     {
       "short": "Human-centered systems",
       "description": "Create practices and places that support human dignity, shared responsibility, and collective learning instead of extraction.",
@@ -23,7 +23,7 @@
   ],
   "missionTitle": "A better human future starts with design",
   "missionText1": "We are imagining the systems that support healthy families, meaningful work, and places where nature and culture can grow together.",
-  "missionText2": "This project is a call to rethink the rules of housing, education, and community so that people can belong without burning out the planet.",
+  "missionText2": "This branch is a call to rethink the rules of housing, education, and community so that people can belong without burning out the planet.",
   "stats": {
     "raised": "10K",
     "companies": "2",

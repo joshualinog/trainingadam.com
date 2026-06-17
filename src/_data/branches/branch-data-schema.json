@@ -1,8 +1,8 @@
 {
-  "name": "Dummy Project Name",
-  "tagline": "A catchy tagline for the project",
-  "domain": "dummyproject.com",
-  "description": "This is a dummy description for the project, explaining its purpose and goals in a few sentences.",
+  "name": "Dummy Branch Name",
+  "tagline": "A catchy tagline for the branch",
+  "domain": "dummybranch.com",
+  "description": "This is a dummy description for the branch, explaining its purpose and goals in a few sentences.",
   "gallery": [
     "image1.jpg",
     "image2.jpg",
@@ -10,8 +10,8 @@
     "image4.jpg"
   ],
   "headingImage": "hero-image.jpg",
-  "contentSubHeading": "Discover what makes this project special",
-  "projectFeatures": [
+  "contentSubHeading": "Discover what makes this branch special",
+  "branchFeatures": [
     {
       "short": "Feature One",
       "description": "Detailed description of the first feature, highlighting its benefits and how it works.",

@@ -1,5 +1,5 @@
 {
-  "name": "Tiny Village Healing Farms",
+  "name": "Tiny Village Healing Human Farms",
   "tagline": "Healing through sustainable farming",
   "domain": "tinyvillagehealingfarms.org",
   "description": "Tiny Village Healing Farms provides therapeutic farming experiences that promote mental health, community building, and sustainable agriculture practices for healing and growth.",
@@ -11,7 +11,7 @@
   ],
   "headingImage": "/assets/images/tinyhealingbannerimage.png",
   "contentSubHeading": "Explore our healing practices and community initiatives",
-  "projectFeatures": [
+  "branchFeatures": [
     {
       "short": "Heal on the Land",
       "description": "Working with soil, plants, and seasons is one of the oldest forms of therapy known to humanity. Our farm creates structured time outdoors that settles the nervous system and restores hope.",
