@@ -2,6 +2,196 @@
 title: Walk-N-Talk - Father and Son
 layout: layout.njk
 bodyClass: walk-n-talk-page
+permalink: /walk-n-talk/
 ---
 
-<H1>Walk-N-Talk - Father and Son</H1>
+{# ── Floating Shoe (scroll-driven parallax) ── #}
+<div id="floating-shoe" aria-hidden="true" class="pointer-events-none fixed right-4 top-24 z-20 w-24 sm:w-32 opacity-90 transition-transform duration-75 ease-linear">
+  <img src="/assets/images/hoka-shoe.png.png" alt="" class="w-full drop-shadow-xl rotate-[-15deg] mix-blend-multiply">
+</div>
+
+<main class="overflow-x-hidden">
+
+  {# ── HERO ── #}
+  <section class="relative min-h-screen bg-golden-pollen-600 flex flex-col items-center justify-center text-center px-6 pt-28 pb-20 overflow-hidden">
+    {# background blobs mirroring the poster's pink clouds #}
+    <div class="absolute -top-16 -left-16 w-64 h-64 bg-cotton-candy-300 rounded-full opacity-50 blur-3xl"></div>
+    <div class="absolute top-8 -right-12 w-48 h-48 bg-cotton-candy-400 rounded-full opacity-40 blur-2xl"></div>
+    <div class="absolute bottom-0 left-1/3 w-56 h-40 bg-seagrass-400 rounded-full opacity-30 blur-3xl"></div>
+
+    <p class="font-subheading text-seagrass-700 tracking-widest uppercase text-sm mb-3">father &amp; son</p>
+    <h1 class="font-heading text-6xl sm:text-8xl text-white drop-shadow-lg leading-none mb-4">
+      Walk-N-Talk
+    </h1>
+    <p class="font-subheading text-xl sm:text-2xl text-olive-bark-800 max-w-sm mx-auto mb-10">
+      Two people. Two shoes. One long conversation.
+    </p>
+
+    <img
+      src="https://github.com/user-attachments/assets/0f102a6c-b56f-463d-be00-15d660cf77a9"
+      alt="Walk-N-Talk Father and Son poster"
+      class="w-64 sm:w-80 rounded-2xl shadow-2xl border-4 border-white/40 mx-auto"
+    >
+
+    <a href="#say-hi" class="mt-10 inline-block bg-seagrass-600 hover:bg-seagrass-700 text-white font-subheading tracking-wide px-8 py-3 rounded-full shadow-lg transition-colors">
+      Say Hi ↓
+    </a>
+  </section>
+
+  {# ── SAY HI FORM ── #}
+  <section id="say-hi" class="bg-blazing-flame-500 py-20 px-6">
+    <div class="max-w-xl mx-auto">
+      <h2 class="font-heading text-4xl sm:text-5xl text-white text-center mb-2">Say Hi</h2>
+      <p class="font-subheading text-golden-pollen-200 text-center mb-10">
+        Caught us on the road? Drop a note — it'll show up in the feed below.
+      </p>
+
+      <form id="say-hi-form" action="https://api.web3forms.com/submit" method="POST" class="space-y-4 bg-white/10 backdrop-blur rounded-2xl p-6 sm:p-8">
+        {# Replace with your Web3Forms access key from https://web3forms.com #}
+        <input type="hidden" name="access_key" value="3a8508cf-c77a-4cee-bc21-78bdab4fbe93">
+        <input type="hidden" name="subject" value="Walk-N-Talk Say Hi">
+        <input type="hidden" name="redirect" value="https://trainingadam.com/walk-n-talk/?thanks=1">
+
+        <div>
+          <label for="wnt-name" class="block font-subheading text-white mb-1">Name</label>
+          <input
+            id="wnt-name"
+            type="text"
+            name="name"
+            required
+            autocomplete="name"
+            placeholder="Your name"
+            class="w-full rounded-lg px-4 py-3 bg-white/20 text-white placeholder-white/50 border border-white/30 focus:outline-none focus:ring-2 focus:ring-white/60"
+          >
+        </div>
+
+        <div>
+          <label for="wnt-message" class="block font-subheading text-white mb-1">Message</label>
+          <textarea
+            id="wnt-message"
+            name="message"
+            required
+            rows="3"
+            placeholder="Just walking by? Leave a thought."
+            class="w-full rounded-lg px-4 py-3 bg-white/20 text-white placeholder-white/50 border border-white/30 focus:outline-none focus:ring-2 focus:ring-white/60 resize-none"
+          ></textarea>
+        </div>
+
+        <button
+          type="submit"
+          class="w-full bg-golden-pollen-500 hover:bg-golden-pollen-600 text-olive-bark-900 font-heading text-xl py-3 rounded-full shadow-lg transition-colors"
+        >
+          Send it
+        </button>
+      </form>
+
+      {# Thanks message shown after redirect #}
+      <p id="thanks-msg" class="hidden font-subheading text-center text-golden-pollen-200 mt-6 text-lg">
+        Thanks for saying hi! Your message is on its way. 👋
+      </p>
+    </div>
+  </section>
+
+  {# ── STREET FEED ── #}
+  <section class="bg-golden-pollen-500 py-20 px-6">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="font-heading text-4xl sm:text-5xl text-night-bordeaux-500 text-center mb-2">Street Feed</h2>
+      <p class="font-subheading text-olive-bark-700 text-center mb-10">
+        Messages from the road — from us and from you.
+      </p>
+
+      <div id="street-feed" class="space-y-4">
+        <p class="font-subheading text-center text-olive-bark-600 animate-pulse">Loading messages…</p>
+      </div>
+    </div>
+  </section>
+
+  {# ── DEEP DIVE ── #}
+  <section class="bg-seagrass-700 py-20 px-6">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="font-heading text-4xl sm:text-5xl text-golden-pollen-400 mb-4">Why Walk?</h2>
+      <p class="font-subheading text-seagrass-100 text-lg leading-relaxed mb-6">
+        Walk-N-Talk is part of the <span class="text-golden-pollen-300 font-bold">ReTHINK Human</span> initiative
+        at Training Adam — a spiritual non-profit replanting humanity one step at a time.
+      </p>
+      <p class="font-subheading text-seagrass-200 leading-relaxed mb-6">
+        Ancient footpaths weren't just routes — they were the original internet. Places where ideas, goods,
+        and stories moved between people. We're reviving that. A father and son, shoes on pavement,
+        carrying a question: <em>what does it mean to be human?</em>
+      </p>
+      <a href="/about/" class="inline-block bg-golden-pollen-500 hover:bg-golden-pollen-400 text-olive-bark-900 font-heading text-lg px-8 py-3 rounded-full shadow transition-colors">
+        Learn About Training Adam
+      </a>
+    </div>
+  </section>
+
+</main>
+
+{# ── SCRIPTS ── #}
+<script>
+(function () {
+  // ── Feed (GitHub issue comments) ──────────────────────────────────────────
+  // Create a dedicated public GitHub issue for the Walk-N-Talk street feed,
+  // then set FEED_ISSUE_NUMBER to that issue's number.
+  var OWNER = 'joshualinog';
+  var REPO  = 'trainingadam.com';
+  var FEED_ISSUE_NUMBER = 55;
+  var AUTHOR_HANDLE = 'joshualinog';
+
+  fetch('https://api.github.com/repos/' + OWNER + '/' + REPO + '/issues/' + FEED_ISSUE_NUMBER + '/comments')
+    .then(function(res) { return res.json(); })
+    .then(function(comments) {
+      var feed = document.getElementById('street-feed');
+      if (!comments.length) {
+        feed.innerHTML = '<p class="font-subheading text-center text-olive-bark-600">No messages yet — be the first!</p>';
+        return;
+      }
+      var isOfficial = function(login) { return login === AUTHOR_HANDLE; };
+      feed.innerHTML = comments.map(function(c) {
+        var official = isOfficial(c.user.login);
+        var cardClass = official
+          ? 'bg-night-bordeaux-500 text-white border-l-4 border-golden-pollen-400'
+          : 'bg-white/70 text-olive-bark-900 border-l-4 border-seagrass-400';
+        var badge = official
+          ? '<span class="text-xs font-subheading bg-golden-pollen-400 text-olive-bark-900 px-2 py-0.5 rounded-full ml-2">Father &amp; Son</span>'
+          : '';
+        var author = official ? 'Father &amp; Son' : c.user.login;
+        var time = new Date(c.created_at).toLocaleString();
+        // Simple HTML strip for safety — only render plain text from comments
+        var body = c.body
+          .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+          .replace(/\n/g,'<br>');
+        return '<div class="' + cardClass + ' rounded-xl p-4 shadow">'
+          + '<div class="flex items-center gap-2 mb-2">'
+          + '<strong class="font-subheading">' + author + '</strong>' + badge
+          + '<span class="ml-auto text-xs opacity-60">' + time + '</span>'
+          + '</div>'
+          + '<p class="text-sm leading-relaxed">' + body + '</p>'
+          + '</div>';
+      }).join('');
+    })
+    .catch(function() {
+      document.getElementById('street-feed').innerHTML =
+        '<p class="font-subheading text-center text-olive-bark-600">Could not load messages right now.</p>';
+    });
+
+  // ── Thanks message on redirect ─────────────────────────────────────────────
+  if (window.location.search.includes('thanks=1')) {
+    var msg = document.getElementById('thanks-msg');
+    if (msg) { msg.classList.remove('hidden'); }
+  }
+
+  // ── Scroll-driven shoe parallax ───────────────────────────────────────────
+  var shoe = document.getElementById('floating-shoe');
+  if (shoe) {
+    window.addEventListener('scroll', function() {
+      var scrolled = window.scrollY;
+      var maxScroll = document.body.scrollHeight - window.innerHeight;
+      var pct = maxScroll > 0 ? scrolled / maxScroll : 0;
+      var translateY = pct * 60; // vh units approximated in px by viewport
+      var rotate = -15 + pct * 30;
+      shoe.style.transform = 'translateY(' + (pct * window.innerHeight * 0.6) + 'px) rotate(' + rotate + 'deg)';
+    }, { passive: true });
+  }
+})();
+</script>
