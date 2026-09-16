@@ -41,25 +41,19 @@ function isShorts(url) {
   }
 }
 
-function embedYouTube(html) {
-  // Replace paragraph blocks containing only a link with a click-to-play facade embed.
-  // Keep this broad and validate URL/ID in code so we don't miss valid YouTube variants.
-  return html.replace(
-    /<p>\s*<a[^>]*href="([^"]+)"[^>]*>[^<]*<\/a>\s*<\/p>/g,
-    (match, url) => {
-      const id = extractYouTubeId(url);
-      if (!id) return match;
+function renderYouTubeFigure(url) {
+  const id = extractYouTubeId(url);
+  if (!id) return null;
 
-      const shorts = isShorts(url);
-      const aspectClass = shorts ? 'aspect-[9/16] max-w-xs mx-auto' : 'aspect-video w-full';
-      const watchUrl = shorts
-        ? `https://www.youtube.com/shorts/${id}`
-        : `https://www.youtube.com/watch?v=${id}`;
-      const thumbnail = `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
-      const embedSrc = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1`;
+  const shorts = isShorts(url);
+  const aspectClass = shorts ? 'aspect-[9/16] max-w-xs mx-auto' : 'aspect-video w-full';
+  const watchUrl = shorts
+    ? `https://www.youtube.com/shorts/${id}`
+    : `https://www.youtube.com/watch?v=${id}`;
+  const thumbnail = `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
+  const embedSrc = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1`;
 
-      // Facade: show thumbnail + play button; click swaps in the iframe (autoplay)
-      return `<figure class="my-8 not-prose">
+  return `<figure class="my-8 not-prose">
   <div class="relative ${aspectClass} rounded-xl overflow-hidden bg-black cursor-pointer group"
        onclick="var d=this;d.innerHTML='<iframe class=\\'absolute inset-0 w-full h-full\\' src=\\'${embedSrc}\\' allow=\\'autoplay;accelerometer;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share\\' allowfullscreen frameborder=\\'0\\'></iframe>'">
     <img src="${thumbnail}" alt="YouTube video" class="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity" loading="lazy" />
@@ -71,8 +65,19 @@ function embedYouTube(html) {
   </div>
   <figcaption class="mt-2 text-center"><a href="${watchUrl}" target="_blank" rel="noopener noreferrer" class="text-sm text-blazing-flame-500 hover:underline">Watch on YouTube ↗</a></figcaption>
 </figure>`;
-    }
-  );
+}
+
+function embedYouTube(html) {
+  // Convert YouTube links anywhere in HTML anchors, not just standalone link paragraphs.
+  // 1) If a paragraph contains only a YouTube anchor, replace the whole paragraph with a figure.
+  // 2) Otherwise replace individual YouTube anchors inline with the figure.
+  const paraOnlyLink = /<p>\s*<a[^>]*href="([^"]+)"[^>]*>[^<]*<\/a>\s*<\/p>/g;
+  let out = html.replace(paraOnlyLink, (match, url) => renderYouTubeFigure(url) || match);
+
+  const anyAnchor = /<a[^>]*href="([^"]+)"[^>]*>[^<]*<\/a>/g;
+  out = out.replace(anyAnchor, (match, url) => renderYouTubeFigure(url) || match);
+
+  return out;
 }
 const POSTS_DIR = path.join(__dirname, '..', 'data', 'posts');
 
