@@ -6,12 +6,32 @@ const MarkdownIt = require('markdown-it');
 const md = new MarkdownIt({ html: true, linkify: true });
 
 function extractYouTubeId(url) {
-  const m = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|shorts\/|embed\/))([a-zA-Z0-9_-]{11})/);
-  return m ? m[1] : null;
+  try {
+    const u = new URL(url);
+    const host = u.hostname.replace(/^www\./, '').replace(/^m\./, '');
+    const parts = u.pathname.split('/').filter(Boolean);
+
+    if (host === 'youtu.be' && parts[0]) {
+      const id = parts[0].slice(0, 11);
+      return /^[a-zA-Z0-9_-]{11}$/.test(id) ? id : null;
+    }
+
+    if (host.endsWith('youtube.com') || host.endsWith('youtube-nocookie.com')) {
+      if (parts[0] === 'watch') {
+        const v = u.searchParams.get('v');
+        return v && /^[a-zA-Z0-9_-]{11}$/.test(v) ? v : null;
+      }
+      if ((parts[0] === 'shorts' || parts[0] === 'embed') && parts[1]) {
+        return /^[a-zA-Z0-9_-]{11}$/.test(parts[1]) ? parts[1] : null;
+      }
+    }
+  } catch (_) {}
+
+  return null;
 }
 
 function isShorts(url) {
-  return /youtube\.com\/shorts\//.test(url);
+  return /(?:youtube\.com|youtu\.be)\/shorts\//.test(url);
 }
 
 function embedYouTube(html) {
@@ -31,7 +51,7 @@ function embedYouTube(html) {
       // Facade: show thumbnail + play button; click swaps in the iframe (autoplay)
       return `<figure class="my-8 not-prose">
   <div class="relative ${aspectClass} rounded-xl overflow-hidden bg-black cursor-pointer group"
-       onclick="var d=this;d.innerHTML='<iframe class=\\'absolute inset-0 w-full h-full\\' src=\\'${embedSrc}\\' allow=\\'autoplay;accelerometer;clipboard-write;encrypted-media;gyroscope;picture-in-picture\\' allowfullscreen></iframe>'">
+       onclick="var d=this;d.innerHTML='<iframe class=\\'absolute inset-0 w-full h-full\\' src=\\'${embedSrc}\\' allow=\\'autoplay;accelerometer;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share\\' allowfullscreen frameborder=\\'0\\'></iframe>'">
     <img src="${thumbnail}" alt="YouTube video" class="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity" loading="lazy" />
     <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
       <div class="rounded-full bg-black/60 p-4 group-hover:bg-blazing-flame-500 transition-colors">
