@@ -31,16 +31,25 @@ function extractYouTubeId(url) {
 }
 
 function isShorts(url) {
-  return /(?:youtube\.com|youtu\.be)\/shorts\//.test(url);
+  try {
+    const u = new URL(url);
+    const host = u.hostname.replace(/^www\./, '').replace(/^m\./, '');
+    const parts = u.pathname.split('/').filter(Boolean);
+    return (host.endsWith('youtube.com') || host === 'youtu.be') && parts[0] === 'shorts';
+  } catch (_) {
+    return /(?:youtube\.com|youtu\.be)\/shorts\//.test(url);
+  }
 }
 
 function embedYouTube(html) {
-  // Replace <p> tags containing only a YouTube link with a click-to-play facade embed
+  // Replace paragraph blocks containing only a link with a click-to-play facade embed.
+  // Keep this broad and validate URL/ID in code so we don't miss valid YouTube variants.
   return html.replace(
-    /<p><a[^>]+href="(https?:\/\/(?:www\.)?(?:youtu\.be|youtube\.com)[^"]+)"[^>]*>[^<]*<\/a><\/p>/g,
+    /<p>\s*<a[^>]*href="([^"]+)"[^>]*>[^<]*<\/a>\s*<\/p>/g,
     (match, url) => {
       const id = extractYouTubeId(url);
       if (!id) return match;
+
       const shorts = isShorts(url);
       const aspectClass = shorts ? 'aspect-[9/16] max-w-xs mx-auto' : 'aspect-video w-full';
       const watchUrl = shorts
@@ -48,6 +57,7 @@ function embedYouTube(html) {
         : `https://www.youtube.com/watch?v=${id}`;
       const thumbnail = `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
       const embedSrc = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1`;
+
       // Facade: show thumbnail + play button; click swaps in the iframe (autoplay)
       return `<figure class="my-8 not-prose">
   <div class="relative ${aspectClass} rounded-xl overflow-hidden bg-black cursor-pointer group"
