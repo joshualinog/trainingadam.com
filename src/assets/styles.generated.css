@@ -2461,6 +2461,9 @@
   .pt-28 {
     padding-top: calc(var(--spacing) * 28);
   }
+  .pt-32 {
+    padding-top: calc(var(--spacing) * 32);
+  }
   .pr-6 {
     padding-right: calc(var(--spacing) * 6);
   }
@@ -3291,6 +3294,49 @@
       }
     }
   }
+  .first-letter\:float-left {
+    &::first-letter {
+      float: left;
+    }
+  }
+  .first-letter\:mr-3 {
+    &::first-letter {
+      margin-right: calc(var(--spacing) * 3);
+    }
+  }
+  .first-letter\:font-heading {
+    &::first-letter {
+      font-family: var(--font-heading);
+    }
+  }
+  .first-letter\:text-8xl {
+    &::first-letter {
+      font-size: var(--text-8xl);
+      line-height: var(--tw-leading, var(--text-8xl--line-height));
+    }
+  }
+  .first-letter\:leading-\[0\.8\] {
+    &::first-letter {
+      --tw-leading: 0.8;
+      line-height: 0.8;
+    }
+  }
+  .first-letter\:text-blazing-flame-500 {
+    &::first-letter {
+      color: var(--color-blazing-flame-500);
+    }
+  }
+  .first-line\:tracking-widest {
+    &::first-line {
+      --tw-tracking: var(--tracking-widest);
+      letter-spacing: var(--tracking-widest);
+    }
+  }
+  .first-line\:uppercase {
+    &::first-line {
+      text-transform: uppercase;
+    }
+  }
   .placeholder\:text-gray-400 {
     &::-moz-placeholder {
       color: var(--color-gray-400);
@@ -3395,6 +3441,13 @@
       background-color: var(--color-seagrass-500);
     }
   }
+  .hover\:bg-blazing-flame-600 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-blazing-flame-600);
+      }
+    }
+  }
   .hover\:bg-blue-700 {
     &:hover {
       @media (hover: hover) {
@@ -3493,6 +3546,13 @@
     &:hover {
       @media (hover: hover) {
         color: var(--color-blazing-flame-500);
+      }
+    }
+  }
+  .hover\:text-blazing-flame-700 {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-blazing-flame-700);
       }
     }
   }
@@ -3848,6 +3908,11 @@
       padding-top: calc(var(--spacing) * 32);
     }
   }
+  .sm\:pt-40 {
+    @media (width >= 40rem) {
+      padding-top: calc(var(--spacing) * 40);
+    }
+  }
   .sm\:pb-24 {
     @media (width >= 40rem) {
       padding-bottom: calc(var(--spacing) * 24);
@@ -3868,6 +3933,12 @@
     @media (width >= 40rem) {
       font-size: var(--text-3xl);
       line-height: var(--tw-leading, var(--text-3xl--line-height));
+    }
+  }
+  .sm\:text-4xl {
+    @media (width >= 40rem) {
+      font-size: var(--text-4xl);
+      line-height: var(--tw-leading, var(--text-4xl--line-height));
     }
   }
   .sm\:text-5xl {
