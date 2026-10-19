@@ -10,6 +10,7 @@ body:
       options:
         - Enhancement
         - Feature
+        - Content creation
     validations:
       required: true
 
