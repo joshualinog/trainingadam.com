@@ -1,0 +1,57 @@
+name: Label site change issues
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  issues: write
+
+jobs:
+  label-site-change:
+    if: startsWith(github.event.issue.title, 'Site change:')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Apply site change and category labels
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issue = context.payload.issue;
+            const match = issue.body?.match(/^### Change type\s*\r?\n+([^\r\n]+)/m);
+            const categories = {
+              Enhancement: "enhancement",
+              Feature: "🛠️ feature",
+            };
+            const category = match && categories[match[1].trim()];
+
+            if (!category) {
+              throw new Error("The site change issue is missing a valid Change type selection.");
+            }
+
+            const siteChangeLabel = "site change";
+            try {
+              await github.rest.issues.getLabel({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                name: siteChangeLabel,
+              });
+            } catch (error) {
+              if (error.status !== 404) {
+                throw error;
+              }
+
+              await github.rest.issues.createLabel({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                name: siteChangeLabel,
+                color: "0075ca",
+                description: "Proposed changes to the website",
+              });
+            }
+
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issue.number,
+              labels: [siteChangeLabel, category],
+            });

@@ -1,0 +1,48 @@
+name: Site change
+description: Request a change to the trainingadam.com website
+title: "Site change: "
+body:
+  - type: dropdown
+    id: change-type
+    attributes:
+      label: Change type
+      description: Choose the category label that best fits this request.
+      options:
+        - Enhancement
+        - Feature
+    validations:
+      required: true
+
+  - type: input
+    id: page
+    attributes:
+      label: Page or area
+      description: Which page or part of the website should be changed?
+      placeholder: "https://trainingadam.com/"
+    validations:
+      required: true
+
+  - type: textarea
+    id: requested-change
+    attributes:
+      label: Requested change
+      description: Describe what you would like changed.
+      placeholder: Explain the change you have in mind.
+    validations:
+      required: true
+
+  - type: textarea
+    id: purpose
+    attributes:
+      label: Purpose
+      description: What problem would this change solve, or what would it improve?
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Expected outcome
+      description: How will we know the change is complete?
+    validations:
+      required: false
