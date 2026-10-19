@@ -40,6 +40,39 @@ body:
     validations:
       required: true
 
+  - type: checkboxes
+    id: style-areas
+    attributes:
+      label: Potential style changes (optional)
+      description: Check any styling areas this change involves.
+      options:
+        - label: Color style guide
+        - label: Typography / fonts
+        - label: Illustration components
+        - label: Icons
+        - label: Layout / spacing
+        - label: Buttons / organic shapes
+        - label: Images / backgrounds
+        - label: Animation / interaction
+        - label: Mobile / responsive design
+
+  - type: textarea
+    id: style-details
+    attributes:
+      label: Style details (optional)
+      description: Describe the CSS or styling you have in mind, such as colors, fonts, or reference examples.
+    validations:
+      required: false
+
+  - type: textarea
+    id: added-features
+    attributes:
+      label: Added or potential features (optional)
+      description: List features you want on this change, such as a contact form, a link, an embed, or a sign-up.
+      placeholder: "- Contact form\n- Link to partner website"
+    validations:
+      required: false
+
   - type: textarea
     id: acceptance-criteria
     attributes:
