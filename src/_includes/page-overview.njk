@@ -1,0 +1,47 @@
+<section id="overview">
+  <div class="overflow-hidden bg-white py-24 sm:py-32 text-night-bordeaux-500">
+    <div class="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
+      <div class="max-w-4xl">
+        {% if overview.eyebrow %}<h2 class="section-heading-small text-seagrass-600">{{ overview.eyebrow }}</h2>{% endif %}
+        <p class="section-heading-large text-blazing-flame-500">{{ overview.heading }}</p>
+        {% if overview.lead %}<p class="mt-6 text-xl/8 font-subheading text-balance text-night-bordeaux-500">{{ overview.lead | safe }}</p>{% endif %}
+      </div>
+
+      <section class="mt-20 grid grid-cols-1 lg:grid-cols-2 lg:gap-x-8 lg:gap-y-16">
+        <div class="lg:pr-8">
+          {% if overview.sectionTitle %}<h3 class="font-heading text-3xl tracking-tight text-pretty text-seagrass-600">{{ overview.sectionTitle }}</h3>{% endif %}
+          {% for paragraph in overview.paragraphs %}
+          <p class="{{ 'mt-6' if loop.first else 'mt-8' }} text-base/7 text-night-bordeaux-500">{{ paragraph | safe }}</p>
+          {% endfor %}
+        </div>
+
+        {% if overview.images %}
+        <div class="pt-16 lg:row-span-2 lg:-mr-16 xl:mr-auto">
+          <div class="-mx-8 grid grid-cols-2 gap-4 sm:-mx-16 sm:grid-cols-4 lg:mx-0 lg:grid-cols-2 xl:gap-8">
+            {% for image in overview.images %}
+            <div class="{{ '-mt-8 lg:-mt-40 ' if loop.index is even }}aspect-square overflow-hidden rounded-xl shadow-xl outline-1 -outline-offset-1 outline-night-bordeaux-500/10">
+              <img src="{{ image.src }}" alt="{{ image.alt or '' }}" class="block size-full object-cover" />
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        {% endif %}
+
+        {% if overview.stats %}
+        <div class="max-lg:mt-16 lg:col-span-1">
+          <p class="text-base/7 font-subheading font-semibold text-olive-bark-500">{{ overview.statsTitle }}</p>
+          <hr class="mt-6 border-t border-seagrass-300" />
+          <dl class="mt-6 grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-2">
+            {% for stat in overview.stats %}
+            <div class="flex flex-col gap-y-2 border-b border-dotted border-seagrass-300 pb-4">
+              <dt class="text-sm/6 font-subheading text-night-bordeaux-500">{{ stat.label }}</dt>
+              <dd class="order-first font-heading text-6xl tracking-tight text-blazing-flame-500">{{ stat.value }}</dd>
+            </div>
+            {% endfor %}
+          </dl>
+        </div>
+        {% endif %}
+      </section>
+    </div>
+  </div>
+</section>

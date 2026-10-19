@@ -1,0 +1,43 @@
+<div class="bg-golden-pollen-500">
+  <div class="relative">
+    <div class="mx-auto max-w-7xl">
+      <div class="relative z-10 pt-14 lg:w-full lg:max-w-2xl">
+        <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" class="absolute inset-y-0 right-8 hidden h-full w-80 translate-x-1/2 transform fill-golden-pollen-500 lg:block">
+          <polygon points="0,0 90,0 50,100 0,100" />
+        </svg>
+
+        <div class="relative px-6 py-32 sm:py-40 lg:px-8 lg:py-56 lg:pr-0">
+          <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl">
+            {% if hero.eyebrow %}
+            <p class="section-heading-small text-blazing-flame-500">
+              {% if hero.eyebrowHref %}<a href="{{ hero.eyebrowHref }}" class="hover:underline">{{ hero.eyebrow }}</a>{% else %}{{ hero.eyebrow }}{% endif %}
+            </p>
+            {% endif %}
+            <h1 class="text-5xl font-heading uppercase tracking-tight text-pretty sm:text-7xl">
+              <span class="block xl:inline text-blazing-flame-500">{{ hero.title }}</span>
+              {% if hero.titleAccent %}<span class="block xl:inline text-night-bordeaux-500">{{ hero.titleAccent }}</span>{% endif %}
+            </h1>
+            <p class="mt-8 text-lg font-subheading font-medium text-pretty text-night-bordeaux-500 sm:text-xl/8 {% if hero.dropCap %}first-letter:float-left first-letter:mr-3 first-letter:font-heading first-letter:text-8xl first-letter:leading-[0.8] first-letter:text-blazing-flame-500{% endif %}">
+              {{ hero.text | safe }}
+            </p>
+            <div class="mt-10 flex items-center gap-x-6">
+              {% if hero.primary %}
+              <a href="{{ hero.primary.href }}" class="rounded-md bg-seagrass-500 px-3.5 py-2.5 text-xl font-hand font-light uppercase text-white shadow-xs hover:bg-seagrass-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-seagrass-600">
+                {{ hero.primary.label }}
+              </a>
+              {% endif %}
+              {% if hero.secondary %}
+              <a href="{{ hero.secondary.href }}" class="text-2xl/6 font-heading uppercase text-blazing-flame-500">
+                {{ hero.secondary.label }} <span aria-hidden="true">→</span>
+              </a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bg-golden-pollen-500 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+      <img src="{{ hero.image or '/assets/images/heroimage.png' }}" alt="{{ hero.imageAlt or '' }}" class="aspect-3/2 object-cover lg:aspect-auto lg:size-full" />
+    </div>
+  </div>
+</div>

@@ -14,7 +14,7 @@
   </head>
   <body class="bg-golden-pollen-500 text-gray-900 w-full overflow-x-hidden{{ ' ' + bodyClass if bodyClass }}">
     <div class="w-full overflow-x-hidden">
-      {% include "navbar.njk" %}
+      {% include headerInclude or "navbar.njk" %}
       {{ content | safe }}
       {% include "footer.njk" %}
     </div>
