@@ -1,0 +1,17 @@
+<aside id="partner" aria-label="Our partner" class="bg-golden-pollen-500 px-6 pb-16 lg:px-8">
+  <div class="mx-auto max-w-7xl">
+    <div class="relative -rotate-1 overflow-hidden rounded-3xl bg-blazing-flame-500 p-8 shadow-xl sm:p-12 lg:flex lg:items-center lg:justify-between lg:gap-x-10">
+      <div class="absolute -top-10 -right-10 size-40 rounded-full bg-golden-pollen-500/40 blur-2xl" aria-hidden="true"></div>
+      <div class="relative max-w-2xl">
+        <p class="section-heading-small text-golden-pollen-300">{{ aside.eyebrow }}</p>
+        <h2 class="font-heading text-4xl uppercase tracking-tight text-white sm:text-5xl">{{ aside.heading }}</h2>
+        <p class="mt-4 text-lg/8 font-subheading text-white">{{ aside.text | safe }}</p>
+      </div>
+      <div class="relative mt-8 lg:mt-0 lg:shrink-0">
+        <a href="{{ aside.href }}" target="_blank" rel="noopener noreferrer" class="inline-block rounded-md bg-golden-pollen-500 px-6 py-3 text-xl font-hand font-bold uppercase text-night-bordeaux-500 shadow-xs hover:bg-golden-pollen-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
+          {{ aside.label }} <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</aside>

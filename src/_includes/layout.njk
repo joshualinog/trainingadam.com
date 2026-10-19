@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title or "Eleventy Tailwind Template" }}</title>
+    {% if description %}<meta name="description" content="{{ description }}">{% endif %}
+    {% if ogImage %}
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ title }}">
+    {% if description %}<meta property="og:description" content="{{ description }}">{% endif %}
+    <meta property="og:image" content="https://trainingadam.com{{ ogImage }}">
+    <meta property="og:url" content="https://trainingadam.com{{ page.url }}">
+    {% endif %}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@100;200;300;400;500;600;700;800;900&family=Rubik+Puddles&family=Rubik+Gemstones&family=Darumadrop+One&family=Special+Elite&family=Nunito+Sans:wght@200;300;400;600;700;800;900&display=swap" rel="stylesheet">
@@ -14,7 +22,7 @@
   </head>
   <body class="bg-golden-pollen-500 text-gray-900 w-full overflow-x-hidden{{ ' ' + bodyClass if bodyClass }}">
     <div class="w-full overflow-x-hidden">
-      {% include headerInclude or "navbar.njk" %}
+      {% include "navbar.njk" %}
       {{ content | safe }}
       {% include "footer.njk" %}
     </div>

@@ -13,15 +13,15 @@
   "branchDonations": [
     {
       "image": "donation-trees.jpg",
-      "name": "Trees",
+      "name": "Fruit Trees",
       "short": "Fruit and shade trees for food forests",
       "description": "Donate established or bare-root trees to help us plant permanent food forests that feed communities for generations."
     },
     {
-      "image": "donation-flowers.jpg",
-      "name": "Flowers",
-      "short": "Pollinator and medicinal flowers",
-      "description": "Contribute flower starts, bulbs, or seeds — especially native, medicinal, and pollinator-friendly varieties that support healthy ecosystems."
+      "image": "donation-houseplants.jpg",
+      "name": "House Plants",
+      "short": "Healthy house plants and starts",
+      "description": "Share healthy house plants, cuttings, and starts that we can grow out, give away, and use to teach people to care for living things."
     },
     {
       "image": "donation-land.jpg",
@@ -36,8 +36,8 @@
       "description": "Share seed packets from your own garden or unopened stock — especially open-pollinated varieties we can save and multiply year after year."
     },
     {
-      "image": "donation-soil.jpg",
-      "name": "Soil and Amendments",
+      "image": "donation-fertilizer.jpg",
+      "name": "Fertilizer",
       "short": "Compost, mulch, and mineral inputs",
       "description": "Donate compost, wood chips, straw, biochar, or mineral amendments to build living soil that grows resilient, productive plants."
     },

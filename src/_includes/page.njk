@@ -1,9 +1,9 @@
 ---
 layout: layout.njk
-headerInclude: navbar-flyout.njk
 ---
 <main>
   {% include "page-hero.njk" %}
+  {% if aside %}{% include "page-aside.njk" %}{% endif %}
   {% include "page-overview.njk" %}
   {% include "page-cta.njk" %}
 </main>

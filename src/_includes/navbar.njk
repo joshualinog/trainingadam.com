@@ -6,29 +6,67 @@
           <span class="sr-only">Training Adam</span>
           <span class="text-xl font-heading text-olive-bark-900 uppercase">Training Adam</span>
         </a>
-        <button type="button" command="show-modal" commandfor="mobile-menu" class="-m-2.5 rounded-md p-2.5 text-gray-700 lg:hidden text-gray-200">
+        <button type="button" command="show-modal" commandfor="mobile-menu" class="-m-2.5 rounded-md p-2.5 text-night-bordeaux-500 lg:hidden">
           <span class="sr-only">Open main menu</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" class="size-6">
             <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
         </button>
-        <div class="hidden lg:ml-12 lg:flex lg:gap-x-14">
+        <div class="hidden lg:ml-12 lg:flex lg:items-center lg:gap-x-14">
+          <button type="button" popovertarget="desktop-menu-branches" class="inline-flex items-center gap-x-1 text-sm/6 font-subheading font-semibold uppercase text-night-bordeaux-500">
+            Our six branches
+            <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="size-5">
+              <path d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" fill-rule="evenodd" />
+            </svg>
+          </button>
           <a href="/#latest-posts" class="text-sm/6 font-subheading font-semibold text-night-bordeaux-500">Blog</a>
           <a href="/youtube-videos/" class="inline-flex items-center gap-1.5 text-sm/6 font-subheading font-semibold text-night-bordeaux-500">Youtube <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="size-4 shrink-0"><path d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.417-4.814a2.507 2.507 0 0 1 1.768-1.768C5.744 5 11.998 5 11.998 5s6.255 0 7.814.418ZM15.194 12 10 15V9l5.194 3Z" clip-rule="evenodd" fill-rule="evenodd" /></svg></a>
-          <a href="#about-us" class="text-sm/6 font-subheading font-semibold text-night-bordeaux-500">About</a>
+          <a href="/#about-us" class="text-sm/6 font-subheading font-semibold text-night-bordeaux-500">About</a>
           <a href="/#donate-preview" class="text-sm/6 font-subheading font-semibold text-night-bordeaux-500">Donate</a>
-          <a href="#branch-shed-lite" class="text-sm/6 font-subheading font-semibold text-night-bordeaux-500">Shed Lite</a>
-          <a href="#branch-permaculture-plants-sc" class="text-sm/6 font-subheading font-semibold text-night-bordeaux-500">Permaculture Plants</a>
-          <a href="#branch-tiny-village-healing-farms" class="text-sm/6 font-subheading font-semibold text-night-bordeaux-500">Tiny Village Healing Farms</a>
-          <a href="#contact" class="text-sm/6 font-subheading font-semibold text-night-bordeaux-500">Contact</a>
+          <a href="/#contact" class="text-sm/6 font-subheading font-semibold text-night-bordeaux-500">Contact</a>
         </div>
       </nav>
     </div>
   </div>
+
+  {# ── Full-width branches flyout ── #}
+  <el-popover id="desktop-menu-branches" popover class="absolute top-16 hidden w-full overflow-visible bg-transparent transition transition-discrete backdrop:bg-transparent open:block data-closed:-translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in">
+    <div aria-hidden="true" class="absolute inset-0 top-1/2 bg-golden-pollen-100 shadow-lg ring-1 ring-night-bordeaux-500/10"></div>
+    <div class="relative bg-golden-pollen-100">
+      <div class="mx-auto max-w-7xl px-6 py-10 lg:px-8">
+        <div class="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+          {% for b in branchPages %}{% if b.key != 'branch-data-schema' %}
+          <div>
+            <h3 class="font-heading text-2xl tracking-tight text-blazing-flame-500">
+              <a href="{{ b.url }}" class="hover:text-blazing-flame-600"><span class="text-seagrass-500">{{ loop.index }}.</span> {{ b.name }}</a>
+            </h3>
+            <p class="mt-1 text-sm/6 font-subheading text-night-bordeaux-500/80">{{ b.tagline }}</p>
+            <div class="mt-4 flow-root">
+              <div class="-my-2">
+                {% set hasSubpages = false %}
+                {% for p in collections.branchSubpage %}{% if p.data.branchKey == b.key %}
+                {% set hasSubpages = true %}
+                <a href="{{ p.url }}" class="flex gap-x-3 py-2 text-sm/6 font-subheading font-semibold text-night-bordeaux-500 hover:text-seagrass-600">
+                  <span aria-hidden="true" class="text-seagrass-500">→</span>
+                  {{ p.data.navTitle or p.data.title }}
+                </a>
+                {% endif %}{% endfor %}
+                {% if not hasSubpages %}
+                <p class="py-2 text-sm/6 font-subheading text-night-bordeaux-500/60">More pages coming soon.</p>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+          {% endif %}{% endfor %}
+        </div>
+      </div>
+    </div>
+  </el-popover>
+
   <el-dialog>
     <dialog id="mobile-menu" class="backdrop:bg-transparent lg:hidden">
       <div tabindex="0" class="fixed inset-0 focus:outline-none">
-        <el-dialog-panel class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 bg-seagrass-500 sm:ring-gray-100/10">
+        <el-dialog-panel class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-seagrass-500 p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-100/10">
           <div class="flex items-center justify-between">
             <a href="/" class="-m-1.5 p-1.5">
               <span class="sr-only">Training Adam</span>
@@ -40,16 +78,24 @@
             </button>
           </div>
           <div class="mt-6 flow-root">
-            <div class="-my-6 divide-y divide-gray-500/10 divide-white/10">
+            <div class="-my-6 divide-y divide-white/10">
               <div class="space-y-2 py-6">
                 <a href="/#latest-posts" class="-mx-3 block rounded-lg px-3 py-2 text-2xl font-subheading font-semibold text-white hover:bg-white/10">Blog</a>
-                <a href="/youtube-videos/" class="-mx-3 flex items-center gap-2 rounded-lg px-3 py-2 text-2xl font-subheading font-semibold text-white hover:bg-white/10">Youtube <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="size-6 shrink-0"><path d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.417-4.814a2.507 2.507 0 0 1 1.768-1.768C5.744 5 11.998 5 11.998 5s6.255 0 7.814.418ZM15.194 12 10 15V9l5.194 3Z" clip-rule="evenodd" fill-rule="evenodd" /></svg></a>
-                <a href="#about-us" class="-mx-3 block rounded-lg px-3 py-2 text-2xl font-subheading font-semibold text-white hover:bg-white/10">About</a>
+                <a href="/youtube-videos/" class="-mx-3 block rounded-lg px-3 py-2 text-2xl font-subheading font-semibold text-white hover:bg-white/10">Youtube</a>
+                <a href="/#about-us" class="-mx-3 block rounded-lg px-3 py-2 text-2xl font-subheading font-semibold text-white hover:bg-white/10">About</a>
                 <a href="/#donate-preview" class="-mx-3 block rounded-lg px-3 py-2 text-2xl font-subheading font-semibold text-white hover:bg-white/10">Donate</a>
-                <a href="#branch-shed-lite" class="-mx-3 block rounded-lg px-3 py-2 text-2xl font-subheading font-semibold text-white hover:bg-white/10">Shed Lite</a>
-                <a href="#branch-permaculture-plants-sc" class="-mx-3 block rounded-lg px-3 py-2 text-2xl font-subheading font-semibold text-white hover:bg-white/10">Permaculture Plants</a>
-                <a href="#branch-tiny-village-healing-farms" class="-mx-3 block rounded-lg px-3 py-2 text-2xl font-subheading font-semibold text-white hover:bg-white/10">Tiny Village Healing Farms</a>
-                <a href="#contact" class="-mx-3 block rounded-lg px-3 py-2 text-2xl font-subheading font-semibold text-white hover:bg-white/10">Contact</a>
+                <a href="/#contact" class="-mx-3 block rounded-lg px-3 py-2 text-2xl font-subheading font-semibold text-white hover:bg-white/10">Contact</a>
+              </div>
+              <div class="space-y-4 py-6">
+                <p class="px-3 font-subheading text-sm uppercase tracking-widest text-golden-pollen-300">Our six branches</p>
+                {% for b in branchPages %}{% if b.key != 'branch-data-schema' %}
+                <div>
+                  <a href="{{ b.url }}" class="-mx-3 block rounded-lg px-3 py-2 text-xl font-subheading font-semibold text-white hover:bg-white/10">{{ loop.index }}. {{ b.name }}</a>
+                  {% for p in collections.branchSubpage %}{% if p.data.branchKey == b.key %}
+                  <a href="{{ p.url }}" class="-mx-3 block rounded-lg px-3 py-1 pl-8 text-base font-subheading text-golden-pollen-200 hover:bg-white/10">{{ p.data.navTitle or p.data.title }}</a>
+                  {% endif %}{% endfor %}
+                </div>
+                {% endif %}{% endfor %}
               </div>
             </div>
           </div>

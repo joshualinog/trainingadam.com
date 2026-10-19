@@ -11,6 +11,20 @@ function slugify(name) {
     .replace(/(^-|-$)/g, '');
 }
 
+const BRANCH_ORDER = [
+  'rethinkinghuman',
+  'growupandplay',
+  'trashtotreasurecleanandrestored',
+  'permacultureplantssc',
+  'shedlite',
+  'tinyvillagehealingfarms',
+];
+
+function orderIndex(branch) {
+  const index = BRANCH_ORDER.indexOf(branch.key);
+  return index === -1 ? BRANCH_ORDER.length : index;
+}
+
 function loadBranches() {
   if (!fs.existsSync(BRANCHES_DIR)) return [];
 
@@ -27,7 +41,8 @@ function loadBranches() {
         slug,
         url: `/${slug}/`,
       };
-    });
+    })
+    .sort((a, b) => orderIndex(a) - orderIndex(b));
 }
 
 module.exports = loadBranches();
