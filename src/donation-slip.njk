@@ -1,0 +1,71 @@
+---
+pagination:
+  data: donationSlips
+  size: 1
+  alias: slip
+permalink: "{{ slip.url }}"
+layout: slip-layout.njk
+eleventyComputed:
+  title: "Donation Slip: {{ slip.title }} | {{ slip.rowName }} | Training Adam"
+---
+<main class="sheet">
+  <header class="slip">
+    <div>
+      <div class="brand">Training Adam &middot; Donation Slip</div>
+      <h1>{{ slip.title }}</h1>
+      <div class="branch">{{ slip.rowName }}{% if slip.domain %} &middot; {{ slip.domain }}{% endif %}</div>
+    </div>
+    {% if slip.kind == 'item' %}
+    <div class="badge">{% if slip.photo %}<img src="{{ slip.photo }}" alt="">{% else %}<span aria-hidden="true">{{ donationIcons[slip.image] or "🎁" }}</span>{% endif %}</div>
+    {% else %}
+    <div class="badge" aria-hidden="true">🎁</div>
+    {% endif %}
+  </header>
+
+  <section class="item">
+    {% if slip.kind == 'item' %}
+    <h2>{{ slip.short }}</h2>
+    <p>{{ slip.description }}</p>
+    {% else %}
+    <h2>Tell us what you'd like to give</h2>
+    <p>Use the lines below to write in the details of your donation to {{ slip.rowName }}. Be as specific as you like.</p>
+    {% endif %}
+  </section>
+
+  <div class="section-title">About you</div>
+  <div class="fields">
+    <div class="field">Name</div>
+    <div class="field">Date of contribution</div>
+    <div class="field">Phone</div>
+    <div class="field">Email</div>
+    <div class="field full">Address</div>
+  </div>
+
+  <div class="section-title">{% if slip.kind == 'item' %}About this donation{% else %}What you're donating{% endif %}</div>
+  {% if slip.kind == 'item' %}
+  <div class="fields">
+    <div class="field">Quantity / amount</div>
+    <div class="field">Estimated value (optional)</div>
+    <div class="field full">Details (size, variety, condition, brand)</div>
+  </div>
+  <div class="section-title">Condition</div>
+  <div class="checks"><span>New</span><span>Like new</span><span>Used, good</span><span>Needs repair</span></div>
+  {% endif %}
+  <div class="section-title">Delivery</div>
+  <div class="checks"><span>I will drop it off</span><span>Please pick it up</span><span>Date(s) available: ______________</span></div>
+
+  <div class="section-title">{% if slip.kind == 'item' %}Notes{% else %}Describe your donation by hand{% endif %}</div>
+  <div class="lines">{% if slip.kind == 'general' %}<div></div><div></div><div></div><div></div><div></div><div></div>{% else %}<div></div><div></div><div></div>{% endif %}</div>
+
+  <footer class="slip">
+    <div class="sign">Donor signature</div>
+    <div class="sign">Authorized signature and title (Training Adam)</div>
+    <div class="sign" style="flex:.6">Date issued</div>
+  </footer>
+  <div class="fineprint">
+    <p><strong>{{ organization.legalName }}</strong> is a tax-exempt organization under section 501(c)(3) of the Internal Revenue Code. EIN {{ organization.ein }}. {{ organization.address }}.</p>
+    <p>This slip is a record of a donation and, once signed and dated by a Training Adam representative, serves as your written acknowledgment (Charitable Contribution Receipt) for gifts of $250 or more. Keep it: the IRS requires it by the date you file your return or the filing deadline, whichever is earlier. <strong>No goods or services were provided in exchange for this contribution</strong> unless stated here (with a good-faith estimate of its value): ______________________________.</p>
+    <p>For non-cash gifts, Training Adam describes the item received but does not assign a dollar value. Determining fair market value is the donor's responsibility. Non-cash gifts valued over $500 require IRS Form 8283, and over $5,000 generally require a qualified appraisal. Gifts of time, services, and use of space or facilities are not deductible as charitable contributions. Please consult a tax professional. Keep this slip with your tax records.</p>
+  </div>
+  <p class="thanks">Thank you for helping Training Adam keep building. trainingadam.com/donate</p>
+</main>

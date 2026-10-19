@@ -22,6 +22,7 @@
               <a href="{{ b.url }}" class="hover:underline">{{ b.name }}</a>
             </p>
             <p class="mt-1 text-xs/5 text-night-bordeaux-500/70">{{ b.tagline }}</p>
+            <p class="mt-1 text-xs/5"><a href="{{ b.generalSlipUrl }}" class="font-semibold text-blazing-flame-500 hover:underline">General donation slip</a></p>
           </div>
         </div>
         <dl class="flex w-full flex-none items-center justify-between gap-x-8 sm:w-auto">
@@ -32,7 +33,7 @@
             <dd class="group relative">
               <button type="button"
                 class="donation-item flex size-9 items-center justify-center overflow-hidden rounded-full bg-white text-lg outline-2 outline-golden-pollen-50 transition hover:z-10 hover:scale-110 hover:bg-seagrass-100 focus-visible:z-10 focus-visible:outline-seagrass-500"
-                data-name="{{ d.name }}" data-short="{{ d.short }}" data-description="{{ d.description }}" data-icon="{{ icon }}" data-photo="{{ d.photo }}" data-branch="{{ b.name }}" data-branch-url="{{ b.url }}"
+                data-name="{{ d.name }}" data-short="{{ d.short }}" data-description="{{ d.description }}" data-icon="{{ icon }}" data-photo="{{ d.photo }}" data-branch="{{ b.name }}" data-branch-url="{{ b.url }}" data-slip="{{ d.slipUrl }}"
                 aria-label="{{ d.name }} — {{ d.short }}">
                 {% if d.photo %}<img src="{{ d.photo }}" alt="" class="size-full object-cover" />{% else %}<span aria-hidden="true">{{ icon }}</span>{% endif %}
               </button>
@@ -56,7 +57,8 @@
       <div tabindex="0" class="flex min-h-full items-end justify-center p-4 text-center focus:outline-none sm:items-center sm:p-0">
         <el-dialog-panel class="relative transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all data-closed:translate-y-4 data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in sm:my-8 sm:w-full sm:max-w-md sm:p-6 data-closed:sm:translate-y-0 data-closed:sm:scale-95">
           <div>
-            <div class="mx-auto flex size-[300px] max-w-full items-center justify-center overflow-hidden rounded-full bg-golden-pollen-100 ring-4 ring-seagrass-500/30">
+            <a id="donation-dialog-slip" href="#" class="absolute right-4 top-4 z-10 font-heading text-xl text-blazing-flame-500 hover:underline sm:right-6 sm:top-5">Donation slip!</a>
+            <div class="mx-auto mt-6 flex size-[300px] max-w-full items-center justify-center overflow-hidden rounded-full bg-golden-pollen-100 ring-4 ring-seagrass-500/30">
               <img id="donation-dialog-photo" src="" alt="" class="hidden size-full object-cover" />
               <span id="donation-dialog-icon" aria-hidden="true" class="text-[9rem] leading-none"></span>
             </div>
@@ -89,6 +91,7 @@
           $('donation-dialog-description').textContent = d.description;
           $('donation-dialog-branch').textContent = d.branch;
           $('donation-dialog-branch-link').href = d.branchUrl;
+          $('donation-dialog-slip').href = d.slip;
           $('donation-dialog-icon').textContent = d.photo ? '' : d.icon;
           var photo = $('donation-dialog-photo');
           photo.classList.toggle('hidden', !d.photo);

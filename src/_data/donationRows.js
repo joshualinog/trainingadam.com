@@ -1,5 +1,10 @@
 const branches = require('./branchPages');
 
+function slugify(text) {
+  return text.toString().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+}
+
+
 const extraRows = [
   {
     name: 'Food',
@@ -45,4 +50,17 @@ const extraRows = [
   },
 ];
 
-module.exports = [...branches.filter((b) => b.key !== 'branch-data-schema'), ...extraRows];
+const rows = [
+  ...branches.filter((b) => b.key !== 'branch-data-schema'),
+  ...extraRows.map((r) => ({ ...r, slug: slugify(r.name) })),
+];
+
+// Every row and item gets a stable slip URL, e.g. /donation-slips/permaculture-plants-sc/fruit-trees/
+module.exports = rows.map((row) => ({
+  ...row,
+  generalSlipUrl: `/donation-slips/${row.slug}/general/`,
+  branchDonations: (row.branchDonations || []).map((d) => ({
+    ...d,
+    slipUrl: `/donation-slips/${row.slug}/${slugify(d.name)}/`,
+  })),
+}));
